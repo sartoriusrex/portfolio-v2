@@ -1,11 +1,31 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+	mode: 'development',
+  entry: {
+		app: './src/index.js',
+	},
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
 	},
+	devtool: 'cheap-eval-source-map',
+	devServer: {
+		contentBase: path.join(__dirname, './dist'),
+		compress: true
+	},
+	plugins: [
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			title: "Dennis Mai Personal Website",
+			hash: true,
+			minify: true,
+			template: "!!ejs-webpack-loader!src/views/index.ejs",
+			filename: "index.html",
+		})
+	],
 	module: {
 		rules: [
 			{
@@ -18,7 +38,13 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(png|svg|jpg|jpeg|gif)$/,
+				use: [
+					'file-loader'
+				]
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: [
 					'file-loader'
 				]

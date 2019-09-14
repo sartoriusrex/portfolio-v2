@@ -1,0 +1,52 @@
+@import "_variables";
+
+@keyframes load {
+	from {
+		transform: scaleX(0);
+	}
+
+	to {
+		transform: scaleX(.7);
+	}
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+.landing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		margin: 8rem 0;
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+}
+
+.subheadline-container {
+	&:after {
+		display: block;
+		content: "";
+		padding-bottom: 1rem;
+		border-bottom: 2px solid $purple;
+		transform: scaleX(0);
+		animation: load 300ms ease-in-out 800ms forwards;
+	}
+
+	margin-bottom: 4rem;
+}
+
+.name {
+	font-family: "Playfair Display";
+	font-weight: bold;
+}
+
+.effective {
+	font-family: "Raleway";
+	font-weight: bold;
+}

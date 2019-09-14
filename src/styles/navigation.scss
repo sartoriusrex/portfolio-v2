@@ -1,0 +1,32 @@
+@import "_variables";
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;;
+	width: 100%;
+	padding: 0 2rem;
+	height: 4rem;
+	box-shadow: 0 0 5px 10px $primary-background;
+
+	a {
+		border: 2px solid transparent;
+		text-decoration: none;
+		color: $primary-text;
+
+		&:after {
+			display: block;
+			content: "";
+			padding-bottom: 1rem;
+			border-bottom: 2px solid $purple;
+			transform: scaleX(0);
+			transition: transform 150ms ease-in-out;
+		}
+
+		&:hover:after,
+		&:focus:after,
+		&:active:after {
+			transform: scale(.70);
+		}
+	}
+}
