@@ -1,0 +1,71 @@
+@import "_variables";
+
+.about-background-one {
+	clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100% );
+	background-color: $teal;
+	width: 100%;
+	height: 360px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-card {
+	margin-top: 80px;
+	max-width: 400px;
+
+	p {
+		text-align: center;
+	}
+}
+
+.about-title-container {
+	margin-top: -20%;
+	width: 90%;
+	max-width: 300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	background-color: transparent;
+	margin-bottom: 1.25rem;
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+	img {
+		border-radius: 50%;
+		border: 2px solid $card-background;
+		width: 120px;
+	}
+}
+
+.enjoy-container {
+	margin-top: -50px;
+	z-index: 10;
+
+	li {
+		list-style: none;
+		margin-bottom: .625rem;
+
+		&::before {
+			content: url("../images/portofolio-point.svg");
+			margin-right: .5rem;
+		}
+	}
+}
+
+.tech-container {
+	z-index: 10;
+	
+	h4 {
+		padding: .5rem;
+		background-color: $teal;
+		margin-bottom: .625rem;
+	}
+
+	p {
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+}

@@ -21,6 +21,7 @@ h1 {
 
 	h1 {
 		margin: 8rem 0;
+		font-weight: normal;
 	}
 
 	p {
@@ -37,7 +38,8 @@ h1 {
 		transform: scaleX(0);
 		animation: load 300ms ease-in-out 800ms forwards;
 	}
-
+	
+	padding-bottom: .1rem;
 	margin-bottom: 4rem;
 }
 

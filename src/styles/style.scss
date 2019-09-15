@@ -58,12 +58,58 @@
 	outline: 1px solid rgba(255, 0, 0, 0.263);
 	font-family: 'Raleway', Roboto, Ariel, sans-serif;
 	box-sizing: border-box;
-	background-color: $primary-background;
+	background-color: transparent;
 	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: $primary-background;
 }
 
 h1, h2 {
 	font-family: "Playfair Display";
+}
+
+h2,h3 {
+	margin-bottom: 1.25rem;
+
+	&::after {
+		content: "";
+		display: block;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid $teal;
+		transform: scaleX(.5);
+		transition: transform 150ms ease-in-out;
+	}
+}
+
+h3 {
+	&::after {
+		padding-bottom:.5rem;
+	}
+
+	margin-bottom: 1.25rem;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.card {
+	border-radius: $b-radius;
+	box-shadow: $b-shadow;
+	width: calc(100%-2rem);
+	padding: 1.25rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: $card-background;
+	margin-bottom: 2.5rem;
 }
 
 @import "navigation";
