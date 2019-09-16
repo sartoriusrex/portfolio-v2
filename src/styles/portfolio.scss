@@ -15,7 +15,116 @@
 	margin-top: 440px;
 }
 
+.project {
+	padding: 0;
+	position: relative;
+	height: 233px;
+	width: 350px;
+	background-color: transparent;
+}
+
+.project-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	border-radius: $b-radius;
+}
+
 .jjd {
 	margin-top: -90px;
 	z-index: 10;
+}
+
+.project-text-container {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	border-radius: $b-radius;
+	opacity: 0;
+	transition: opacity 250ms ease-in-out;
+	color: $card-background;
+	background-color: $project-background;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.project-description-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 66%;
+	padding: 1.25rem;
+}
+
+.project-main-text-container {
+	h3 {
+		text-align: center;
+
+		&::after {
+			border-bottom: 2px solid $green;
+		}
+
+		a {
+			text-decoration: none;
+			font-family: "Playfair Display";
+			font-size: 1.125rem;
+			font-weight: normal;
+			text-align: center;
+			width: auto;
+			color: $card-background;
+		}
+	}
+
+	p {
+		text-align: center;
+		font-size: .625rem;
+		line-height: 1.5;
+	}
+}
+
+.project-links-container {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		padding: .5rem 1rem;
+		background-color: $green;
+		border-radius: $b-radius / 2;
+		font-size: .625rem;
+		color: $primary-text;
+		transition: box-shadow 150ms ease-in-out;
+		cursor: pointer;
+		text-decoration: none;
+
+		&:hover {
+			box-shadow: 0 0 .5rem $green;
+		}
+	}
+}
+
+.project-tech-container {
+	width: 34%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 1.25rem;
+}
+
+.built {
+	text-align: center;
+	font-size: .75rem;
+	margin-bottom: 1rem;
+}
+
+.tech {
+	font-size: .625rem;
+	text-align: center;
+	line-height: 1.4;
 }
