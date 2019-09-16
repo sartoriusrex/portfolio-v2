@@ -72,7 +72,9 @@ h1, h2 {
 	font-family: "Playfair Display";
 }
 
-h2,h3 {
+h2,
+h3:not(.project-h3),
+a.project-a {
 	margin-bottom: 1.25rem;
 
 	&::after {

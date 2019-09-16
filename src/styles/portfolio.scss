@@ -48,7 +48,8 @@
 	color: $card-background;
 	background-color: $project-background;
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		opacity: 1;
 	}
 }
@@ -65,10 +66,8 @@
 .project-main-text-container {
 	h3 {
 		text-align: center;
-
-		&::after {
-			border-bottom: 2px solid $green;
-		}
+		display: flex;
+		justify-content: center;
 
 		a {
 			text-decoration: none;
@@ -78,6 +77,19 @@
 			text-align: center;
 			width: auto;
 			color: $card-background;
+			margin-bottom: 0;
+			transition: text-shadow 150ms ease-in-out;
+
+			&::after {
+				border-bottom: 2px solid $green;
+				padding-bottom: .5rem;
+			}
+
+			&:focus,
+			&:active,
+			&:hover {
+				text-shadow: 0 0 .5rem $card-background;
+			}
 		}
 	}
 
@@ -100,10 +112,12 @@
 		font-size: .625rem;
 		color: $primary-text;
 		transition: box-shadow 150ms ease-in-out;
-		cursor: pointer;
+	cursor: pointer;
 		text-decoration: none;
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			box-shadow: 0 0 .5rem $green;
 		}
 	}
