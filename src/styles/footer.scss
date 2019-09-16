@@ -1,0 +1,23 @@
+@import "_variables";
+
+.footer {
+	padding: 1.25rem 1rem;
+	background-color: $teal;
+
+	p {
+		text-align: center;
+		color: $primary-text;
+	}
+}
+
+.icon-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.25rem;
+
+	img {
+		width: 3rem;
+	}
+}

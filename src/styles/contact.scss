@@ -1,0 +1,94 @@
+@import "_variables";
+
+.contact-background-one {
+	width: 100%;
+	height: 400px;
+	background-color: $teal;
+	clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -10;
+	margin-top: -140px;
+}
+
+.contact-title-container {
+	margin-top: 140px;
+
+	p {
+		text-align: center;
+	}
+}
+
+.contact-form {
+	margin-top: -40px;
+	text-align: center;
+
+	p {
+		margin-bottom: 1.25rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: $red;
+		font-weight: bold;
+
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	label {
+		visibility: hidden;
+	}
+
+	input {
+		border: none;
+		width: 100%;
+		border-bottom: 2px solid $teal;
+		padding-bottom: .5rem;
+		text-align: center;
+		font-size: 1rem;
+
+		&::placeholder {
+			text-align: center;
+			font-size: 1rem;
+			color: $placeholder-text;
+		}
+	}
+
+	textarea {
+		font-size: 1rem;
+		border: 2px solid $teal;
+		border-radius: $b-radius;
+		width: 100%;
+		height: 20vh;
+		max-height: 200px;
+		text-indent: 0;
+		padding: 1rem;
+		margin-bottom: 1.25rem;
+
+		&::placeholder {
+			color: $placeholder-text;
+			visibility: visible;
+			text-align: center;
+		}
+	}
+
+	button {
+		font-size: 1rem;
+		padding: 1.25rem 1.5rem;
+		background-color: $teal;
+		border-radius: $b-radius / 2;
+		border: none;
+		transition: box-shadow 150ms ease-in-out;
+
+		&:hover,
+		&:active,
+		&:focus {
+			box-shadow: 0 0 5px 5px $teal;
+		}
+	}
+}

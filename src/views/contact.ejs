@@ -1,3 +1,57 @@
 <section id="contact">
-	<h2>Contact</h2>
+	<div class="contact-background-one">
+		<div class="card contact-title-container">
+			<h2>Contact</h2>
+			<p>Send me a message to check my availability or to grab a coffee.</p>
+		</div>
+	</div>
+
+	<form
+		class="card contact-form"
+	>
+		<p>You can reach me by 
+			<a 
+				id="email-link"
+				href="dmai.developer@gmail.com"
+				rel="noopener noreferrer"
+				target="_blank"
+			>email
+			</a>
+			, this form, or download 
+			<a 
+				id="resume-link"
+				href=""
+				rel="noopener noreferrer"
+				target="_blank"
+			>my resume.
+			</a>
+		</p>
+
+		<p>To prove you’re not a bot, please include the phrase “friends don’t lie” anywhere in the subject.</p>
+
+		<label for="email">email</label>
+		<input
+			type="email"
+			name="email"
+			placeholder="email"
+			required
+		>
+
+		<label for="subject">subject</label>
+		<input
+			type="text"
+			name="subject"
+			placeholder="subject"
+			required
+		>
+
+		<label for="message">message</label>
+		<textarea
+			name="message"
+			placeholder="message"
+			required
+		>
+		</textarea>
+		<button type="submit">Send</button>
+	</form>
 </section>
