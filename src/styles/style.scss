@@ -73,8 +73,7 @@ h1, h2 {
 }
 
 h2,
-h3:not(.project-h3),
-a.project-a {
+h3:not(.project-h3) {
 	margin-bottom: 1.25rem;
 
 	&::after {

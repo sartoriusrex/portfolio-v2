@@ -80,9 +80,12 @@
 			margin-bottom: 0;
 			transition: text-shadow 150ms ease-in-out;
 
+			@extend %bottom-border;
+
 			&::after {
 				border-bottom: 2px solid $green;
 				padding-bottom: .5rem;
+				transform: scaleX(.5);
 			}
 
 			&:focus,
@@ -112,7 +115,7 @@
 		font-size: .625rem;
 		color: $primary-text;
 		transition: box-shadow 150ms ease-in-out;
-	cursor: pointer;
+		cursor: pointer;
 		text-decoration: none;
 
 		&:hover,

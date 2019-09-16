@@ -16,7 +16,7 @@ $b-shadow: 0 5px 10px 5px rgba(0, 0, 0, .16);
 
 // placeholder class for ::after pseudo element to create bottom borders
 %bottom-border {
-	&:after {
+	&::after {
 		display: block;
 		content: "";
 		padding-bottom: 1rem;
@@ -25,9 +25,9 @@ $b-shadow: 0 5px 10px 5px rgba(0, 0, 0, .16);
 		transition: transform 150ms ease-in-out;
 	}
 
-	&:hover:after,
-	&:focus:after,
-	&:active:after {
-		transform: scale(.70);
+	&:hover::after,
+	&:focus::after,
+	&:active::after {
+		transform: scaleX(.70);
 	}
 }
