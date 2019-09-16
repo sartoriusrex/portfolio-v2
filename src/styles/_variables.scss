@@ -19,7 +19,7 @@ $b-shadow: 0 5px 10px 5px rgba(0, 0, 0, .16);
 	&::after {
 		display: block;
 		content: "";
-		padding-bottom: 1rem;
+		padding-bottom: .5rem;
 		border-bottom: 2px solid $purple;
 		transform: scaleX(0);
 		transition: transform 150ms ease-in-out;
