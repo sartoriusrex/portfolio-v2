@@ -54,6 +54,16 @@
        url('../fonts/Raleway/raleway-v14-latin-700.svg#Raleway') format('svg'); /* Legacy iOS */
 }
 
+@keyframes loadbackground {
+	from {
+		background-color: $primary-text;
+	}
+
+	to {
+		background-color: $primary-background;
+	}
+}
+
 *{
 	// outline: 1px solid rgba(255, 0, 0, 0.263);
 	font-family: 'Raleway', Roboto, Ariel, sans-serif;
@@ -62,7 +72,7 @@
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
-	color: $primary-text;
+  color: $primary-text;
 }
 
 a {

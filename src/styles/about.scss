@@ -1,5 +1,9 @@
 @import "_variables";
 
+.about-section {
+	animation: $load-background;
+}
+
 .about-background-one {
 	clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100% );
 	background-color: $teal;
