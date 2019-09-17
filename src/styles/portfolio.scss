@@ -162,7 +162,7 @@
 
 @media screen and (min-width: 600px) {
 	.project {
-		padding-top: 0;
+		padding: 0;
 		width: 550px;
 		height: 336px;
 	}
@@ -203,13 +203,11 @@
 
 @media screen and (min-width: 1200px) {
 	.project {
-		padding-top: 0;
 		display: flex;
 		flex-direction: column-reverse;
 		width: 800px;
 		height: auto;
 		padding: 0;
-		margin-bottom: 4rem;
 		background-color: $card-background;
 	}
 

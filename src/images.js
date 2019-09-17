@@ -1,5 +1,4 @@
 import bioImage from './images/bio.jpeg';
-import bioImagePlaceholder from './images/placeholders/bio-ph.jpeg';
 
 // jjd images
 import jjdImageSm from './images/projects/jjd-sm.png';
@@ -32,15 +31,15 @@ let jjdpic = document.querySelector("#jjd");
 let usdtpic = document.querySelector("#usdt");
 let ravenpic = document.querySelector("#raven");
 
-// mount placeholders
-export function mountImages() {
-	biopic.src = bioImagePlaceholder;
-
-	let sizes = `
+const sizes = `
 		(max-width: 400px) 300px,
 		(max-width: 750px) 600px,
 		900px,
 	`
+
+// mount placeholders
+export function mountImages() {
+	biopic.src = bioImage;
 
 	jjdpic.sizes = sizes;
 	usdtpic.sizes = sizes;
@@ -71,13 +70,111 @@ export function mountImages() {
 	ravenpic.src = ravenImageSmPlaceholder;
 }
 
+
 // Intersection Observer to lazyload images
-const intersectionObserver = new IntersectionObserver( function( entries ) {
-	if ( entries[0].intersectionRatio <= 0 ) {
-		return;
-	}
+document.addEventListener( "DOMContentLoaded", function() {
+	let lazyloadImages;
 
+  if ("IntersectionObserver" in window) { //Not supported by IE
+		lazyloadImages = document.querySelectorAll(".lazy");
+		
+    let imageObserver = new IntersectionObserver( function( entries, observer ) {
+      entries.forEach( function( entry ) {
+        if ( entry.isIntersecting ) {
+					let image = entry.target;
 
+					if( image.id === "jjd" ) {
+						image.srcset = `
+							${jjdImageSm} 350w,
+							${jjdImageMd} 550w,
+							${jjdImageLg} 800w,
+						`
+
+						image.src = jjdImageSm;
+					}
+					else if ( image.id === "usdt") {
+						image.srcset = `
+							${usdtImageSm} 350w,
+							${usdtImageMd} 550w,
+							${usdtImageLg} 800w,
+						`
+
+						image.src = usdtImageSm;
+					} else {
+						image.srcset = `
+							${ravenImageSm} 350w,
+							${ravenImageMd} 550w,
+							${ravenImageLg} 800w,
+						`
+
+						image.src = ravenImageSm;
+					}
+
+          image.classList.remove("lazy");
+					imageObserver.unobserve( image );
+        }
+      });
+    }, { rootMargin: "0px 0px -30% 0px" } );
+
+    lazyloadImages.forEach( function( image ) {
+      imageObserver.observe( image );
+		});
+		
+  } else {  
+    let lazyloadThrottleTimeout;
+    lazyloadImages = document.querySelectorAll(".lazy");
+    
+    function lazyload () {
+      if( lazyloadThrottleTimeout ) {
+        clearTimeout( lazyloadThrottleTimeout );
+      }
+
+      lazyloadThrottleTimeout = setTimeout( function() {
+				const scrollTop = window.pageYOffset;
+
+        lazyloadImages.forEach( function( img ) {
+            if( img.offsetTop < ( window.innerHeight + scrollTop ) ) {
+								if( img.id === "jjd" ) {
+									img.srcset = `
+										${jjdImageSm} 350w,
+										${jjdImageMd} 550w,
+										${jjdImageLg} 800w,
+									`
+			
+									img.src = jjdImageSm;
+								}
+								else if ( img.id === "usdt") {
+									img.srcset = `
+										${usdtImageSm} 350w,
+										${usdtImageMd} 550w,
+										${usdtImageLg} 800w,
+									`
+
+									img.src = usdtImageSm;
+								} else {
+									img.srcset = `
+										${ravenImageSm} 350w,
+										${ravenImageMd} 550w,
+										${ravenImageLg} 800w,
+									`
+			
+									img.src = ravenImageSm;
+								}
+
+              img.classList.remove('lazy');
+            }
+				});
+				
+        if( lazyloadImages.length == 0 ) { 
+          document.removeEventListener( "scroll", lazyload );
+          window.removeEventListener( "resize", lazyload );
+          window.removeEventListener( "orientationChange", lazyload );
+        }
+      }, 20);
+    }
+
+    document.addEventListener( "scroll", lazyload );
+    window.addEventListener( "resize", lazyload );
+    window.addEventListener( "orientationChange", lazyload );
+  }
 });
-
-intersectionObserver.observe(document.querySelector("#portfolio"));

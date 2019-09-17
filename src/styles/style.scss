@@ -133,6 +133,12 @@ section {
 	margin-bottom: 2.5rem;
 }
 
+@media (min-width: 1200px) {
+  .card {
+    margin-bottom: 4rem;
+  }
+}
+
 @import "navigation";
 
 @import "landing";
