@@ -1,17 +1,25 @@
 @import "_variables";
 
-.navigation {
+.nav-container {
 	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;;
+	justify-content: center;
 	width: 100%;
-	padding: 0 2rem;
-	height: 3rem;
 	box-shadow: 0 0 5px 10px $primary-background;
 	position: fixed;
 	top: 0;
 	z-index: 100;
 	background-color: $primary-background;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;;
+	width: 100%;
+	max-width: 25rem;
+	padding: 0 2rem;
+	height: 3rem;
+	
 
 	a {
 		border: 2px solid transparent;

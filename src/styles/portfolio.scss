@@ -22,6 +22,22 @@
 	max-width: none;
 }
 
+@media screen and (min-width: 550px) {
+	.project {
+		padding-top: 0;
+		width: 550px;
+		height: 336px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.project {
+		padding-top: 0;
+		width: 800px;
+		height: 533px;
+	}
+}
+
 .project-image {
 	position: absolute;
 	top: 0;
@@ -141,7 +157,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 2rem 1.25rem;
+	padding: 1.8rem .5rem;
 }
 
 .built {
@@ -152,7 +168,7 @@
 }
 
 .tech {
-	font-size: .625rem;
+	font-size: .5rem;
 	text-align: center;
 	line-height: 1.4;
 	color: $card-background;
