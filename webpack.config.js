@@ -32,6 +32,7 @@ module.exports = {
 		}),
 		new Critters({
 			fonts: true,
+			preload: "swap"
 		})
 	],
 	module: {
