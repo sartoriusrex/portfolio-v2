@@ -187,30 +187,25 @@ document.addEventListener( "DOMContentLoaded", function() {
   }
 });
 
-{/* <link rel="shortcut icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="shortcut icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-
-		<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"></link> */}
-
 export function mountFavicons() {
 	if( !document.getElementById('favicon-small') ) {
-			let faviconSmall = document.createElement('link');
-			faviconSmall.id = 'favicon-small';
-			faviconSmall.rel = 'shortcut icon';
-			faviconSmall.type="image/png";
-			faviconSmall.sizes="16x16";
-			faviconSmall.href = SmallFav;
-			document.head.appendChild(faviconSmall);
+		let faviconSmall = document.createElement('link');
+		faviconSmall.id = 'favicon-small';
+		faviconSmall.rel = 'shortcut icon';
+		faviconSmall.type="image/png";
+		faviconSmall.sizes="16x16";
+		faviconSmall.href = SmallFav;
+		document.head.appendChild(faviconSmall);
 	}
 
-		if( !document.getElementById('favicon-large') ) {
-			let faviconLarge = document.createElement('link');
-			faviconLarge.id = 'favicon-small';
-			faviconLarge.rel = 'shortcut icon';
-			faviconLarge.type="image/png";
-			faviconLarge.sizes="16x16";
-			faviconLarge.href = LargeFav;;
-			document.head.appendChild(faviconLarge);
+	if( !document.getElementById('favicon-large') ) {
+		let faviconLarge = document.createElement('link');
+		faviconLarge.id = 'favicon-small';
+		faviconLarge.rel = 'shortcut icon';
+		faviconLarge.type="image/png";
+		faviconLarge.sizes="16x16";
+		faviconLarge.href = LargeFav;;
+		document.head.appendChild(faviconLarge);
 	}
 
 	if( !document.getElementById('favicon') ) {
