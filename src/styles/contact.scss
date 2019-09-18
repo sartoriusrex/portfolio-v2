@@ -52,6 +52,7 @@
 
 	input {
 		border: none;
+		outline: 0;
 		width: 100%;
 		border-bottom: 2px solid $teal;
 		padding-bottom: .5rem;
@@ -84,6 +85,8 @@
 		text-align: left;
 		padding: 1rem;
 		margin-bottom: 1.25rem;
+		box-shadow: none;
+		outline: 0;
 
 		&::placeholder {
 			color: $placeholder-text;
