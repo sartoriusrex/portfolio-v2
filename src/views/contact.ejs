@@ -8,6 +8,10 @@
 
 	<form
 		class="card contact-form"
+		name="contact-form"
+		method="POST"
+		data-netlify="true"
+		data-netlify-recaptcha="true"
 	>
 		<p>You can reach me by 
 			<a 
@@ -36,6 +40,17 @@
 			required
 		>
 
+		<label 
+			class="gender" 
+			for="gender"
+		>gender: if you are human, do not fill this out.</label>
+		<input
+			type="text"
+			name="gender"
+			placeholder="gender"
+			class="gender"
+		>
+
 		<label for="subject">subject</label>
 		<input
 			type="text"
@@ -50,6 +65,9 @@
 			placeholder="message"
 			required
 		></textarea>
+
+		<div data-netlify-recaptcha="true"></div>
+		
 		<button type="submit">Send</button>
 	</form>
 </section>
