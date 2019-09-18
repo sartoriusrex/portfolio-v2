@@ -50,5 +50,11 @@ module.exports = {
 				]
 			}
 		]
-	}
+	},
+	node: {
+		fs: "empty",
+		tls: 'empty',
+		dns: 'empty',
+		net: 'empty'
+ }
 };

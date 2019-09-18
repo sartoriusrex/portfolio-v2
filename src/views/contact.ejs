@@ -9,9 +9,11 @@
 	<form
 		class="card contact-form"
 		name="contact-form"
-		method="POST"
 		data-netlify="true"
 		data-netlify-recaptcha="true"
+		netlify-honeypot="gender"
+		method="POST"
+		action="/"
 	>
 		<p>You can reach me by 
 			<a 
@@ -29,8 +31,6 @@
 			>my resume.
 			</a>
 		</p>
-
-		<p>To prove you’re not a bot, please include the phrase “friends don’t lie” anywhere in the subject.</p>
 
 		<label for="email">email</label>
 		<input
@@ -67,7 +67,7 @@
 		></textarea>
 
 		<div data-netlify-recaptcha="true"></div>
-		
+
 		<button type="submit">Send</button>
 	</form>
 </section>
