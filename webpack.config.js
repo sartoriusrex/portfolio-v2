@@ -27,7 +27,9 @@ module.exports = {
 			template: "!!ejs-webpack-loader!src/views/index.ejs",
 			filename: "index.html",
 		}),
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+			filename: "style.css",
+		}),
 		new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, 'dist'),
       src: 'index.html',
