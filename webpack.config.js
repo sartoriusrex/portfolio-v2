@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -34,7 +35,8 @@ module.exports = {
 			fonts: true,
 			preload: "swap",
 			noscriptFallback: true
-		})
+		}),
+		new CompressionPlugin()
 	],
 	module: {
 		rules: [
