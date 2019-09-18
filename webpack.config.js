@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+// const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -30,19 +30,19 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "style.css",
 		}),
-		new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, 'dist'),
-      src: 'index.html',
-      dest: 'index.html',
-      inline: true,
-      minify: true,
-      extract: true,
-      width: 375,
-      height: 565,
-      penthouse: {
-        blockJSRequests: false,
-      }
-    })
+		// new HtmlCriticalWebpackPlugin({
+    //   base: path.resolve(__dirname, 'dist'),
+    //   src: 'index.html',
+    //   dest: 'index.html',
+    //   inline: true,
+    //   minify: true,
+    //   extract: true,
+    //   width: 375,
+    //   height: 565,
+    //   penthouse: {
+    //     blockJSRequests: false,
+    //   }
+    // })
 	],
 	module: {
 		rules: [
