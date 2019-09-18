@@ -3,7 +3,7 @@
 [build]
   command = "npm run build"
   functions = "functions"
-  publish = "./build"
+  publish = "./dist"
 
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app. 
