@@ -77,11 +77,11 @@
 		a {
 			text-decoration: none;
 			font-family: "Playfair Display";
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: normal;
 			text-align: center;
 			width: auto;
-			color: $primary-text;
+			color: $darker-text;
 			margin-bottom: 0;
 			transition: text-shadow 150ms ease-in-out;
 
@@ -169,12 +169,6 @@
 	}
 
 	.project-main-text-container {
-		h3 {
-			a {
-				font-size: 1.3rem;
-			}
-		}
-	
 		p {
 			font-size: .9rem;
 		}
