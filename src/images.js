@@ -24,6 +24,14 @@ import ravenImageSmPlaceholder from './images/placeholders/raven-sm-ph.png';
 import ravenImageMdPlaceholder from './images/placeholders/raven-md-ph.png';
 import ravenImageLgPlaceholder from './images/placeholders/raven-lg-ph.png';
 
+// Favicon Images
+import SmallFav from './images/icons/favicon-16x16.png';
+import LargeFav from './images/icons/favicon-32x32.png';
+import Fav from './images/icons/favicon.ico';
+
+
+// =========Code Below
+
 
 // Select images
 let biopic = document.querySelector("#biopic");
@@ -178,3 +186,40 @@ document.addEventListener( "DOMContentLoaded", function() {
     window.addEventListener( "orientationChange", lazyload );
   }
 });
+
+{/* <link rel="shortcut icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="shortcut icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+		<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"></link> */}
+
+export function mountFavicons() {
+	if( !document.getElementById('favicon-small') ) {
+			let faviconSmall = document.createElement('link');
+			faviconSmall.id = 'favicon-small';
+			faviconSmall.rel = 'shortcut icon';
+			faviconSmall.type="image/png";
+			faviconSmall.sizes="16x16";
+			faviconSmall.href = SmallFav;
+			document.head.appendChild(faviconSmall);
+	}
+
+		if( !document.getElementById('favicon-large') ) {
+			let faviconLarge = document.createElement('link');
+			faviconLarge.id = 'favicon-small';
+			faviconLarge.rel = 'shortcut icon';
+			faviconLarge.type="image/png";
+			faviconLarge.sizes="16x16";
+			faviconLarge.href = LargeFav;;
+			document.head.appendChild(faviconLarge);
+	}
+
+	if( !document.getElementById('favicon') ) {
+		let favicon = document.createElement('link');
+		favicon.id = 'favicon-small';
+		favicon.rel = 'shortcut icon';
+		favicon.type="image/png";
+		favicon.sizes="16x16";
+		favicon.href = Fav;
+		document.head.appendChild(favicon);
+	}
+}

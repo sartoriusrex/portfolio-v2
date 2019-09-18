@@ -38,7 +38,20 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif|pdf)$/,
+        test: /\.css$/,
+        use: [
+          'isomorphic-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
+      },
+			{
+				test: /\.(png|svg|jpg|jpeg|gif|pdf|ico)$/,
 				use: [
 					'file-loader'
 				]
