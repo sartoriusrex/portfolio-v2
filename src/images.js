@@ -114,7 +114,7 @@ document.addEventListener( "DOMContentLoaded", function() {
 					imageObserver.unobserve( image );
         }
       });
-    }, { rootMargin: "0px 0px -30% 0px" } );
+    }, { rootMargin: "0px 0px -20% 0px" } );
 
     lazyloadImages.forEach( function( image ) {
       imageObserver.observe( image );
