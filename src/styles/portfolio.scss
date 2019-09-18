@@ -19,7 +19,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	// height: auto;
 	padding: 0;
 	background-color: $card-background;
 	border-radius: $b-radius;
@@ -28,7 +27,6 @@
 
 .project-image {
 	width: 100%;
-	height: auto;
 	border-radius: 0 0 $b-radius $b-radius;
 	z-index: 0;
 }
