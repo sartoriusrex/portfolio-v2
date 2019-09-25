@@ -42,10 +42,18 @@ module.exports = {
 				]
 			},
 			{
+				test: /\.html$/,
+				use: ["html-loader"]
+			},
+			{
 				test: /\.(png|svg|jpg|jpeg|gif|pdf|ico)$/,
-				use: [
-					'file-loader'
-				]
+				use: {
+					loader: "file-loader",
+					options: {
+						name: "[name].[ext]",
+						outputPath: "imgs"
+					}
+				}
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
