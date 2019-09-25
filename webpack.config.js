@@ -66,5 +66,5 @@ module.exports = {
 		tls: 'empty',
 		dns: 'empty',
 		net: 'empty'
- }
+	}
 };
