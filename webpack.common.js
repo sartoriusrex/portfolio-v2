@@ -15,8 +15,11 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: "Dennis Mai Personal Website",
-			hash: true,
-			minify: true,
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true
+			},
 			template: "!!ejs-webpack-loader!src/views/index.ejs",
 			filename: "index.html",
 		}),
