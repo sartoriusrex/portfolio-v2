@@ -1,30 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-	mode: 'production',
   entry: {
 		app: './src/index.js',
 	},
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
-	},
-	devtool: 'cheap-eval-source-map',
-	devServer: {
-		contentBase: path.join(__dirname, './dist'),
-		compress: true
-	},
-	optimization: {
-		minimizer: [
-			new OptimizeCssAssetsPlugin(),
-			new TerserPlugin(),
-		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
