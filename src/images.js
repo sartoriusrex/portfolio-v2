@@ -1,4 +1,5 @@
 import './images/bio.jpeg';
+import './images/mai_resume.pdf';
 
 // jjd images
 import jjdImageSm from './images/projects/jjd-sm.png';
