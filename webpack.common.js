@@ -28,7 +28,7 @@ module.exports = {
 		}),
 		new Critters({
 			fonts: true,
-			preload: "swap",
+			// preload: "swap",
 			noscriptFallback: true
 		}),
 		new CleanWebpackPlugin(),
