@@ -55,26 +55,26 @@ document.addEventListener( "DOMContentLoaded", function() {
 
 					if( image.id === "jjd" ) {
 						image.srcset = `
-							${jjdImageSm} ,
-							${jjdImageMd} ,
-							${jjdImageLg} ,
+							${jjdImageSm} 350w,
+							${jjdImageMd} 550w,
+							${jjdImageLg} 800w,
 						`
 
 						image.src = jjdImageSm;
 					}
 					else if ( image.id === "usdt") {
 						image.srcset = `
-							${usdtImageSm} ,
-							${usdtImageMd} ,
-							${usdtImageLg} ,
+							${usdtImageSm} 350w,
+							${usdtImageMd} 550w,
+							${usdtImageLg} 800w,
 						`
 
 						image.src = usdtImageSm;
 					} else {
 						image.srcset = `
-							${ravenImageSm} ,
-							${ravenImageMd} ,
-							${ravenImageLg} ,
+							${ravenImageSm} 350w,
+							${ravenImageMd} 550w,
+							${ravenImageLg} 800w,
 						`
 
 						image.src = ravenImageSm;
@@ -106,26 +106,26 @@ document.addEventListener( "DOMContentLoaded", function() {
             if( img.offsetTop < ( window.innerHeight + scrollTop ) ) {
 								if( img.id === "jjd" ) {
 									img.srcset = `
-										${jjdImageSm} ,
-										${jjdImageMd} ,
-										${jjdImageLg} ,
+										${jjdImageSm} 350w,
+										${jjdImageMd} 550w,
+										${jjdImageLg} 800w,
 									`
 			
 									img.src = jjdImageSm;
 								}
 								else if ( img.id === "usdt") {
 									img.srcset = `
-										${usdtImageSm} ,
-										${usdtImageMd} ,
-										${usdtImageLg} ,
+										${usdtImageSm} 350w,
+										${usdtImageMd} 550w,
+										${usdtImageLg} 800w,
 									`
 
 									img.src = usdtImageSm;
 								} else {
 									img.srcset = `
-										${ravenImageSm} ,
-										${ravenImageMd} ,
-										${ravenImageLg} ,
+										${ravenImageSm} 350w,
+										${ravenImageMd} 550w,
+										${ravenImageLg} 800w,
 									`
 			
 									img.src = ravenImageSm;
