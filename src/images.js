@@ -59,8 +59,6 @@ document.addEventListener( "DOMContentLoaded", function() {
 							${jjdImageMd} 550w,
 							${jjdImageLg} 800w,
 						`
-
-						image.src = jjdImageSm;
 					}
 					else if ( image.id === "usdt") {
 						image.srcset = `
@@ -68,16 +66,12 @@ document.addEventListener( "DOMContentLoaded", function() {
 							${usdtImageMd} 550w,
 							${usdtImageLg} 800w,
 						`
-
-						image.src = usdtImageSm;
 					} else {
 						image.srcset = `
 							${ravenImageSm} 350w,
 							${ravenImageMd} 550w,
 							${ravenImageLg} 800w,
 						`
-
-						image.src = ravenImageSm;
 					}
 
           image.classList.remove("lazy");
