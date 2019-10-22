@@ -82,7 +82,7 @@
 			width: auto;
 			color: $darker-text;
 			margin-bottom: 0;
-			transition: text-shadow 150ms ease-in-out;
+			transition: all 150ms ease-in-out;
 
 			&::after {
 				display: block;
@@ -90,19 +90,20 @@
 				border-bottom: 2px solid $green;
 				padding-bottom: .5rem;
 				transform: scaleX(.5);
-				transition: transform 150ms ease-in-out;
+				transition: all 150ms ease-in-out;
 			}
 		
 			&:hover::after,
 			&:focus::after,
 			&:active::after {
 				transform: scaleX(.70);
+				border-color: $red;
 			}
 
 			&:focus,
 			&:active,
 			&:hover {
-				text-shadow: 0 0 .1rem $primary-text;
+				transform: scale(1.1);
 			}
 		}
 	}
@@ -127,14 +128,16 @@
 		border-radius: $b-radius / 2;
 		font-size: .75rem;
 		color: $primary-text;
-		transition: box-shadow 150ms ease-in-out;
+		transition: all 100ms ease-in-out;
 		cursor: pointer;
 		text-decoration: none;
 
 		&:hover,
 		&:active,
 		&:focus {
-			box-shadow: 0 0 .5rem $green;
+			transform: scale(1.1);
+			background-color: $red;
+			color: $card-background;
 		}
 	}
 }

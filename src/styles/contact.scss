@@ -35,7 +35,10 @@
 		text-decoration: none;
 		transition: all 100ms ease-in-out;
 		padding-bottom: .2rem;
+		border: 1px solid transparent;
 		border-bottom: 1px solid $primary-text;
+		border-radius: $b-radius;
+		padding: 0 .2rem;
 
 		&:hover,
 		&:active,
@@ -121,10 +124,11 @@
 	&:hover,
 		&:active,
 		&:focus {
-			transform: translateY(-.25rem);
-			text-decoration: underline;
+			transform: scale(1.1);
 			outline: 0;
 			box-shadow: 0 2px 4px $placeholder-text;
+			color: $card-background;
+			background-color: $red;
 		}
 	}
 }
