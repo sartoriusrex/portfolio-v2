@@ -31,38 +31,52 @@
 			</a>
 		</p>
 
-		<label for="email">email</label>
+		<label 
+			id="email" 
+			for="email"
+		>email</label>
 		<input
 			type="email"
 			name="email"
 			placeholder="email"
 			required
+			aria-labelledby="email"
 		>
 
 		<label 
 			class="gender" 
 			for="gender"
+			id="gender"
 		>gender: if you are human, do not fill this out.</label>
 		<input
 			type="text"
 			name="gender"
 			placeholder="gender"
 			class="gender"
+			aria-labelledby="gender"
 		>
 
-		<label for="subject">subject</label>
+		<label 
+			for="subject"
+			id="subject"
+		>subject</label>
 		<input
 			type="text"
 			name="subject"
 			placeholder="subject"
 			required
+			aria-labelledby="subject"
 		>
 
-		<label for="message">message</label>
+		<label 
+			for="message"
+			id="message"
+		>message</label>
 		<textarea
 			name="message"
 			placeholder="message"
 			required
+			aria-labelledby="message"
 		></textarea>
 
 		<button type="submit">Send</button>
