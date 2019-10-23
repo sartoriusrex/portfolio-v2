@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.production.js",
     "start": "webpack-dev-server --config webpack.dev.js --open",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "pa11y": "pa11y ./dist/index.html"
   },
   "author": "",
   "license": "ISC",

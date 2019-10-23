@@ -8,7 +8,7 @@
 	clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100% );
 	background-color: $teal;
 	width: 100%;
-	height: 360px;
+	height: 410px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,6 +21,7 @@
 	p {
 		text-align: center;
 		line-height: 1.4;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -42,6 +43,45 @@
 		border-radius: 50%;
 		border: 2px solid $card-background;
 		width: 120px;
+	}
+}
+
+#read-more-button{
+	border-radius: $b-radius;
+	padding: .5rem;
+	border: none;
+	background-color: $green;
+	transition: all 100ms ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: $b-shadow;
+		background-color: $red;
+		transform: scale(1.1);
+		outline: none;
+	}
+}
+
+#more-about-me{
+	position: fixed;
+	top: 0;
+	left: -100%;
+	z-index: 10000;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $darker-text;
+	transition: left 200ms ease-in-out;
+	
+	p, a {
+		max-width: 400px;
+		margin-bottom: 1rem;
+		color: $card-background;
+		line-height: 1.5;
 	}
 }
 
