@@ -82,6 +82,21 @@
 		margin-bottom: 1rem;
 		color: $card-background;
 		line-height: 1.5;
+		padding: 1rem;
+	}
+
+	a {
+		padding: .1rem;
+		text-decoration: none;
+		border-bottom: 1px solid $card-background;
+		transition: all 150ms ease-in-out;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $darker-text;
+			background-color: $card-background;
+		}
 	}
 }
 
