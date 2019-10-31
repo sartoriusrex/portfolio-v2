@@ -118,26 +118,29 @@
 }
 
 .project-links-container {
-	width: 80%;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 
 	a {
 		padding: .5rem 1rem;
 		background-color: $green;
-		border-radius: $b-radius / 2;
+		border-radius: $b-radius;
 		font-size: .75rem;
 		color: $primary-text;
 		transition: all 100ms ease-in-out;
 		cursor: pointer;
 		text-decoration: none;
+		max-width: 33%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&:hover,
 		&:active,
 		&:focus {
 			transform: scale(1.1);
 			background-color: $red;
-			color: $card-background;
 		}
 	}
 }

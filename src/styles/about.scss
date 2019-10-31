@@ -76,16 +76,39 @@
 	justify-content: center;
 	background-color: $darker-text;
 	transition: left 200ms ease-in-out;
+	padding: 1rem;
+
+	button {
+		background-color: $red;
+		color: $card-background;
+		padding: .5rem 1rem;
+		margin-bottom: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: $b-radius;
+		border: none;
+		transition: all 150ms ease-in-out;
+		font-weight: bold;
+
+		&:hover,
+		&:focus,
+		&:active {
+			transform: scale(1.1);
+			color: $darker-text;
+			background-color: $card-background;
+		}
+	}
 	
-	p, a {
+	p {
 		max-width: 400px;
 		margin-bottom: 1rem;
 		color: $card-background;
 		line-height: 1.5;
-		padding: 1rem;
 	}
 
 	a {
+		color: $card-background;
 		padding: .1rem;
 		text-decoration: none;
 		border-bottom: 1px solid $card-background;
