@@ -63,7 +63,7 @@
 	}
 }
 
-#more-about-me{
+#more-about-me-container{
 	position: fixed;
 	top: 0;
 	left: -100%;
@@ -74,51 +74,59 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: $darker-text;
+	background-color: $primary-text;
 	transition: left 200ms ease-in-out;
 	padding: 1rem;
 
-	button {
-		background-color: $red;
-		color: $card-background;
-		padding: .5rem 1rem;
-		margin-bottom: 2rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: $b-radius;
-		border: none;
-		transition: all 150ms ease-in-out;
-		font-weight: bold;
-
-		&:hover,
-		&:focus,
-		&:active {
-			transform: scale(1.1);
-			color: $darker-text;
-			background-color: $card-background;
-		}
-	}
-	
-	p {
+	.more-about-me{
 		max-width: 400px;
-		margin-bottom: 1rem;
-		color: $card-background;
-		line-height: 1.5;
-	}
+		background-color: $card-background;
+		border-radius: $b-radius;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem;
 
-	a {
-		color: $card-background;
-		padding: .1rem;
-		text-decoration: none;
-		border-bottom: 1px solid $card-background;
-		transition: all 150ms ease-in-out;
-
-		&:hover,
-		&:focus,
-		&:active {
+		button {
+			background-color: $red;
 			color: $darker-text;
-			background-color: $card-background;
+			padding: .5rem 1rem;
+			margin-bottom: 2rem;
+			align-self: start;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: $b-radius;
+			border: none;
+			transition: all 150ms ease-in-out;
+			font-weight: bold;
+
+			&:hover,
+			&:focus,
+			&:active {
+				transform: translatex(.3rem);
+			}
+		}
+		
+		p {
+			margin-bottom: 1rem;
+			color: $darker-text;
+			line-height: 1.5;
+		}
+
+		a {
+			color: $darker-text;
+			padding: .1rem;
+			text-decoration: none;
+			border-bottom: 1px solid $darker-text;
+			transition: all 150ms ease-in-out;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $card-background;
+				background-color: $darker-text;
+			}
 		}
 	}
 }

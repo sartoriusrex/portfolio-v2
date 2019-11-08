@@ -1,5 +1,5 @@
 let moreAboutMeButton = document.getElementById('read-more-button');
-let moreAboutMeDiv = document.getElementById('more-about-me');
+let moreAboutMeDiv = document.getElementById('more-about-me-container');
 
 moreAboutMeButton.addEventListener("click", function(){
 	moreAboutMeDiv.style.left = "0";
