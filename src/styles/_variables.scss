@@ -12,7 +12,10 @@ $teal: rgba(24, 173, 145, 0.75);
 $b-radius: 3px;
 
 // box-shadow
-$b-shadow: 0 5px 10px 5px rgba(0, 0, 0, .16);
+$b-shadow: 	0 1px 1px rgba(0, 0, 0, .12),
+						0 2px 2px rgba(0, 0, 0, .12),
+						0 4px 4px 1px rgba(0, 0, 0, .12),
+						0 8px 8px 2px rgba(0, 0, 0, .12);
 
 // placeholder class for ::after pseudo element to create bottom borders
 %bottom-border {
