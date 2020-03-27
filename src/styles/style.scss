@@ -79,6 +79,12 @@
   color: $primary-text;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+  background: $primary-background;
+}
+
 a {
   &:hover,
   &:active,
@@ -144,6 +150,7 @@ section {
     margin-bottom: 4rem;
   }
 }
+
 
 @import "navigation";
 
