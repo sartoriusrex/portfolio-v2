@@ -7,6 +7,9 @@ module.exports = merge( common, {
 	devtool: 'cheap-eval-source-map',
 	devServer: {
 		contentBase: path.join(__dirname, './dist'),
-		compress: true
+		compress: true,
+    watchOptions: {
+      aggregateTimeout: 200
+    }
 	}
 });
