@@ -8,12 +8,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
-  entry: {
+	entry: {
 		app: './src/index.js',
+		test: './src/test.js',
 	},
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+	output: {
+		filename: '[name].bundle.js',
+		path: path.resolve(__dirname, 'dist')
 	},
 	devtool: 'cheap-eval-source-map',
 	devServer: {
@@ -29,10 +30,25 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: "Dennis Mai Personal Website",
-			hash: true,
-			minify: true,
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true
+			},
 			template: "!!ejs-webpack-loader!src/views/index.ejs",
 			filename: "index.html",
+			chunks: ['app']
+		}),
+		new HtmlWebpackPlugin({
+			title: "test",
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true
+			},
+			template: "!!ejs-webpack-loader!src/views/test.ejs",
+			filename: "test.html",
+			chunks: ['test']
 		}),
 		new MiniCssExtractPlugin({
 			filename: "style.css",

@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: './src/index.js',
+		app: './src/app.js',
 		test: './src/test.js',
 	},
 	output: {
@@ -37,11 +37,12 @@ module.exports = {
 			chunks: ['test']
 		}),
 		new MiniCssExtractPlugin({
-			filename: "style.css",
+			filename: "[name].css",
+			chunkFilename: "[id].css",
 		}),
 		new Critters({
 			fonts: true,
-			// preload: "swap",
+			preload: "js-lazy",
 			noscriptFallback: true
 		}),
 		new CleanWebpackPlugin(),
