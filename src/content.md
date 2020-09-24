@@ -1,3 +1,34 @@
+# Color Scheme(s)
+
+## Neutrals:
+- black: #000000;
+- white: #FEFEFE;
+- gray: #ACACAC;
+
+## Landing
+- neon-blue: #08F7FE;
+- neon-green: #09FBD3;
+- neon-pink: #FE53BB;
+- neon-yellow: #F5D300;
+
+
+## About
+- about-magenta: #DE38C8;
+- about-indigo: #652EC7;
+- about-dark-purple: #33135C;
+
+## Projects
+- pastel-yellow: #E1EF7E;
+- pastel-orange: #FFAA01;
+- pastel-green: #12B296;
+- pastel-dark-blue: #027A9F;
+
+## Blog
+- blog-blue: #3CB9FC;
+- blog-purple: #B537F2;
+- blog-indigio: #8A2BE2;
+- blog-night-violet: #120052;
+
 # Header
 
 1. Link home = animated SVG of my name 'Dennis Mai'
@@ -80,3 +111,20 @@
 
 3. USDT
 - A simple website satirizing the the US's current relationship with misinformation and disinformation, designed to both educate and poke fun of the news / media and the government. Read everything with 2 grains of salt, some lime, and a bit of tequila.
+
+# Topics for Writing
+
+- Anything I feel like
+- Lateast Brazilian Jiu Jitsu Technique I fell in love with / hit live
+- Misinformation vs Disinformation
+- Politics vs Civics - why it matters
+- Psychology Bias (series)
+- What I'm learning (series)
+- Stoicism
+- The need for society reform / revolution in : Transportation; Energy consumption, production, and storage; Recyling / removing waste from our environment; Artificial Intelligence; Formal and Informal Education; Community Design; Elder Care; Healthcare; Investments in Human Capital and Health; Interplanetary Travel; 
+- My Family - being a father and a husband - challenges, rewards
+- Happiness and Health
+- Economics and Economic Theories, models, and the real world; 
+- The ends vs the means, and when the means become the ends: GDP, Freedom/Liberty, Meaning and Happiness
+- The goal of government
+- The 2 halves of society: Progressive vs. Conservative values and their place in society
