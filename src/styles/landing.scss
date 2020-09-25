@@ -1,5 +1,6 @@
 @import "_variables";
 
+
 @keyframes load {
 	from {
 		transform: scaleX(0);
@@ -22,6 +23,8 @@ h1 {
 	height: 75vh;
 	width: 100%;
 	animation: $load-background;
+	background-color: black;
+	padding-top: 4rem;
 
 	h1 {
 		margin: 25vh 0 10vh;

@@ -1,5 +1,6 @@
 import './images/bio.jpeg';
 import './images/mai_resume.pdf';
+import './images/logo.svg';
 
 // jjd images
 import jjdImageSm from './images/projects/jjd-sm.png';
@@ -42,25 +43,25 @@ import './images/icons/favicon.ico';
 
 
 // Intersection Observer to lazyload images
-document.addEventListener( "DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	let lazyloadImages;
 
-  if ("IntersectionObserver" in window) { //Not supported by IE
+	if ("IntersectionObserver" in window) { //Not supported by IE
 		lazyloadImages = document.querySelectorAll(".lazy");
-		
-    let imageObserver = new IntersectionObserver( function( entries, observer ) {
-      entries.forEach( function( entry ) {
-        if ( entry.isIntersecting ) {
+
+		let imageObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
 					let image = entry.target;
 
-					if( image.id === "jjd" ) {
+					if (image.id === "jjd") {
 						image.srcset = `
 							${jjdImageSm} 350w,
 							${jjdImageMd} 550w,
 							${jjdImageLg} 800w,
 						`
 					}
-					else if ( image.id === "usdt") {
+					else if (image.id === "usdt") {
 						image.srcset = `
 							${usdtImageSm} 350w,
 							${usdtImageMd} 550w,
@@ -74,71 +75,71 @@ document.addEventListener( "DOMContentLoaded", function() {
 						`
 					}
 
-          image.classList.remove("lazy");
-					imageObserver.unobserve( image );
-        }
-      });
-    }, { rootMargin: "0px 0px 20px 0px" } );
+					image.classList.remove("lazy");
+					imageObserver.unobserve(image);
+				}
+			});
+		}, { rootMargin: "0px 0px 20px 0px" });
 
-    lazyloadImages.forEach( function( image ) {
-      imageObserver.observe( image );
+		lazyloadImages.forEach(function (image) {
+			imageObserver.observe(image);
 		});
-		
-  } else {  
-    let lazyloadThrottleTimeout;
-    lazyloadImages = document.querySelectorAll(".lazy");
-    
-    function lazyload () {
-      if( lazyloadThrottleTimeout ) {
-        clearTimeout( lazyloadThrottleTimeout );
-      }
 
-      lazyloadThrottleTimeout = setTimeout( function() {
+	} else {
+		let lazyloadThrottleTimeout;
+		lazyloadImages = document.querySelectorAll(".lazy");
+
+		function lazyload() {
+			if (lazyloadThrottleTimeout) {
+				clearTimeout(lazyloadThrottleTimeout);
+			}
+
+			lazyloadThrottleTimeout = setTimeout(function () {
 				const scrollTop = window.pageYOffset;
 
-        lazyloadImages.forEach( function( img ) {
-            if( img.offsetTop < ( window.innerHeight + scrollTop ) ) {
-								if( img.id === "jjd" ) {
-									img.srcset = `
+				lazyloadImages.forEach(function (img) {
+					if (img.offsetTop < (window.innerHeight + scrollTop)) {
+						if (img.id === "jjd") {
+							img.srcset = `
 										${jjdImageSm} 350w,
 										${jjdImageMd} 550w,
 										${jjdImageLg} 800w,
 									`
-			
-									img.src = jjdImageSm;
-								}
-								else if ( img.id === "usdt") {
-									img.srcset = `
+
+							img.src = jjdImageSm;
+						}
+						else if (img.id === "usdt") {
+							img.srcset = `
 										${usdtImageSm} 350w,
 										${usdtImageMd} 550w,
 										${usdtImageLg} 800w,
 									`
 
-									img.src = usdtImageSm;
-								} else {
-									img.srcset = `
+							img.src = usdtImageSm;
+						} else {
+							img.srcset = `
 										${ravenImageSm} 350w,
 										${ravenImageMd} 550w,
 										${ravenImageLg} 800w,
 									`
-			
-									img.src = ravenImageSm;
-								}
 
-              img.classList.remove('lazy');
-            }
+							img.src = ravenImageSm;
+						}
+
+						img.classList.remove('lazy');
+					}
 				});
-				
-        if( lazyloadImages.length == 0 ) { 
-          document.removeEventListener( "scroll", lazyload );
-          window.removeEventListener( "resize", lazyload );
-          window.removeEventListener( "orientationChange", lazyload );
-        }
-      }, 20);
-    }
 
-    document.addEventListener( "scroll", lazyload );
-    window.addEventListener( "resize", lazyload );
-    window.addEventListener( "orientationChange", lazyload );
-  }
+				if (lazyloadImages.length == 0) {
+					document.removeEventListener("scroll", lazyload);
+					window.removeEventListener("resize", lazyload);
+					window.removeEventListener("orientationChange", lazyload);
+				}
+			}, 20);
+		}
+
+		document.addEventListener("scroll", lazyload);
+		window.addEventListener("resize", lazyload);
+		window.addEventListener("orientationChange", lazyload);
+	}
 });
