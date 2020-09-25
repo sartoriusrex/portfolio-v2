@@ -93,14 +93,14 @@
 - [RESUME]
 -
 - Oh, you're still here? Okay, I'll tell you more.
-- I was born (and raised) in Wichita, Kansas to Vietnamese refugees. English was my second language, but not my last. I studied Economics and Spanish at Wichita State University and studied abroad for 1 year in Murcia, Spain, where I met my bombastic Swiss wife. I graduated, moved to Switzerland, starting working, learned German and French, got married, and started our family in Zurich. We got bored, so we moved to Kauai, Hawaii. Now, you can find us romping in the snow  and lakes back in Switzerland.
+- I was born (and raised) in Wichita, Kansas to Vietnamese refugees. English was my second language, but not my last. I studied Economics and Spanish at Wichita State University and studied abroad for 1 year in Murcia, Spain, where I met my bombastic Swiss wife. I graduated, moved to Switzerland, learned German and French, got married, and started our family in Zurich. We got bored, so we moved to Kauai, Hawaii. Now, you can find us romping in the snow  and lakes back in Switzerland.
 
 # Projects
 
 - Here's a short list of projects I have or am currently working on. Feel free to step through the code, make some  pull requests, or visit the live sites. Be patient, some of them are asleep on a Heroku Dyno.
 
 1. Polyglotist
-- A web application for intermediate language learners to improve reading fluency and improve vocabulary. Users can read foreign language newspapers and look up and save words in a total of 3 clicks, a drastic speed increase from leaving the app or window to look up and document a word. This helps learners improve fluency with increasing focus on the text at hand instead of abruptly switching contexts.
+- A web application for intermediate language learners to improve reading fluency and vocabulary. Users can read foreign language newspapers, as well as look up words and phrases and save them. Looking up and saving can be done in a total of 3 clicks, a drastic speed increase from leaving the app or window to look up and document a word. This helps learners improve fluency with increasing focus on the text at hand instead of abruptly switching contexts.
 - LINKS
 - Image(s)
 - Built with: Node, Express, Postgresql, React, Typescript, Docker, Webpack, SCSS, Puppeteer, Jest, React-Testing-Library, Google Cloud API, JWT
