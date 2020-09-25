@@ -22,8 +22,8 @@ h1 {
 	align-items: center;
 	height: 75vh;
 	width: 100%;
-	animation: $load-background;
-	background-color: black;
+	// animation: $load-background;
+	background-color: #222222;
 	padding-top: 4rem;
 
 	h1 {
@@ -34,6 +34,16 @@ h1 {
 	p {
 		font-size: 1.5rem;
 		color: $darker-text;
+	}
+
+	svg {
+		path {
+			transition: all 150ms;
+
+			&:hover {
+				fill: black;
+			}
+		}
 	}
 }
 
