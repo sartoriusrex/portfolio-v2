@@ -1,12 +1,37 @@
-$primary-background: #EDEDED;
-$card-background: #F4F4F4;
-$placeholder-text: rgba(56, 56, 56, 0.5);
-$primary-text: rgba(0, 0, 0, 0.8);
-$darker-text: rgba(0, 0, 0, 0.9);
-$green: #93C71D;
-$red: rgba(173, 24, 52, 0.75);
-$purple: rgba(70, 24, 173, 0.75);
-$teal: rgba(24, 173, 145, 0.75);
+// NEUTRALS
+
+$black: #222222;
+$white: #FEFEFE;
+$gray: #ACACAC;
+
+// LANDING
+
+$neon-blue: #08F7FE;
+$neon-green: #09FBD3;
+$neon-pink: #FE53BB;
+$neon-yellow: #F5D300;
+
+// ABOUT
+
+$about-magenta: #DE38C8;
+$about-indigo: #652EC7;
+$about-dark-purple: #33135C;
+// neon-yellow as well
+
+// PROJECTS
+
+$pastel-yellow: #E1EF7E;
+$pastel-orange: #FFAA01;
+$pastel-green: #12B296;
+$pastel-dark-blue: #027A9F;
+
+// BLOG
+
+$blog-blue: #3CB9FC;
+$blog-purple: #B537F2;
+$blog-indigio: #8A2BE2;
+$blog-night-violet: #120052;
+
 
 // Border Radius
 $b-radius: 3px;
