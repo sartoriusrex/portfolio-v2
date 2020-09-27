@@ -21,7 +21,7 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "!!ejs-webpack-loader!src/views/index.ejs",
+			template: "!!ejs-webpack-loader!src/pages/index.ejs",
 			filename: "index.html",
 			chunks: ['app']
 		}),
