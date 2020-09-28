@@ -25,6 +25,12 @@ nav {
 	}
 }
 
+@media screen and (min-width: $small) {
+	.button--burger-menu[data-burger="closed"] {
+		display: none;
+	}
+}
+
 .ul--burger-menu {
 	transform-origin: top right;
 	position: absolute;
@@ -39,6 +45,18 @@ nav {
 	&[data-burger="open"] {
 		transform: rotateX(0);
 		display: inline-block;
+	}
+}
+
+@media screen and (min-width: $small) {
+	.ul--burger-menu {
+		&[data-burger="closed"] {
+			display: inline-block;
+			transform: rotateX(0);
+		}
+		button {
+			display: none;
+		}
 	}
 }
 
