@@ -21,7 +21,7 @@ nav {
 
 #logo {
 	transform-origin: left;
-	transform: scale(0.9);
+	transform: scale(0.8);
 
 	path:hover {
 		fill: $neon-pink;
@@ -46,11 +46,11 @@ nav {
 	}
 	&:hover {
 		* {
-			fill: $neon-pink;
+			fill: $neon-yellow;
 		}
 
 		path {
-			stroke: $neon-pink;
+			stroke: $neon-yellow;
 		}
 	}
 }
@@ -90,6 +90,15 @@ nav {
 		&:hover {
 			transform: scale(1.1);
 		}
+
+		a, button {
+			color: $neon-yellow;
+			font-size: 1rem;
+
+			&:hover {
+				color: $neon-pink;
+			}
+		}
 	}
 }
 
@@ -107,6 +116,10 @@ nav {
 
 			li {
 				margin-left: 1rem;
+
+				a, button {
+					color: $neon-blue;
+				}
 			}
 		}
 		li:first-child {
@@ -116,8 +129,26 @@ nav {
 }
 
 .button--close-burger-menu {
+	position: relative;
+
 	button:hover {
 		color: $neon-pink;
+	}
+
+	&::before,
+	&::after {
+		content: '[';
+		font-size: 2rem;
+		color: $neon-yellow;
+		position: absolute;
+		top: -50%;
+		left: -20%;
+	}
+
+	&::after {
+		content: ']';
+		right: -20%;
+		left: unset;
 	}
 }
 
