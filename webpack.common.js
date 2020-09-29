@@ -21,7 +21,8 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "!!ejs-webpack-loader!src/pages/index.ejs",
+			template: "src/pages/index.ejs",
+			inject: true,
 			filename: "index.html",
 			chunks: ['app']
 		}),
@@ -32,7 +33,8 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "!!ejs-webpack-loader!src/views/test.ejs",
+			template: "src/views/test.ejs",
+			inject: true,
 			filename: "test.html",
 			chunks: ['test']
 		}),
@@ -61,6 +63,18 @@ module.exports = {
 			{
 				test: /\.html$/,
 				use: ["html-loader"]
+			},
+			{
+				test: /\.ejs$/,
+				use: {
+					loader: 'ejs-compiled-loader',
+					options: {
+						htmlmin: true,
+						htmlminOptions: {
+							removeComments: true
+						}
+					}
+				}
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif|pdf|ico)$/,

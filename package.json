@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "ejs": "^2.7.1",
+    "ejs-compiled-loader": "^3.0.0",
     "gsap": "^3.5.1",
     "howler": "^2.2.0",
     "is-obj": "^2.0.0"

@@ -1,10 +1,7 @@
 import { gsap } from 'gsap';
 
-gsap.from('path', {
-    duration: 5.5,
-    // attr: {
-    //     transform: 'matrix(0,1,0,1,0,0)'
-    // },
+gsap.from('#logo path', {
+    duration: 1.5,
     attr: {
         fill: 'black'
     },
