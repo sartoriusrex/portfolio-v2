@@ -2,12 +2,15 @@
 
 header {
 	width: 100%;
-	padding: 0 .5rem;
+	padding: 0.5rem 1rem;
+}
 
-	a {
-		&:hover {
-			color: $neon-pink;
-		}
+.link--logo {
+	display: flex;
+	align-items: flex-start;
+	
+	&:hover {
+		color: $neon-pink;
 	}
 }
 
@@ -23,13 +26,14 @@ nav {
 #logo {
 	transform-origin: left;
 	transform: scale(0.8);
+	margin-bottom: .6rem;
 
 	path:hover {
 		fill: $neon-pink;
 	}
 }
 
-@media screen and (min-width: $small) {
+@media screen and (min-width: $medium) {
 	#logo {
 		transform: scale(1);
 	}
@@ -56,7 +60,7 @@ nav {
 	}
 }
 
-@media screen and (min-width: $small) {
+@media screen and (min-width: $medium) {
 	.button--burger-menu[data-burger="closed"] {
 		display: none;
 	}
@@ -74,6 +78,7 @@ nav {
 	padding: 1rem;
 	border: 2px solid $neon-yellow;
 	border-radius: $radius;
+	z-index: 10;
 
 	&[data-burger="closed"] {
 		display: none;
@@ -103,7 +108,7 @@ nav {
 	}
 }
 
-@media screen and (min-width: $small) {
+@media screen and (min-width: $medium) {
 	.ul--burger-menu {
 		&[data-burger] {
 			display: flex;

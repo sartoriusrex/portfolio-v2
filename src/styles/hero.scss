@@ -1,0 +1,58 @@
+@import "_variables";
+
+.container--hero {
+    width: 100%;
+    height: 70vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    perspective-origin: bottom left;
+}
+
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed $neon-blue;
+    // border-radius: .5rem;
+    outline: 1px dashed $neon-pink;
+}
+
+.front {
+    transform: translateZ(100px);
+    background-color: $neon-green;
+}
+
+.back {
+    background-color: $neon-blue;
+    transform: translateZ(-100px);
+}
+
+.left {
+    background-color: $neon-green;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.right {
+    background-color: $neon-pink;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+    background-color: $neon-yellow;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    background-color: $pastel-orange;
+    transform: rotateX(-90deg) translateZ(100px);
+}

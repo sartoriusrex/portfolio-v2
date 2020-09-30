@@ -1,6 +1,7 @@
 import './images/bio.jpeg';
 import './images/mai_resume.pdf';
 import './images/logo.svg';
+import './images/portrait-ascii.png';
 
 // jjd images
 import jjdImageSm from './images/projects/jjd-sm.png';
