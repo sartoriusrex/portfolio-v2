@@ -1,8 +1,27 @@
+@import "_variables";
+
 @import "style";
 
 @import "navigation";
 
 @import "hero";
+
+h1 {
+    font-size: 3rem;
+    padding: 1rem;
+    border: 2px dashed $neon-yellow;
+    transform: rotate(-5deg);
+    margin: 1rem;
+    z-index: 10;
+    max-width: 30rem;
+    margin-bottom: 3rem;
+}
+
+.container--byline {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 1rem;
+}
 
 // @import "landing";
 

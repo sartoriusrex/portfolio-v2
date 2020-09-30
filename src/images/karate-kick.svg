@@ -10,7 +10,7 @@
    viewBox="0 0 466 328"
    version="1.1"
    id="svg1013"
-   sodipodi:docname="karate-42412.svg"
+   sodipodi:docname="karate-kick.svg"
    width="466"
    height="328"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,13 +41,14 @@
      inkscape:window-height="1011"
      id="namedview1015"
      showgrid="false"
-     inkscape:zoom="5.2191992"
-     inkscape:cx="330.91661"
-     inkscape:cy="196.27849"
+     inkscape:zoom="1.8452656"
+     inkscape:cx="266.27068"
+     inkscape:cy="218.67286"
      inkscape:window-x="0"
      inkscape:window-y="33"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1013" />
+     inkscape:current-layer="svg1013"
+     inkscape:pagecheckerboard="true" />
   <path
      d="m 360.70711,206.82988 v 1 l -1,1 h -1 q -1,0 -6,3 l -5,3 h -4 l -1,1 -1,1 h 1 v 1 h -3 l -3,-1 h -1 v -1 h 1 v -1 l 1,-1 v -1 h 1 q 1,0 1,-1 l 7,-4 q 7,-5 9,-5 2,0 3,2 z"
      id="path815"
