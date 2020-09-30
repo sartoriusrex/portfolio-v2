@@ -2,6 +2,11 @@ import './images/bio.jpeg';
 import './images/mai_resume.pdf';
 import './images/logo.svg';
 import './images/portrait-ascii.png';
+import './images/karate-kick.svg';
+import './images/fam.png';
+import './images/me.png';
+import './images/leila.png';
+
 
 // jjd images
 import jjdImageSm from './images/projects/jjd-sm.png';
