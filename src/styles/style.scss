@@ -85,7 +85,6 @@ main {
   position: relative;
   z-index: 1;
   // background: $primary-background;
-  overflow: hidden;
 }
 
 a {
@@ -99,7 +98,8 @@ a {
 }
 
 body {
-	// background-color: $primary-background;
+  // background-color: $primary-background;
+  overflow: hidden;
 }
 
 h1, h2 {
