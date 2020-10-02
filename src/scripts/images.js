@@ -1,49 +1,49 @@
-import './images/bio.jpeg';
-import './images/mai_resume.pdf';
-import './images/logo.svg';
-import './images/portrait-ascii.png';
-import './images/karate-kick.svg';
-import './images/fam.png';
-import './images/me.png';
-import './images/leila.png';
+import '../images/bio.jpeg';
+import '../images/mai_resume.pdf';
+import '../images/logo.svg';
+import '../images/portrait-ascii.png';
+import '../images/karate-kick.svg';
+import '../images/fam.png';
+import '../images/me.png';
+import '../images/leila.png';
 
 
 // jjd images
-import jjdImageSm from './images/projects/jjd-sm.png';
-import jjdImageMd from './images/projects/jjd-md.png';
-import jjdImageLg from './images/projects/jjd-lg.png';
+import jjdImageSm from '../images/projects/jjd-sm.png';
+import jjdImageMd from '../images/projects/jjd-md.png';
+import jjdImageLg from '../images/projects/jjd-lg.png';
 
 // usdt images
-import usdtImageSm from './images/projects/usdt-sm.png';
-import usdtImageMd from './images/projects/usdt-md.png';
-import usdtImageLg from './images/projects/usdt-lg.png';
+import usdtImageSm from '../images/projects/usdt-sm.png';
+import usdtImageMd from '../images/projects/usdt-md.png';
+import usdtImageLg from '../images/projects/usdt-lg.png';
 
 // raven images
-import ravenImageSm from './images/projects/raven-sm.png';
-import ravenImageMd from './images/projects/raven-md.png';
-import ravenImageLg from './images/projects/raven-lg.png';
+import ravenImageSm from '../images/projects/raven-sm.png';
+import ravenImageMd from '../images/projects/raven-md.png';
+import ravenImageLg from '../images/projects/raven-lg.png';
 
 // Placeholders
-import './images/placeholders/jjd-sm-ph.png';
-import './images/placeholders/jjd-md-ph.png';
-import './images/placeholders/jjd-lg-ph.png';
-import './images/placeholders/usdt-sm-ph.png';
-import './images/placeholders/usdt-md-ph.png';
-import './images/placeholders/usdt-lg-ph.png';
-import './images/placeholders/raven-sm-ph.png';
-import './images/placeholders/raven-md-ph.png';
-import './images/placeholders/raven-lg-ph.png';
+import '../images/placeholders/jjd-sm-ph.png';
+import '../images/placeholders/jjd-md-ph.png';
+import '../images/placeholders/jjd-lg-ph.png';
+import '../images/placeholders/usdt-sm-ph.png';
+import '../images/placeholders/usdt-md-ph.png';
+import '../images/placeholders/usdt-lg-ph.png';
+import '../images/placeholders/raven-sm-ph.png';
+import '../images/placeholders/raven-md-ph.png';
+import '../images/placeholders/raven-lg-ph.png';
 
 // icons
-import './images/icons/pdf.svg';
-import './images/icons/linkedin.svg';
-import './images/icons/github.svg';
-import './images/icons/stackoverflow.svg';
-import './images/icons/skype.svg';
+import '../images/icons/pdf.svg';
+import '../images/icons/linkedin.svg';
+import '../images/icons/github.svg';
+import '../images/icons/stackoverflow.svg';
+import '../images/icons/skype.svg';
 
-import './images/icons/favicon-16x16.png';
-import './images/icons/favicon-32x32.png';
-import './images/icons/favicon.ico';
+import '../images/icons/favicon-16x16.png';
+import '../images/icons/favicon-32x32.png';
+import '../images/icons/favicon.ico';
 
 // =========Code Below
 

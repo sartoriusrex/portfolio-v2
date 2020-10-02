@@ -1,5 +1,5 @@
 import './styles/app.scss';
-import './images';
+import './scripts/images';
 // import './moreAboutMe';
-import './animations';
-import './burger-menu';
+import './scripts/animations';
+import './scripts/burger-menu';
