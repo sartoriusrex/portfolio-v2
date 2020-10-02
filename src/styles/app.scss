@@ -7,8 +7,6 @@
 @import "hero";
 
 h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
     padding: 1rem;
     border: .5rem dashed $neon-yellow;
     transform: rotate(-5deg);
@@ -34,8 +32,9 @@ h1 {
     text-decoration-style: wavy;
 }
 
-#svg--hero-divider {
-    margin-bottom: 4rem;
+#svg--hero-divider, #svg--about-divider {
+    margin-bottom: 4.5rem;
+    margin-top: -.5rem;
 }
 
 .container--about-this-place {
@@ -52,13 +51,21 @@ h1 {
     flex-direction: column;
     max-width: 40rem;
 
-    h2, p, em {
+    h2, p, em, a, span {
         color: $black;
     }
 
+    span {
+        text-decoration: underline;
+        text-decoration-color: $neon-yellow;
+        text-decoration-skip-ink: auto;
+        -webkit-text-decoration-skip-ink: auto;
+        text-decoration-style: wavy;
+    }
+
     h2 {
-        font-size: 2.3rem;
-        margin: 0 1rem;
+        margin: 0 1rem 1rem;
+        text-align: center;
     }
 
     p {
@@ -82,10 +89,50 @@ h1 {
 }
 
 .container--what-you-will-find {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 4rem;
+    @extend .container--about-this-place;
+    background-color: $black;
+}
+
+.container--what-text {
+    @extend .container--about-text;
+
+    h2 {
+        background-color: $neon-blue;
+        background-image: linear-gradient($neon-blue, $neon-green);
+        background-size: 100%;
+        background-repeat: repeat;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+
+    ul {
+        background: linear-gradient(155deg, $neon-blue, $neon-green 75%);
+        padding: 1rem;
+        list-style: disc;
+        border: .5rem solid $neon-pink;
+        margin: 0 1rem;
+
+        li {
+            color: $black;
+            padding: .5rem;
+            margin-left: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: $small) {
+    .container--what-text {
+        ul {
+            li {
+                transform: skew(10deg);
+            }
+        }
+    }
+    
+    .container--ul-what-text {
+        transform: skew(-10deg);
+    }
 }
 
 // @import "landing";
