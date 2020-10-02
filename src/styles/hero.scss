@@ -3,6 +3,7 @@
 .container--hero {
     width: 100%;
     height: 40vh;
+    min-height: 350px;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -28,18 +29,18 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: .5rem dashed $blog-purple;
+    border: .2rem dashed $blog-purple;
     border-radius: 1rem;
-    outline: .5rem dashed $neon-pink;
+    outline: .2rem dashed $neon-pink;
 }
 
 .front {
     transform: translateZ(125px);
-    background-color: $pastel-yellow;
+    background-color: $neon-green;
 }
 
 .back {
-    background-color: $neon-green;
+    background-color: $pastel-yellow;
     transform: translateZ(-125px);
 }
 

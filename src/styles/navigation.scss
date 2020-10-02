@@ -41,6 +41,7 @@ nav {
 
 .button--burger-menu {
 	transform-origin: right;
+	background-color: $black;
 
 	&[data-burger="closed"] {
 		transform: scale(1.5);
@@ -69,16 +70,17 @@ nav {
 .ul--burger-menu {
 	transform-origin: top right;
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 0.5%;
+	left: 0.5%;
 	flex-direction: column;
 	align-items: center;
-	width: 100vw;
-	height: calc(100vh - 1rem);
+	width: calc(96vw);
+	height: calc(99vh);
 	padding: 1rem;
 	border: 2px solid $neon-yellow;
 	border-radius: $radius;
-	z-index: 10;
+	background-color: $black;
+	z-index: 100;
 
 	&[data-burger="closed"] {
 		display: none;
@@ -89,7 +91,7 @@ nav {
 	}
 
 	li {
-		transition: all 100ms ease-in;
+		transition: all 50ms ease-in;
 		transform-origin: center;
 		margin: 1rem 0;
 
@@ -121,10 +123,14 @@ nav {
 			justify-content: flex-end;
 
 			li {
-				margin-left: 1rem;
+				display: flex;
+				justify-content: flex-end;
+				margin-left: 1.5rem;
 
 				a, button {
 					color: $neon-blue;
+					text-align: right;
+					padding-right: 1rem;
 
 					&:hover {
 						color: $neon-pink;
@@ -141,8 +147,12 @@ nav {
 .button--close-burger-menu {
 	position: relative;
 
-	button:hover {
-		color: $neon-pink;
+	button{
+		background-color: $black;
+
+		&:hover {
+			color: $neon-pink;
+		}
 	}
 
 	&::before,

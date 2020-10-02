@@ -70,11 +70,10 @@
 // }
 
 *{
-	outline: 1px solid rgba(255, 0, 0, 0.263);
+	// outline: 1px solid rgba(255, 0, 0, 0.263);
   font-family: 'Fira Mono', Roboto, Ariel, sans-serif;
   font-weight: normal;
 	box-sizing: border-box;
-	background-color: $background-color;
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
@@ -101,8 +100,8 @@ a {
 }
 
 body {
-  // background-color: $primary-background;
-  overflow: hidden;
+  background-color: $black;
+  overflow-x: hidden;
 }
 
 h1, h2 {
