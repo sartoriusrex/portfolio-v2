@@ -1,9 +1,12 @@
 <footer>
     <ul>
-        <li><a href="">Resume</a></li>
-        <li><a href="">Github</a></li>
-        <li><a href="">LinkedIn</a></li>
-        <li><a href="">StackOverflow</a></li>
+        <li><a href="imgs/mai_resume.pdf"><% include ../images/icons/pdf.svg %></a></li>
+        <li><a href="https://www.github.com/sartoriusrex"><% include ../images/icons/github.svg %></a></li>
+        <li><a href="https://www.linkedin.com/in/dennismai-dev"><% include ../images/icons/linkedin.svg %></a></li>
+        <li><a
+                href="https://stackoverflow.com/users/11639750/dmai-developer?tab=profile"><% include ../images/icons/stackoverflow.svg %></a>
+        </li>
+        <li><a href="/changelog">Change Log</a></li>
     </ul>
-    <h3>Copyright <% let ts = new Date(); %> <%= ts.getFullYear() %> Dennis Mai | All Rights Reserved</h3>
+    <h4>Copyright <% let ts = new Date(); %> <%= ts.getFullYear() %> Dennis Mai</h4>
 </footer>

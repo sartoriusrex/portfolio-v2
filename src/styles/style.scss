@@ -84,7 +84,7 @@
 // }
 
 *{
-	outline: 1px solid rgba(255, 0, 0, 0.263);
+	// outline: 1px solid rgba(255, 0, 0, 0.263);
   font-family: 'Fira Mono', Roboto, Ariel, sans-serif;
   font-weight: normal;
 	box-sizing: border-box;
@@ -131,6 +131,22 @@ h1 {
 
 h2 {
   font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.6rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2.2rem;
+}
+
+h6 {
+  font-size: 2rem;
 }
 
 // h2,
