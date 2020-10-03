@@ -39,4 +39,15 @@ footer {
 			fill: $neon-blue;
 		}
 	}
+
+	a {
+		&:hover {
+			path {
+				stroke: $neon-pink;
+				fill: $neon-pink;
+			}
+
+			color: $neon-pink;
+		}
+	}
 }
