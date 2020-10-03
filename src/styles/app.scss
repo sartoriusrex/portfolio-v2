@@ -140,6 +140,14 @@ h1 {
             margin-left: 2rem;
         }
     }
+
+    a {
+        text-decoration: underline;
+        text-decoration-color: $neon-pink;
+        text-decoration-skip-ink: auto;
+        -webkit-text-decoration-skip-ink: auto;
+        text-decoration-style: wavy;
+    }
 }
 
 @media screen and (min-width: $small) {
