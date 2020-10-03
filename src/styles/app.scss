@@ -6,6 +6,8 @@
 
 @import "hero";
 
+@import "footer";
+
 h1 {
     padding: 1rem;
     border: .5rem dashed $neon-yellow;
@@ -108,9 +110,12 @@ h1 {
 
     ul {
         background: linear-gradient(155deg, $neon-blue, $neon-green 75%);
+        clip-path: polygon(0% 0%, 97% 0%, 100% 11%, 97% 22%, 100% 33%, 97% 44%, 100% 55%, 97% 66%, 100% 77%, 97% 88%, 100% 100%, 3% 100%, 0% 88%, 3% 77%, 0% 66%, 3% 55%, 0% 44%, 3% 33%, 0% 22%, 3% 11%);
         padding: 1rem;
         list-style: disc;
         border: .5rem solid $neon-pink;
+        border-left: none;
+        border-right: none;
         margin: 0 1rem;
 
         li {
@@ -124,6 +129,9 @@ h1 {
 @media screen and (min-width: $small) {
     .container--what-text {
         ul {
+            clip-path: none;
+            border: .5rem solid $neon-pink;
+
             li {
                 transform: skew(10deg);
             }
