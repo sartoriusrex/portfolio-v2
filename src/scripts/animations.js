@@ -1,23 +1,41 @@
 import { gsap } from 'gsap';
 
-gsap.from('#logo path', {
-    duration: 1.5,
-    attr: {
-        fill: '#222222'
-    },
-    // ease: "rough ({template: none.out, strength: 10, points: 50,taper: 'out', randomize: false, clamp: false })"
-    ease: "back.inOut(1.7)"
-});
+// Animate Dennis Mai on start, fade in to color\
+function animateLogo() {
+    gsap.from('#logo path', {
+        duration: 1.5,
+        attr: {
+            fill: '#222222'
+        },
+        ease: "back.inOut(1.7)"
+    });
+}
 
-// const heroTL = gsap.timeline({
-// repeat: infinite,
-// })
+function animateHero() {
+    const heroTL = gsap.timeline();
+    const heroCube = document.getElementById('hero-cube');
 
-gsap.to('#hero-cube', {
-    duration: 7,
-    rotationX: 360,
-    rotationY: 360,
-    ease: 'none',
-    repeat: 2,
-})
+    // Animations for Hero Cube
+    const heroAnimation = heroTL.to(heroCube, {
+        duration: 7,
+        rotationX: 360,
+        rotationY: 720,
+        ease: 'none',
+        repeat: 10,
+    });
 
+    let paused = false;
+
+    heroCube.addEventListener('click', function () {
+        if (paused) {
+            paused = false;
+            return heroAnimation.play();
+        }
+
+        paused = true;
+        return heroAnimation.pause();
+    });
+}
+
+animateLogo();
+animateHero();

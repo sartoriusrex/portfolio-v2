@@ -37,7 +37,7 @@
 
 .back {
     background-color: $pastel-yellow;
-    transform: translateZ(-125px);
+    transform: rotate(180deg) translateZ(-125px);
 }
 
 .left {

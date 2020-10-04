@@ -7,6 +7,12 @@ import '../images/fam.png';
 import '../images/me.png';
 import '../images/leila.png';
 
+// Add click events on images
+const sides = document.querySelector('#front');
+sides.addEventListener('dblclick', function () {
+	alert('side clicked');
+});
+
 
 // jjd images
 import jjdImageSm from '../images/projects/jjd-sm.png';
