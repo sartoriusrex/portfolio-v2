@@ -138,10 +138,19 @@ h1 {
             color: $black;
             padding: .5rem;
             margin-left: 2rem;
+
+            // &:last-child {
+            //     a {
+            //         font-size: 1.5rem;
+            //     }
+            // }
         }
     }
 
     a {
+        font-weight: bold;
+        letter-spacing: 1.1;
+        font-size: 1.2rem;
         text-decoration: underline;
         text-decoration-color: $neon-pink;
         text-decoration-skip-ink: auto;
