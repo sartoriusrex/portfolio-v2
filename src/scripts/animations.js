@@ -11,31 +11,18 @@ function animateLogo() {
     });
 }
 
-function animateHero() {
-    const heroTL = gsap.timeline();
-    const heroCube = document.getElementById('hero-cube');
 
-    // Animations for Hero Cube
-    const heroAnimation = heroTL.to(heroCube, {
-        duration: 7,
-        rotationX: 360,
-        rotationY: 720,
-        ease: 'none',
-        repeat: 10,
-    });
+const heroTL = gsap.timeline();
+const heroCube = document.getElementById('hero-cube');
 
-    let paused = false;
+// Animations for Hero Cube
+export const heroAnimation = heroTL.to(heroCube, {
+    duration: 8,
+    rotationX: 360,
+    rotationY: 720,
+    ease: 'none',
+    repeat: 20,
+});
 
-    heroCube.addEventListener('click', function () {
-        if (paused) {
-            paused = false;
-            return heroAnimation.play();
-        }
-
-        paused = true;
-        return heroAnimation.pause();
-    });
-}
 
 animateLogo();
-animateHero();

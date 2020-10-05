@@ -1,13 +1,31 @@
 <div class="container--hero">
     <div id="hero-cube">
-        <img id="front" class="side front" src="imgs/me.png" alt="Me, Dennis Mai" />
+        <img class="side front" src="imgs/me.png" alt="Me, Dennis Mai" />
         <img class="side back" src="imgs/portrait-ascii.png" alt="Me in ASCII characters" />
-        <div class="side top"></div>
+        <div class="side top">
+
+        </div>
         <div class="side bottom">
             <% include ./karate-kick %>
         </div>
         <img class="side right" src="imgs/leila.png"
             alt="My daughter Leila at 4 years old. She's super sweet. And a firecracker." />
+
         <img class="side left" src="imgs/fam.png" alt="Me and my laides at the beach in Kauai, straight chillin'" />
     </div>
+    <!-- front caption -->
+    <% let data='Me in the wild!'; let id='front'; %>
+    <% include ./heroCaption %>
+    <!-- back caption -->
+    <% data='Me in ASCII looking semi-professional'; id='back'; %>
+    <% include ./heroCaption %>
+    <!-- bottom caption -->
+    <% data='I love this animation. I also love Martial Arts and fancy kicks.'; id='bottom'; %>
+    <% include ./heroCaption %>
+    <!-- righty caption -->
+    <% data='My daughter being her typical crazy toddler self'; id='right'; %>
+    <% include ./heroCaption %>
+    <!-- left caption -->
+    <% data='My family at a sweet little beach on the East Side of Kauai. Good Times.'; id='left'; %>
+    <% include ./heroCaption %>
 </div>

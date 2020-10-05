@@ -80,7 +80,6 @@ nav {
 	border: 2px solid $neon-yellow;
 	border-radius: $radius;
 	background-color: $black;
-	z-index: 100;
 
 	&[data-burger="closed"] {
 		display: none;
@@ -88,6 +87,7 @@ nav {
 
 	&[data-burger="open"] {
 		display: flex;
+		z-index: 100;
 	}
 
 	li {
