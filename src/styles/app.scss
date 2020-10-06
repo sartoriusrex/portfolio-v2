@@ -35,13 +35,6 @@ h1 {
     text-decoration-style: wavy;
 }
 
-#svg--hero-divider, #svg--about-divider {
-    margin-bottom: 4.5rem;
-    margin-top: -.5rem;
-    max-height: 12rem;
-    width: 100%;
-}
-
 .svg-hero-divider,
 .svg-what-you-find-divider {
     width: 100%;
@@ -50,6 +43,7 @@ h1 {
     background-image: url("../images/wave.svg");
     background-repeat: repeat-x;
     margin-bottom: 2rem;
+    margin-top: -.5rem;
 }
 
 .svg-what-you-find-divider {
@@ -139,12 +133,6 @@ h1 {
             color: $black;
             padding: .5rem;
             margin-left: 2rem;
-
-            // &:last-child {
-            //     a {
-            //         font-size: 1.5rem;
-            //     }
-            // }
         }
     }
 
