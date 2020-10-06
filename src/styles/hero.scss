@@ -125,7 +125,7 @@
     width: 100%;
     background-color: transparent;
     z-index: 40;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
 
     button {
@@ -156,9 +156,17 @@
         margin: 1rem;
         border-radius: .5rem;
         background-color: $black;
-        opacity: .9;
         position: relative;
         border: .2rem dotted $neon-pink;
+    }
+}
+
+@media screen and (min-width: $medium) {
+    .heroCaption {
+        p {
+            width: 50rem;
+            margin-right: -20%;
+        }
     }
 }
 
