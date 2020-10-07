@@ -1,4 +1,4 @@
-import { heroAnimation, starAnimation, animateCat } from './animations';
+import { heroAnimation, starAnimation, talkBoxAnimation, animateCat } from './animations';
 import { enableScroll, disableScroll } from './enableDisableScrolling';
 
 const sides = ['front', 'back', 'left', 'right', 'bottom', 'top']
@@ -26,8 +26,10 @@ sides.forEach(side => {
 
                 catContainer.style.transform = 'scale(1)';
                 catContainer.style.borderRadius = '0';
+
                 animateCat(randomCat);
                 starAnimation.play();
+                talkBoxAnimation.play();
 
                 disableScroll();
             });

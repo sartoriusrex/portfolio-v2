@@ -16,6 +16,7 @@ const heroTL = gsap.timeline();
 const heroCube = document.getElementById('hero-cube');
 
 // Animations for Hero Cube
+
 export const heroAnimation = heroTL.to(heroCube, {
     duration: 8,
     rotationX: 360,
@@ -41,6 +42,7 @@ starAnimation.pause();
 // Animations for cats -- export function to apply to a random cat on each click
 
 const catTL = gsap.timeline();
+
 export const animateCat = function (cat) {
     return catTL.to(cat, {
         duration: 1,
@@ -50,5 +52,18 @@ export const animateCat = function (cat) {
         delay: .5,
     })
 }
+
+// Animate dialog box
+const talkBoxTL = gsap.timeline();
+const talkBox = document.querySelector('#cat-dialog');
+
+export const talkBoxAnimation = talkBoxTL.to(talkBox, {
+    duration: .25,
+    scale: 1,
+    ease: 'none',
+    delay: .75,
+})
+
+talkBoxAnimation.pause();
 
 animateLogo();
