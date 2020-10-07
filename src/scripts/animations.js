@@ -24,5 +24,31 @@ export const heroAnimation = heroTL.to(heroCube, {
     repeat: 20,
 });
 
+// Animations for star on cat dialogue
+
+const starTL = gsap.timeline();
+const star = document.getElementById('pink-star');
+
+export const starAnimation = starTL.to(star, {
+    duration: .75,
+    rotation: 45,
+    scale: 3,
+    ease: 'none',
+})
+
+starAnimation.pause();
+
+// Animations for cats -- export function to apply to a random cat on each click
+
+const catTL = gsap.timeline();
+export const animateCat = function (cat) {
+    return catTL.to(cat, {
+        duration: 1,
+        scale: .6,
+        rotate: 360,
+        ease: 'power4.out',
+        delay: .5,
+    })
+}
 
 animateLogo();

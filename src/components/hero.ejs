@@ -3,7 +3,23 @@
         <img class="side front" src="imgs/me.png" alt="Me, Dennis Mai" />
         <img class="side back" src="imgs/portrait-ascii.png" alt="Me in ASCII characters" />
         <div class="side top">
-            <a href="https://www.vecteezy.com/free-vector/isolated">Isolated Vectors by Vecteezy</a>
+            <p>Open the door...</p>
+            <!-- We need an animation to play here, of a cat face popping out with text stating a cat fact and thanking the user for subscribing. Another button to opt op shows the animation again with another cat fact, and opting out a 2nd time makes a life-time subscription to an e-amil of your choice. -->
+            <!-- <a href="https://www.vecteezy.com/free-vector/isolated">Isolated Vectors by Vecteezy</a> -->
+            <div class="door">
+
+                <div class="window">
+                    <div class="pane"></div>
+                    <div class="pane"></div>
+                    <div class="pane"></div>
+                    <div class="pane"></div>
+                </div>
+                <div class="doorknob"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+            </div>
+            <div class="behind-door">
+            </div>
         </div>
         <div class="side bottom">
             <% include ./karate-kick %>
@@ -12,6 +28,17 @@
             alt="My daughter Leila at 4 years old. She's super sweet. And a firecracker." />
 
         <img class="side left" src="imgs/fam.png" alt="Me and my laides at the beach in Kauai, straight chillin'" />
+    </div>
+    <div class="container--interactive-cat">
+        <div class="star-background">
+            <% include ../images/star-background.svg %>
+            <% include ../images/cat1.svg %>
+            <% include ../images/cat2.svg %>
+            <% include ../images/cat3.svg %>
+            <% include ../images/cat4.svg %>
+            <% include ../images/cat5.svg %>
+            <% include ../images/cat6.svg %>
+        </div>
     </div>
     <!-- front caption -->
     <% let data='Me in the wild!'; let id='front'; %>

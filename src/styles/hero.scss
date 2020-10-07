@@ -1,4 +1,5 @@
 @import "_variables";
+@use "sass:color";
 
 .container--hero {
     width: 100%;
@@ -54,12 +55,150 @@
 
 .top {
     background-color: $neon-yellow;
-    transform: rotateX(90deg) translateZ(125px);
+    transform: rotateX(90deg) rotate(180deg) translateZ(125px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective-origin: right;
+    perspective: 20rem;
+
+    p {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        transform: rotate(-30deg);
+        color: $blog-purple;
+        text-shadow: .1rem .1rem $black;
+        width: 8rem;
+    }
 }
 
 .bottom {
     background-color: $pastel-orange;
     transform: rotateX(-90deg) translateZ(125px);
+}
+
+.open {
+    transform: rotateY(100deg);
+}
+
+.door {
+    width: 5rem;
+    height: 7rem;
+    background-color: $neon-blue;
+    border: 1px solid $neon-pink;
+    box-shadow: .2rem .2rem $black;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 60% 40%;
+    position: relative;
+    transform-origin: right;
+    transition: transform 200ms ease-in;
+    padding: .3rem;
+
+    .window {
+        grid-column: 1 / 3;
+        grid-row: 1 /2 ;
+        border: .4rem solid blue;
+        border-top: .4rem solid darkblue;
+        border-left: .4rem solid darkblue;
+        border-radius: 50% 50% 0 0;
+        margin: .3rem;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+    }
+
+    .pane {
+        border: .1rem solid $neon-pink;
+
+        &:nth-of-type(1) {
+            border-top: none;
+            border-left: none;
+        }
+
+        &:nth-of-type(2) {
+            border-top: none;
+            border-right: none;
+        }
+
+        &:nth-of-type(3) {
+            border-left: none;
+            border-bottom: none;
+        }
+
+        &:nth-of-type(4) {
+            border-right: none;
+            border-bottom: none;
+        }
+    }
+
+    .doorknob {
+        position: absolute;
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        background-color: $neon-yellow;
+        border: .1rem solid $neon-pink;
+        top: 55%;
+        left: .5rem;
+        z-index: 10;
+        box-shadow: .1rem .1rem 1rem $black;
+    }
+
+    .panel {
+        background-color: $neon-blue;
+        border-top: .4rem solid darkblue;
+        border-left: .4rem solid darkblue;
+        border-right: .4rem solid blue;
+        border-bottom: .4rem solid blue;
+        margin: .2rem;
+    }
+}
+
+.behind-door {
+    position: absolute;
+    width: 4rem;
+    height: 6rem;
+    background-color: $black;
+    z-index:-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--interactive-cat {
+    position: absolute;
+    transform: scale(0);
+    border-radius: 50%;
+    width: 100%;
+    height: 100vh;
+    background-color: $neon-yellow;
+    transition: transform 250ms linear, border-radius 300ms linear;
+    transition-delay: 250ms;
+    z-index: 50;
+    top: -5rem;
+    left: 0;
+
+    .star-background {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    svg {
+        position: absolute;
+        transform: scale(0);
+        z-index: 1;
+    }
+
+    .cat {
+        bottom: 0%;
+    }
 }
 
 #karate-kick {
