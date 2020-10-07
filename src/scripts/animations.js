@@ -39,31 +39,31 @@ export const starAnimation = starTL.to(star, {
 
 starAnimation.pause();
 
+
 // Animations for cats -- export function to apply to a random cat on each click
+// Cat swirls in, then dialog box opens, and then text displays;
 
 const catTL = gsap.timeline();
+const talkBox = document.querySelector('#cat-dialog');
+const talkDialog = document.querySelector('.container--talk-box-text');
 
 export const animateCat = function (cat) {
     return catTL.to(cat, {
-        duration: 1,
+        duration: .75,
         scale: .6,
         rotate: 360,
         ease: 'power4.out',
         delay: .5,
+    }).to(talkBox, {
+        duration: .25,
+        scale: 1,
+        ease: 'none',
+    }).to(talkDialog, {
+        duration: .25,
+        scale: 1,
+        ease: 'none',
     })
+
 }
-
-// Animate dialog box
-const talkBoxTL = gsap.timeline();
-const talkBox = document.querySelector('#cat-dialog');
-
-export const talkBoxAnimation = talkBoxTL.to(talkBox, {
-    duration: .25,
-    scale: 1,
-    ease: 'none',
-    delay: .75,
-})
-
-talkBoxAnimation.pause();
 
 animateLogo();
