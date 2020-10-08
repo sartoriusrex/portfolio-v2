@@ -48,29 +48,62 @@ const talkBox = document.querySelector('#cat-dialog');
 const talkDialog = document.querySelector('.container--talk-box-text');
 
 export const animateCat = function (cat) {
-    return catTL.fromTo(cat,
-        {
-            scale: 0,
-            rotate: -360,
-        }
-        , {
-            duration: .75,
-            scale: .6,
-            rotate: 360,
-            ease: 'power4.out',
-            delay: .5,
-        }).to(talkBox, {
-            duration: .25,
-            scale: 1,
-            ease: 'none',
-            // delay: .25,
-        }).to(talkDialog, {
-            duration: .25,
-            scale: 1,
-            ease: 'none',
-            // delay: .25,
-        })
+    return catTL.fromTo(cat, {
+        scale: 0,
+        rotate: -360,
+    }, {
+        duration: .75,
+        scale: .6,
+        rotate: 360,
+        ease: 'power4.out',
+        delay: .5,
+    }).to(talkBox, {
+        duration: .25,
+        scale: 1,
+        ease: 'none',
+    },
+        ">-.25"
+    ).to(talkDialog, {
+        duration: .25,
+        scale: 1,
+        ease: 'none',
+    })
 
 }
 
 animateLogo();
+
+// Animating the about this place paragraph drop bounces
+const pDrop1 = gsap.timeline();
+const pDrop2 = gsap.timeline();
+const pDrop3 = gsap.timeline();
+
+const aboutP1 = document.querySelector('#my-corner');
+const aboutP2 = document.querySelector('#explore');
+const aboutP3 = document.querySelector('#hope');
+
+export const animatePDrop = function () {
+    pDrop1.fromTo(aboutP1, {
+        rotate: 0,
+        translateX: 0
+    }, {
+        rotate: -1,
+        translateX: '.5rem'
+    });
+
+    pDrop2.fromTo(aboutP2, {
+        rotate: 0,
+        translateX: 0
+    }, {
+        rotate: 1.3,
+        translateX: '-.1rem'
+    });
+
+    pDrop3.fromTo(aboutP3, {
+        rotate: 0,
+        translateX: 0
+    }, {
+        rotate: -1.1,
+        translateX: '.2rem'
+    });
+}

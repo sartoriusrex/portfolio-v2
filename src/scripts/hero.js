@@ -11,7 +11,7 @@ const factContainer = document.querySelector('#cat-fact');
 let currentCats;
 
 const getFact = async function () {
-    return fetch('https://catfact.ninja/fact?max_length=140').then(response => {
+    return fetch('https://catfact.ninja/fact?max_length=160').then(response => {
         return response.json();
     }).then(data => data.fact)
 }
@@ -49,6 +49,7 @@ const animateRandomCat = async function () {
 // When the door opens, the random cat container scales up and the cat spins out, revealing the text
 door.addEventListener('click', async function (e) {
     e.stopPropagation();
+    heroAnimation.pause();
     door.classList.add('open');
 
     catContainer.style.transform = 'scale(1)';
@@ -105,6 +106,8 @@ sides.forEach(side => {
             switch (cancelCount) {
                 case 0:
                     catMessage.innerText = "Are you crazy?! Here, have another Cat Fact! to change your mind."
+                    cancelBtn.innerText = "No!"
+                    subscribeBtn.innerText = "Shyeah!";
 
                     await updateFact();
                     animateRandomCat();
@@ -112,6 +115,8 @@ sides.forEach(side => {
                     break;
                 case 1:
                     catMessage.innerText = "I think you clicked the wrong button. Here's another fact for free."
+                    cancelBtn.innerText = "Nooo!";
+                    subscribeBtn.innerText = "..Yes?";
 
                     await updateFact();
                     animateRandomCat();
@@ -119,6 +124,8 @@ sides.forEach(side => {
                     break;
                 case 2:
                     catMessage.innerHTML = "You clicked 'No?' again? Ugh. In case you're out of the loop, check <a href='https://www.reddit.com/r/funny/comments/owx3v/so_my_little_cousin_posted_on_fb_that_he_was/' target='_blank' rel='noopener noreferrer'>this page</a> out.";
+                    cancelBtn.innerText = "..please..no..";
+                    subscribeBtn.innerText = "okay";
 
                     await updateFact();
                     animateRandomCat();
@@ -128,11 +135,13 @@ sides.forEach(side => {
                     cancelCount = 0;
                     closeCatBox();
                     catMessage.innerText = 'Thank you for subscribing to Cat Facts!';
+                    cancelBtn.innerText = "No?";
+                    subscribeBtn.innerText = "Absolutely!";
             }
         });
 
         subscribeBtn.addEventListener('click', function () {
-            alert("Seriously? \n\nOkay, well, I might implement that another time. Weirdo.");
+            alert("Seriously? \n\nOkay, well, I might implement that another time.\n\nWeirdo.");
 
             closeCatBox();
         });
