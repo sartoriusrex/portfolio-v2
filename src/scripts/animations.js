@@ -31,7 +31,7 @@ const starTL = gsap.timeline();
 const star = document.getElementById('pink-star');
 
 export const starAnimation = starTL.to(star, {
-    duration: .75,
+    duration: .5,
     rotation: 45,
     scale: 3,
     ease: 'none',
@@ -48,21 +48,28 @@ const talkBox = document.querySelector('#cat-dialog');
 const talkDialog = document.querySelector('.container--talk-box-text');
 
 export const animateCat = function (cat) {
-    return catTL.to(cat, {
-        duration: .75,
-        scale: .6,
-        rotate: 360,
-        ease: 'power4.out',
-        delay: .5,
-    }).to(talkBox, {
-        duration: .25,
-        scale: 1,
-        ease: 'none',
-    }).to(talkDialog, {
-        duration: .25,
-        scale: 1,
-        ease: 'none',
-    })
+    return catTL.fromTo(cat,
+        {
+            scale: 0,
+            rotate: -360,
+        }
+        , {
+            duration: .75,
+            scale: .6,
+            rotate: 360,
+            ease: 'power4.out',
+            delay: .5,
+        }).to(talkBox, {
+            duration: .25,
+            scale: 1,
+            ease: 'none',
+            // delay: .25,
+        }).to(talkDialog, {
+            duration: .25,
+            scale: 1,
+            ease: 'none',
+            // delay: .25,
+        })
 
 }
 

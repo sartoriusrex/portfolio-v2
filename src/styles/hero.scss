@@ -22,6 +22,10 @@
     margin-right: 10%;
     margin-top: 5%;
     z-index: 20;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .side {
@@ -190,7 +194,7 @@
         justify-content: center;
     }
 
-    svg {
+    svg:not(.cat) {
         position: absolute;
         transform: scale(0);
         z-index: 1;
@@ -203,7 +207,10 @@
     }
 
     .cat {
+        position: absolute;
         top: 50%;
+        z-index: 1;
+        transform: rotate(-360deg) scale(0);
     }
 }
 
@@ -236,7 +243,23 @@
         color: $black;
     }
 
+    a {
+        color: $about-dark-purple;
+        background-color: $pastel-yellow;
+    }
+
     .container--cat-choice {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .container--cat-buttons {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
