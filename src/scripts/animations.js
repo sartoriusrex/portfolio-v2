@@ -74,6 +74,7 @@ export const animateCat = function (cat) {
 animateLogo();
 
 // Animating the about this place paragraph drop bounces
+const pDropContainer = document.querySelector('.container--about-text');
 const pDrop1 = gsap.timeline();
 const pDrop2 = gsap.timeline();
 const pDrop3 = gsap.timeline();
@@ -84,26 +85,76 @@ const aboutP3 = document.querySelector('#hope');
 
 export const animatePDrop = function () {
     pDrop1.fromTo(aboutP1, {
-        rotate: 0,
-        translateX: 0
+        rotate: 10,
+        translateX: '1rem',
     }, {
         rotate: -1,
-        translateX: '.5rem'
+        translateX: '.5rem',
+        ease: "bounce.out",
+        duration: 1.1,
     });
 
     pDrop2.fromTo(aboutP2, {
-        rotate: 0,
-        translateX: 0
+        rotate: -7,
+        translateX: '1rem',
     }, {
         rotate: 1.3,
-        translateX: '-.1rem'
+        translateX: '-.1rem',
+        ease: "bounce.out",
+        duration: 1,
     });
 
     pDrop3.fromTo(aboutP3, {
-        rotate: 0,
-        translateX: 0
+        rotate: 8,
+        translateX: '1rem',
     }, {
         rotate: -1.1,
-        translateX: '.2rem'
+        translateX: '.2rem',
+        ease: "bounce.out",
+        duration: 1.2,
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    if ("IntersectionObserver" in window) {
+        let cb = function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animatePDrop();
+                    observer.unobserve(entry.target);
+                }
+            })
+        }
+
+        let opts = {
+            rootMargin: '0px 0px -150px 0px',
+        }
+
+        let observer = new IntersectionObserver(cb, opts);
+        observer.observe(aboutP3);
+    } else {
+        let ieTimout;
+
+        function ieIOanimation() {
+            if (ieTimout) clearTimeout(ieTimout);
+
+            ieTimout = setTimeout(function () {
+                let animated = false;
+                if (aboutP3.offsetTop < (window.innerHeight + window.pageYOffset)) {
+                    animatePDrop();
+                    animated = true;
+                }
+
+                if (animated) {
+                    document.removeEventListener("scroll", ieIOanimation);
+                    window.removeEventListener("resize", ieIOanimation);
+                    window.removeEventListener("orientationChange", ieIOanimation);
+                }
+            }, 20);
+        }
+
+        document.addEventListener("scroll", ieIOanimation);
+        window.addEventListener("resize", ieIOanimation);
+        window.addEventListener("orientationChange", ieIOanimation);
+    }
+});
