@@ -3,6 +3,7 @@
 header {
 	width: 100%;
 	padding: 0.5rem 1rem;
+	max-width: 60rem;
 }
 
 .link--logo {
@@ -96,6 +97,7 @@ nav {
 		width: 95%;
 		display: flex;
 		justify-content: center;
+		margin: 1rem 0;
 
 		&:hover {
 			transform: scale(1.1);

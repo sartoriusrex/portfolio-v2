@@ -46,6 +46,8 @@ const animateRandomCat = async function () {
     animateCat(randCat);
 }
 
+catContainer.addEventListener('click', function (e) { e.stopPropagation() })
+
 // When the door opens, the random cat container scales up and the cat spins out, revealing the text
 door.addEventListener('click', async function (e) {
     e.stopPropagation();

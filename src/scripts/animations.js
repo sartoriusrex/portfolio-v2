@@ -74,7 +74,6 @@ export const animateCat = function (cat) {
 animateLogo();
 
 // Animating the about this place paragraph drop bounces
-const pDropContainer = document.querySelector('.container--about-text');
 const pDrop1 = gsap.timeline();
 const pDrop2 = gsap.timeline();
 const pDrop3 = gsap.timeline();
