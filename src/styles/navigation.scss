@@ -20,7 +20,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	overflow: hidden;
+	// overflow: hidden;
 	max-height: 65px;
 }
 
@@ -91,6 +91,18 @@ nav {
 		z-index: 100;
 	}
 
+	svg {
+		width: 7rem;
+		height: 7rem;
+		padding: .1rem;
+		margin: 1rem;
+	}
+
+	svg * {
+		stroke: $neon-yellow;
+		fill: $neon-yellow;
+	}
+
 	li {
 		transition: all 50ms ease-in;
 		transform-origin: center;
@@ -108,13 +120,29 @@ nav {
 			font-size: 1rem;
 			width: 100%;
 			text-align: center;
-			padding: 1rem 0;
+			padding: .5rem 0;
+		}
+
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
 
 			&:hover {
 				color: $neon-pink;
+
+				svg * {
+				stroke: $neon-pink;
+				fill: $neon-pink;
+				}
 			}
 		}
 	}
+}
+
+#sob-svg {
+	margin-bottom: 0;
 }
 
 @media screen and (min-width: $medium) {
@@ -140,10 +168,6 @@ nav {
 					text-align: right;
 					padding: 0;
 					padding-right: 1rem;
-
-					&:hover {
-						color: $neon-pink;
-					}
 				}
 			}
 		}
@@ -189,32 +213,3 @@ nav {
 		}
 	}
 }
-
-// .nav-container {
-// 	display: flex;
-// 	justify-content: center;
-// 	width: 100%;
-// 	box-shadow: 0 0 3px 6px $primary-background;
-// 	position: fixed;
-// 	top: 0;
-// 	z-index: 100;
-// 	background-color: $primary-background;
-// }
-
-// .navigation {
-// 	display: flex;
-// 	justify-content: space-between;
-// 	align-items: flex-end;;
-// 	width: 100%;
-// 	max-width: 25rem;
-// 	padding: 0 2rem;
-// 	height: 2.5rem;
-	
-
-// 	a {
-// 		text-decoration: none;
-// 		color: $primary-text;
-
-// 		@extend %bottom-border;
-// 	}
-// }
