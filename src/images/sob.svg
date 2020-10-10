@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="13.3mm"
-   height="9.6999998mm"
-   viewBox="0 0 13.3 9.6999998"
+   width="30mm"
+   height="22mm"
+   viewBox="0 0 30 22"
    version="1.1"
    id="sob-svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -25,17 +25,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6105428"
-     inkscape:cx="139.34095"
-     inkscape:cy="187.04489"
+     inkscape:zoom="1.1512865"
+     inkscape:cx="28.776114"
+     inkscape:cy="117.55741"
      inkscape:document-units="mm"
      inkscape:current-layer="g885"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
-     inkscape:window-x="0"
-     inkscape:window-y="33"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1509"
+     inkscape:window-height="884"
+     inkscape:window-x="269"
+     inkscape:window-y="141"
+     inkscape:window-maximized="0"
      units="mm" />
   <metadata
      id="metadata5">
@@ -53,13 +53,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-287.29999)">
+     transform="translate(0,-274.99999)">
     <g
        id="g885"
        transform="matrix(0.26458333,0,0,0.26458333,4.9873943,95.897769)">
       <g
          id="g1116"
-         transform="matrix(0.15422505,0,0,0.15422505,-15.942853,642.84938)">
+         transform="matrix(0.35303732,0,0,0.35303732,-12.725955,492.27025)">
         <path
            inkscape:connector-curvature="0"
            id="path928"

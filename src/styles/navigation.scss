@@ -20,8 +20,6 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	// overflow: hidden;
-	max-height: 65px;
 }
 
 #logo {
@@ -92,10 +90,10 @@ nav {
 	}
 
 	svg {
-		width: 7rem;
-		height: 7rem;
+		width: 5rem;
+		height: 5rem;
 		padding: .1rem;
-		margin: 1rem;
+		margin: .5rem;
 	}
 
 	svg * {
@@ -109,7 +107,6 @@ nav {
 		width: 95%;
 		display: flex;
 		justify-content: center;
-		margin: 1rem 0;
 
 		&:hover {
 			transform: scale(1.1);
@@ -141,9 +138,6 @@ nav {
 	}
 }
 
-#sob-svg {
-	margin-bottom: 0;
-}
 
 @media screen and (min-width: $medium) {
 	.ul--burger-menu {
@@ -163,11 +157,30 @@ nav {
 				margin-left: 1.5rem;
 				width: auto;
 
+				svg {
+					width: 4rem;
+					height: 4rem;
+					margin-bottom: .5rem;
+					padding: 0;
+
+					* {
+						stroke: $neon-blue;
+						fill: $neon-blue;
+					}
+				}
+
 				a, button {
 					color: $neon-blue;
 					text-align: right;
 					padding: 0;
 					padding-right: 1rem;
+					transform-origin:top right;
+					transition: all 50ms ease-in;
+
+					&:hover {
+						color: $neon-pink;
+						transform: rotate(5deg);
+					}
 				}
 			}
 		}
@@ -195,7 +208,7 @@ nav {
 		font-size: 2rem;
 		color: $neon-yellow;
 		position: absolute;
-		top: 5%;
+		top: 0;
 		left: 20%;
 	}
 
