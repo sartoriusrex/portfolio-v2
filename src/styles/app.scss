@@ -42,12 +42,14 @@ h1 {
         left: 0%;
         background: $black;
         padding: .5rem;
+        font-size: 1rem;
         text-align: center;
         color: $neon-yellow;
         width: 100%;
         opacity: .9;
         transform: scale(0);
         transition: transform 100ms ease-in;
+        transition-delay: .25s;
         z-index: 100;
     }
 
@@ -112,6 +114,7 @@ h1 {
             opacity: .9;
             transform: scale(0);
             transition: transform 100ms ease-in;
+            transition-delay: .25s;
             z-index: 1;
         }
 
@@ -182,6 +185,10 @@ h1 {
             color: $black;
             padding: .5rem;
             margin-left: 2rem;
+
+            &::marker {
+                color: $neon-pink;
+            }
         }
     }
 
@@ -198,7 +205,7 @@ h1 {
 
         &::after {
             position: absolute;
-            top: 3rem;
+            top: -4rem;
             left: 0;
             background: $black;
             padding: .5rem;
@@ -206,8 +213,10 @@ h1 {
             color: $neon-yellow;
             width: 100%;
             opacity: 1;
+            font-size: 1rem;
             transform: scale(0);
             transition: transform 100ms ease-in;
+            transition-delay: .25s;
             z-index: 100;
         }
     }
@@ -225,7 +234,8 @@ h1 {
     #i-work {
         &::after {
             content: "This is me trying to toot my own  horn.";
-            width: 200%;
+            width: 20rem;
+            left: -4rem;
         }
         &:hover {
             &::after {
@@ -249,7 +259,6 @@ h1 {
     #i-change {
         &::after {
             content: "This is currently the 3rd iteration. I'm getting better";
-            top: -6rem;
             left: -4rem;
             width: 300%;
         }
@@ -263,7 +272,6 @@ h1 {
     #i-connect {
         &::after {
             content: "...another appeal to be my friend.";
-            top: -4rem;
             left: -4rem;
             width: 200%;
         }
