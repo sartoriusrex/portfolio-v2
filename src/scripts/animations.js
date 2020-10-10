@@ -115,7 +115,13 @@ export const animatePDrop = function () {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    /*
+        If there's the intersection observer (all browsers except ie) then we use that to check the window.
+    */
+
+
     if ("IntersectionObserver" in window) {
+        // Callback just calls animateDrop and unobserves after it's called.
         let cb = function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -125,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
 
+        // Make sure we're about 150px into the window to animate
         let opts = {
             rootMargin: '0px 0px -150px 0px',
         }
@@ -132,6 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let observer = new IntersectionObserver(cb, opts);
         observer.observe(aboutP3);
     } else {
+        /*
+            Polyfill for intersection Observer.
+            We have to listen and remove events using setTimeout and measure the top of the object to the window.
+            We also have to listen to orientation changes and resize events.
+        */
+
         let ieTimout;
 
         function ieIOanimation() {

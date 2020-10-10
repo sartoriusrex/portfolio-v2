@@ -22,11 +22,13 @@ const updateFact = async function () {
     factContainer.innerText = fact;
 }
 
+// Remove styling from all the .cat s
 const clearCatStyle = async function () {
     currentCats = Array.from(allCats).filter(cat => cat.style.length > 0);
     await Promise.all(currentCats.map(cat => cat.style = ""));
 }
 
+// First return the styling to what it was before, then remove its class open and clear all cat styles, re-enable scroll and play the animation again!
 const closeCatBox = async function () {
     catContainer.style.transform = 'scale(0)';
     catContainer.style.borderRadius = '50%';
@@ -38,6 +40,9 @@ const closeCatBox = async function () {
     heroAnimation.play();
 }
 
+// If we haven't already, clear all the styles from cats
+// Get a random number from 1 to 6 and grab a random cat using that number
+// ANIMATE THAT RANDOM CAT!
 const animateRandomCat = async function () {
     await clearCatStyle();
     let randNum = Math.floor(Math.random() * 6) + 1;
@@ -46,6 +51,7 @@ const animateRandomCat = async function () {
     animateCat(randCat);
 }
 
+// Prevent any clicks when user clicks on the star or background. This could accidentally trigger cat animations.
 catContainer.addEventListener('click', function (e) { e.stopPropagation() })
 
 // When the door opens, the random cat container scales up and the cat spins out, revealing the text
@@ -68,10 +74,14 @@ door.addEventListener('click', async function (e) {
 // Add click events on all sides and their captions
 sides.forEach(side => {
     cube[side] = document.querySelector(`.side.${side}`);
+
+    // Top side doesn't have a caption. It's the cat door
     if (side !== 'top') captions[side] = document.querySelector(`#${side}`);
 
     //When the side of the cube is clicked, we make the caption visible by removing class invisible and adding class visible
     // Then we  pause the animation
+    // For the top side, we check if the animation is paused and toggle it each time.
+    // We also scroll the user to the very top for the best UX
     cube[side].addEventListener('click', function (e) {
         let paused = heroAnimation.paused();
 
@@ -97,11 +107,15 @@ sides.forEach(side => {
             heroAnimation.play();
         });
     } else {
+        // If it's the top side, we do some magic
         const catMessage = document.querySelector('#cat-message');
         const cancelBtn = document.querySelector('.cancel');
         const subscribeBtn = document.querySelector('.subscribe');
         let cancelCount = 0;
 
+        // We set control flow for the user to either 'subscribe' or 'cancel' cat facts, but invert the actions.
+        // Continuosly clicking no adds a new cat fact just to annoy the user (but only 3 times to click no before letting the user go)
+        // Clicking subscribe just sends an alert.
         cancelBtn.addEventListener('click', async function (e) {
             e.stopPropagation();
 
@@ -116,15 +130,6 @@ sides.forEach(side => {
                     cancelCount++;
                     break;
                 case 1:
-                    catMessage.innerText = "I think you clicked the wrong button. Here's another fact for free."
-                    cancelBtn.innerText = "Nooo!";
-                    subscribeBtn.innerText = "..Yes?";
-
-                    await updateFact();
-                    animateRandomCat();
-                    cancelCount++;
-                    break;
-                case 2:
                     catMessage.innerHTML = "You clicked 'No?' again? Ugh. In case you're out of the loop, check <a href='https://www.reddit.com/r/funny/comments/owx3v/so_my_little_cousin_posted_on_fb_that_he_was/' target='_blank' rel='noopener noreferrer'>this page</a> out.";
                     cancelBtn.innerText = "..please..no..";
                     subscribeBtn.innerText = "okay";

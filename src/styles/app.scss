@@ -33,6 +33,29 @@ h1 {
     text-decoration-skip-ink: auto;
     -webkit-text-decoration-skip-ink: auto;
     text-decoration-style: wavy;
+    position: relative;
+
+    &::after {
+        content: "Or 2021. God I wish we were already there.";
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        background: $black;
+        padding: .5rem;
+        text-align: center;
+        color: $neon-yellow;
+        width: 100%;
+        opacity: .9;
+        transform: scale(0);
+        transition: transform 100ms ease-in;
+        z-index: 100;
+    }
+
+    &:hover {
+        &::after {
+            transform: scale(1) rotate(5deg);
+        }
+    }
 }
 
 .svg-hero-divider,
@@ -74,6 +97,29 @@ h1 {
         text-decoration-skip-ink: auto;
         -webkit-text-decoration-skip-ink: auto;
         text-decoration-style: wavy;
+        position: relative;
+
+        &::after {
+            content: "That's muh braainz on the interwebs.";
+            position: absolute;
+            top: 2rem;
+            left: -50%;
+            background: $black;
+            padding: .5rem;
+            text-align: center;
+            color: $neon-yellow;
+            width: 10rem;
+            opacity: .9;
+            transform: scale(0);
+            transition: transform 100ms ease-in;
+            z-index: 1;
+        }
+
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(5deg);
+            }
+        }
     }
 
     h2 {
@@ -148,6 +194,84 @@ h1 {
         text-decoration-skip-ink: auto;
         -webkit-text-decoration-skip-ink: auto;
         text-decoration-style: wavy;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 3rem;
+            left: 0;
+            background: $black;
+            padding: .5rem;
+            text-align: center;
+            color: $neon-yellow;
+            width: 100%;
+            opacity: .9;
+            transform: scale(0);
+            transition: transform 100ms ease-in;
+            z-index: 100;
+        }
+    }
+
+    #i-am {
+        &::after {
+            content: "This is an appeal to be my friend.";
+        }
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(5deg);
+            }
+        }
+    }
+    #i-work {
+        &::after {
+            content: "This is me trying to toot my own  horn.";
+            width: 200%;
+        }
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(-5deg);
+            }
+        }
+    }
+
+    #i-write {
+        &::after {
+            content: "I don't write a lot, though.";
+            width: 200%;
+        }
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(5deg);
+            }
+        }
+    }
+
+    #i-change {
+        &::after {
+            content: "This is currently the 3rd iteration. I'm getting better";
+            top: -6rem;
+            left: -4rem;
+            width: 300%;
+        }
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(-5deg);
+            }
+        }
+    }
+
+    #i-connect {
+        &::after {
+            content: "...another appeal to be my friend.";
+            top: -4rem;
+            left: -4rem;
+            width: 200%;
+        }
+        &:hover {
+            &::after {
+                transform: scale(1) rotate(5deg);
+            }
+        }
     }
 }
 
@@ -167,11 +291,3 @@ h1 {
         transform: skew(-10deg);
     }
 }
-
-// @import "landing";
-
-// @import "about";
-
-// @import "portfolio";
-
-// @import "contact";
