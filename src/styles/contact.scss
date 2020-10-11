@@ -1,146 +1,25 @@
 @import "_variables";
+@import "style";
+@import "navigation";
+@import "footer";
 
-.contact-background-one {
+.section--contact {
 	width: 100%;
-	height: 500px;
-	background-color: $teal;
-	clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: -10;
-	margin-top: -180px;
-}
+	padding: 0 1rem;
+	max-width: 40rem;
 
-.contact-title-container {
-	margin-top: 220px;
-
-	p {
-		text-align: center;
-		line-height: 1.4;
-	}
-}
-
-.contact-form {
-	margin-top: -40px;
-	text-align: center;
-	margin-bottom: 4rem;
-
-	p {
-		margin-bottom: 1.25rem;
-		line-height: 1.4;
+	h1 {
+		margin: 1rem;
 	}
 
 	a {
-		text-decoration: none;
-		transition: all 100ms ease-in-out;
-		padding-bottom: .2rem;
-		border: 1px solid transparent;
-		border-bottom: 1px solid $primary-text;
-		border-radius: $b-radius;
-		padding: 0 .2rem;
-
-		&:hover,
-		&:active,
-		&:focus {
-			color: $card-background;
-			background-color: $primary-text;
-			outline: 0;
-		}
+		color: $neon-yellow;
+		font-size: 2rem;
 	}
 
-	label {
-		visibility: hidden;
-	}
-
-	input {
-		outline: 0;
-		width: 100%;
-		border: 2px solid $teal;
-		padding: .5rem;
-		text-align: center;
-		font-size: 1rem;
-		margin-bottom: 1rem;
-		border-radius: $b-radius;
-
-		&::placeholder {
-			text-align: center;
-			font-size: 1rem;
-			color: $placeholder-text;
-		}
-	}
-
-	.gender {
-		visibility: hidden;
-		height: 0;
-		padding: 0;
-		margin: 0;
-	}
-
-	textarea {
-		font-size: 1rem;
-		border: 2px solid $teal;
-		border-radius: $b-radius;
-		width: 100%;
-		height: 20vh;
-		max-height: 200px;
-		text-indent: 0;
-		text-align: left;
-		padding: 1rem;
-		margin-bottom: 1.25rem;
-		box-shadow: none;
-		outline: 0;
-
-		&::placeholder {
-			color: $placeholder-text;
-			visibility: visible;
-			text-align: center;
-		}
-	}
-
-	input,
-	textarea {
-		transform: scale(.95);
-		transition: transform 100ms ease-in-out;
-
-		&:hover,
-		&:active,
-		&:focus {
-			transform: scale(1);
-			outline: 0;
-		}
-	}
-
-	button {
-		font-size: 1rem;
-		font-weight: bold;
-		padding: 1.25rem 1.5rem;
-		background-color: $teal;
-		border-radius: $b-radius / 2;
-		border: none;
-		transition: all 150ms ease-in-out;
-		margin-top: 1.25rem;
-
-	&:hover,
-		&:active,
-		&:focus {
-			transform: scale(1.1);
-			outline: 0;
-			box-shadow: 0 2px 4px $placeholder-text;
-			color: $card-background;
-			background-color: $red;
-		}
+	svg {
+		width: 20rem;
+		height: 100%;
 	}
 }
 
-@media (min-width: 600px ) {
-	.contact-form {
-		input {
-			border: none;
-			border-bottom: 2px solid $teal;
-			padding: 0;
-			padding-bottom: .5rem;
-			border-radius: 0;
-		}
-	}
-}

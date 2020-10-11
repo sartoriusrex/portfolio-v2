@@ -87,7 +87,6 @@
 main {
   position: relative;
   z-index: 1;
-  // background: $primary-background;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,12 +105,11 @@ a {
 body {
   background-color: $black;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  // font-family: "Merriweather";
   font-family: 'VT323';
-  // color: $darker-text;
 }
 
 h1 {

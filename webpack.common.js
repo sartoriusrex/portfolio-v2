@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
 	entry: {
 		app: './src/app.js',
-		test: './src/test.js',
+		contact: './src/contact.js',
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -33,10 +33,10 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "src/views/test.ejs",
+			template: "src/pages/contact.ejs",
 			inject: true,
-			filename: "test.html",
-			chunks: ['test']
+			filename: "contact.html",
+			chunks: ['contact']
 		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
