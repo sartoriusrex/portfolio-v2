@@ -211,19 +211,22 @@ h1 {
             padding: .5rem;
             text-align: center;
             color: $neon-yellow;
-            width: 100%;
+            min-width: 5rem;
             opacity: 1;
             font-size: 1rem;
             transform: scale(0);
             transition: transform 100ms ease-in;
             transition-delay: .25s;
             z-index: 100;
+            display: block;
         }
     }
 
     #i-am {
         &::after {
             content: "This is an appeal to be my friend.";
+            top: 0;
+            left: -4rem;
         }
         &:hover {
             &::after {

@@ -8,6 +8,7 @@ const door = document.querySelector('.door');
 const catContainer = document.querySelector('.container--interactive-cat');
 const allCats = document.querySelectorAll('.cat');
 const factContainer = document.querySelector('#cat-fact');
+const heroContainer = document.querySelector('.container--hero');
 let currentCats;
 
 const getFact = async function () {
@@ -95,7 +96,9 @@ sides.forEach(side => {
         } else {
             heroAnimation.pause();
         }
-        window.scrollTo(0, 0);
+
+        // scroll to top of hero container
+        window.scrollTo(0, heroContainer.getBoundingClientRect.y);
     });
 
     // If the caption is visible, then it can be clicked
