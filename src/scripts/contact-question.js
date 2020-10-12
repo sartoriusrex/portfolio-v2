@@ -1,0 +1,1 @@
+const emailLink = document.getElementById('email-link');

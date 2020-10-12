@@ -2,19 +2,31 @@
     <% include ../components/header %>
     <section class="section--contact">
         <h1>
-            Hypothetical Situation
+            Just e-mail Please. But first, a quick question.
         </h1>
-        <label for="fight-choices">Who would win in a fight against Bruce Lee: Jet Li or Jackie Chan?</label>
-        <select name="fight-choices" id="fight-choices">
-            <option value="blank">Don't select this option</option>
-            <option value="neither">Neither</option>
-            <option value="jet-li">Jet Li</option>
-            <option value="jackie-chan">Jackie Chan</option>
-            <option value="who">Who?</option>
-        </select>
-        <a href="mailto: dmai.developer@gmail.com?subject=''">
+        <form action="">
+            <fieldset>
+                <legend for="fight-choices">Who would win in a fight against Bruce Lee: Jet Li or Jackie Chan?</legend>
+                <input type="radio" id="stupid" name="answer">
+                <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
+
+                <input type="radio" id="jet-li" name="answer">
+                <label for="jet-li">Jet Li</label>
+
+                <input type="radio" id="jackie-chan" name="answer">
+                <label for="jackie-chan">Jackie Chan</label>
+
+                <input type="radio" id="neither" name="answer">
+                <label for="neither">Neither</label>
+
+                <input type="radio" id="who" name="answer">
+                <label for="who">Who?</label>
+            </fieldset>
+            <button type='submit' id='submit-answer'>That's my final answer </button>
+        </form>
+        <!-- <a id="email-link" href="mailto: dmai.developer@gmail.com?subject=''">
             <% include ../images/email-sig.svg %>
-        </a>
+        </a> -->
     </section>
 </main>
 
