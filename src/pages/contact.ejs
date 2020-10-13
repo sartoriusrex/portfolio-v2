@@ -1,31 +1,42 @@
 <main>
     <% include ../components/header %>
     <section class="section--contact">
-        <h1>
+        <h2>
             Just e-mail Please. But first, a quick question.
-        </h1>
-        <form action="">
+        </h2>
+        <% include ../images/question-arrow.svg %>
+        <form action="POST">
             <fieldset>
                 <legend>
                     <p>
-                        Suddenly a pack of angry miniature Centaurs attack you. What Awesome Pokemon would you call upon
+                        Suddenly a pack of angry miniature Centaurs attack you.
+                    </p>
+                    <p>
+                        What heroic Pokemon would you call upon
                         to defend you?
                     </p>
                 </legend>
-                <input type="radio" id="stupid" name="answer">
-                <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
+                <div class="input-group">
+                    <input type="radio" id="stupid" name="answer">
+                    <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="jet-li" name="answer">
+                    <label for="jet-li">Jet Li</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="jackie-chan" name="answer">
+                    <label for="jackie-chan">Jackie Chan</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="neither" name="answer">
+                    <label for="neither">Neither</label>
 
-                <input type="radio" id="jet-li" name="answer">
-                <label for="jet-li">Jet Li</label>
-
-                <input type="radio" id="jackie-chan" name="answer">
-                <label for="jackie-chan">Jackie Chan</label>
-
-                <input type="radio" id="neither" name="answer">
-                <label for="neither">Neither</label>
-
-                <input type="radio" id="who" name="answer">
-                <label for="not">Those aren't Pokemon!</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="who" name="answer">
+                    <label for="not">Those aren't Pokemon!</label>
+                </div>
             </fieldset>
             <button type='submit' id='submit-answer'>That's my final answer </button>
         </form>
