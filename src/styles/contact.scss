@@ -23,9 +23,15 @@
 		max-width: 35rem;
 	}
 
-	svg {
+	#question-arrow {
 		width: 4rem;
 		margin: 0;
+	}
+
+	.container--contact-animation {
+		width: 100%;
+		min-height: 40rem;
+		position: relative;
 	}
 
 	form {
@@ -35,6 +41,13 @@
 		align-items: center;
 		width: 100%;
 		max-width: 40rem;
+		transform-origin: center;
+		transition: transform 100ms ease-out;
+		position: absolute;
+
+		&.hidden {
+			transform: scale(0);
+		}
 	}
 
 	fieldset {
@@ -71,7 +84,7 @@
 
 		p {
 			transform: skewX(-10deg);
-			padding: .5rem;
+			padding: .5rem 2rem;
 			margin: 0;
 			font-size: 1rem;
 			text-align: right;
@@ -131,3 +144,15 @@
 	}
 }
 
+#email-link {
+	width: 100%;
+
+	#egg-hatcher {
+		transform: translateX(50px) scale(0);
+		transform-origin: bottom right;
+	}
+
+	#chick {
+		// transform: matrix(0.22031241,0,0,0.22031241,-591.60419,-259.8001);
+	}
+}

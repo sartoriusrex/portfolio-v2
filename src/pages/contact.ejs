@@ -5,44 +5,47 @@
             Just e-mail Please. But first, a quick question.
         </h2>
         <% include ../images/question-arrow.svg %>
-        <form action="POST">
-            <fieldset>
-                <legend>
-                    <p>
-                        Suddenly a pack of angry miniature Centaurs attack you.
-                    </p>
-                    <p>
-                        What heroic Pokemon would you call upon
-                        to defend you?
-                    </p>
-                </legend>
-                <div class="input-group">
-                    <input type="radio" id="stupid" name="answer">
-                    <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" id="jet-li" name="answer">
-                    <label for="jet-li">Jet Li</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" id="jackie-chan" name="answer">
-                    <label for="jackie-chan">Jackie Chan</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" id="neither" name="answer">
-                    <label for="neither">Neither</label>
+        <div class="container--contact-animation">
+            <form action="POST">
+                <fieldset>
+                    <legend>
+                        <p>
+                            Suddenly a pack of angry miniature Centaurs attack you.
+                        </p>
+                        <p>
+                            What heroic Pokemon would you call upon
+                            to defend you?
+                        </p>
+                    </legend>
+                    <div class="input-group">
+                        <input type="radio" id="stupid" name="answer" value="stupid" checked>
+                        <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" id="jet-li" name="answer" value="jet-li">
+                        <label for="jet-li">Jet Li</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" id="jackie-chan" name="answer" value="jackie-chan">
+                        <label for="jackie-chan">Jackie Chan</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" id="neither" name="answer" value="neither">
+                        <label for="neither">Neither</label>
 
-                </div>
-                <div class="input-group">
-                    <input type="radio" id="who" name="answer">
-                    <label for="not">Those aren't Pokemon!</label>
-                </div>
-            </fieldset>
-            <button type='submit' id='submit-answer'>That's my final answer </button>
-        </form>
-        <!-- <a id="email-link" href="mailto: dmai.developer@gmail.com?subject=''">
-            <% include ../images/email-sig.svg %>
-        </a> -->
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" id="who" name="answer" value="not-pokemon">
+                        <label for="not">Those aren't Pokemon!</label>
+                    </div>
+                </fieldset>
+                <button type='submit' id='submit-answer'>That's my final answer </button>
+            </form>
+            <a id="email-link" href="">
+                <!-- <% include ../images/email-sig.svg %> -->
+                <% include ../images/egg-hatching.svg %>
+            </a>
+        </div>
     </section>
 </main>
 
