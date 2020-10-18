@@ -11,8 +11,6 @@ submitBtn.addEventListener('click', function (e) {
 
     const selected = Array.from(document.querySelectorAll('input')).filter(e => e.checked)[0];
 
-    console.log(animationContainer);
-
     scrollTo(0, animationContainer.offsetTop - 60);
 
     formEl.classList.add('hidden');

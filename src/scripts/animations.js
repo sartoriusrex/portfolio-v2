@@ -236,7 +236,7 @@ const shellOptions = {
     duration: .05,
     ease: 'none',
     attr: {
-        stroke: "#DE38C8"
+        stroke: "#DE38C8",
     }
 }
 
