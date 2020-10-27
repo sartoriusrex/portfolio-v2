@@ -14,6 +14,7 @@ function animateLogo() {
     });
 }
 
+animateLogo();
 
 const heroTL = gsap.timeline();
 const heroCube = document.getElementById('hero-cube');
@@ -73,8 +74,6 @@ export const animateCat = function (cat) {
     })
 
 }
-
-animateLogo();
 
 // Animating the about this place paragraph drop bounces
 const pDrop1 = gsap.timeline();
@@ -179,22 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
 const eggHatcher = document.querySelector('#egg-hatcher');
 
 // shell pieces (not bottom)
-const shellPiece1 = document.querySelector('#path918');
-const shellPiece2 = document.querySelector('#path920');
-const shellPiece3 = document.querySelector('#path922');
-const shellPiece4 = document.querySelector('#path924');
-const shellPiece5 = document.querySelector('#path926');
-const shellPiece6 = document.querySelector('#path928');
-const shellPiece7 = document.querySelector('#path930');
-const shellPiece8 = document.querySelector('#path932');
-const shellPiece9 = document.querySelector('#path938');
-const shellPiece10 = document.querySelector('#path940');
-const shellPiece11 = document.querySelector('#path942');
-const shellPiece12 = document.querySelector('#path944');
-const shellPiece13 = document.querySelector('#path946');
-const shellPiece14 = document.querySelector('#path948');
-const shellPiece15 = document.querySelector('#path950');
-console.log(shellPiece2);
+const topShell = document.querySelectorAll('#shell path:not(#shell-bottom');
+const shellObject = {};
+topShell.forEach((piece, idx) => shellObject[idx] = piece);
+
 // entire chick
 const chick = document.querySelector('#chick');
 
@@ -233,13 +220,13 @@ const piece45 = document.querySelector('#path982');
 
 const eggTL = gsap.timeline();
 const shellOptions = {
-    duration: .05,
+    duration: .025,
     ease: 'none',
     attr: {
         stroke: "#DE38C8",
     }
 }
-
+const shellOptions2 = { ...shellOptions, ...{ delay: -.8 } }
 
 export const animateEgg = function () {
     eggTL.to(eggHatcher, {
@@ -252,35 +239,22 @@ export const animateEgg = function () {
         scale: 1,
         ease: 'none',
         duration: .2,
-    }).to(shellPiece1,
-        shellOptions
-    ).to(shellPiece2,
-        shellOptions
-    ).to(shellPiece3,
-        shellOptions
-    ).to(shellPiece4,
-        shellOptions
-    ).to(shellPiece5,
-        shellOptions
-    ).to(shellPiece6,
-        shellOptions
-    ).to(shellPiece7,
-        shellOptions
-    ).to(shellPiece8,
-        shellOptions
-    ).to(shellPiece9,
-        shellOptions
-    ).to(shellPiece10,
-        shellOptions
-    ).to(shellPiece11,
-        shellOptions
-    ).to(shellPiece12,
-        shellOptions
-    ).to(shellPiece13,
-        shellOptions
-    ).to(shellPiece14,
-        shellOptions
-    ).to(shellPiece15,
-        shellOptions
-    )
+    }).to(shellObject[0], shellOptions2) // we crack the egg
+        .to(shellObject[1], shellOptions)
+        .to(shellObject[2], shellOptions)
+        .to(shellObject[3], shellOptions)
+        .to(shellObject[4], shellOptions)
+        .to(shellObject[5], shellOptions)
+        .to(shellObject[6], shellOptions2)
+        .to(shellObject[7], shellOptions)
+        .to(shellObject[8], shellOptions)
+        .to(shellObject[9], shellOptions)
+        .to(shellObject[10], shellOptions)
+        .to(shellObject[11], shellOptions2)
+        .to(shellObject[12], shellOptions)
+        .to(shellObject[13], shellOptions2)
+        .to(shellObject[14], shellOptions2) // the egg explodes
+    // The chick pops out
+    // The chick moves a bit
+    // we display our image link with our email address
 }
