@@ -226,16 +226,20 @@ const shellOptions = {
         stroke: "#DE38C8",
     }
 }
-const shellOptions2 = { ...shellOptions, ...{ delay: -.5 } }
-const pathOptions = {
-    motionPath: {
-        path: "#path867",
-        autoRotate: true,
-        align: "self",
-    },
-    scale: 1.2,
-    duration: 0.7,
-    ease: "power2.out",
+const shellOptions2 = { ...shellOptions, ...{ delay: -.5 } };
+
+function returnPathOption(pathId) {
+    return {
+        motionPath: {
+            path: `#path${pathId}`,
+            autoRotate: true,
+            align: "self",
+        },
+        scale: 0.9,
+        duration: 1,
+        ease: "slow (0.0, 0.0, true)",
+        delay: `${Math.random() * 0.025}`
+    }
 }
 
 export const animateEgg = function () {
@@ -265,21 +269,21 @@ export const animateEgg = function () {
         .to(shellObject[13], shellOptions)
         .to(shellObject[14], shellOptions2)
         .addLabel("explode") // the egg explodes
-        .to(shellObject[0], pathOptions, "explode")
-        .to(shellObject[1], pathOptions, "explode")
-        .to(shellObject[2], pathOptions, "explode")
-        .to(shellObject[3], pathOptions, "explode")
-        .to(shellObject[4], pathOptions, "explode")
-        .to(shellObject[5], pathOptions, "explode")
-        .to(shellObject[6], pathOptions, "explode")
-        .to(shellObject[7], pathOptions, "explode")
-        .to(shellObject[8], pathOptions, "explode")
-        .to(shellObject[9], pathOptions, "explode")
-        .to(shellObject[10], pathOptions, "explode")
-        .to(shellObject[11], pathOptions, "explode")
-        .to(shellObject[12], pathOptions, "explode")
-        .to(shellObject[13], pathOptions, "explode")
-        .to(shellObject[14], pathOptions, "explode")
+        .to(shellObject[0], returnPathOption('867'), "explode")
+        .to(shellObject[1], returnPathOption('867-72'), "explode")
+        .to(shellObject[2], returnPathOption('867-9'), "explode")
+    // .to(shellObject[3], pathOptions, "explode")
+    // .to(shellObject[4], pathOptions, "explode")
+    // .to(shellObject[5], pathOptions, "explode")
+    // .to(shellObject[6], pathOptions, "explode")
+    // .to(shellObject[7], pathOptions, "explode")
+    // .to(shellObject[8], pathOptions, "explode")
+    // .to(shellObject[9], pathOptions, "explode")
+    // .to(shellObject[10], pathOptions, "explode")
+    // .to(shellObject[11], pathOptions, "explode")
+    // .to(shellObject[12], pathOptions, "explode")
+    // .to(shellObject[13], pathOptions, "explode")
+    // .to(shellObject[14], pathOptions, "explode")
     // The chick pops out
     // The chick moves a bit
     // we display our image link with our email address

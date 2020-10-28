@@ -37,6 +37,7 @@
 		width: 100%;
 		min-height: 40rem;
 		position: relative;
+		overflow: hidden;
 	}
 
 	form {
@@ -152,9 +153,13 @@
 #email-link {
 	width: 100%;
 
+	svg {
+		width: 800px;
+	}
+
 	#egg-hatcher {
 		transform: translateX(50px) scale(0);
-		transform-origin: bottom right;
+		transform-origin: bottom;
 	}
 
 	#chick {
