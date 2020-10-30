@@ -26,7 +26,7 @@ export const heroAnimation = heroTL.to(heroCube, {
     rotationX: 360,
     rotationY: 720,
     ease: 'none',
-    repeat: 20,
+    repeat: -1,
 });
 
 // Animations for star on cat dialogue
@@ -180,7 +180,10 @@ const eggHatcher = document.querySelector('#egg-hatcher');
 // shell pieces (not bottom)
 const topShell = document.querySelectorAll('#shell path:not(#shell-bottom');
 const shellObject = {};
-topShell.forEach((piece, idx) => shellObject[idx] = piece);
+
+let topShellPieces = Array.from(topShell).filter(piece => piece.id.slice(0, 1) !== "p");
+
+topShellPieces.forEach((piece, idx) => shellObject[idx] = piece);
 
 // entire chick
 const chick = document.querySelector('#chick');
@@ -229,18 +232,37 @@ const shellOptions = {
 const shellOptions2 = { ...shellOptions, ...{ delay: -.5 } };
 
 function returnPathOption(pathId) {
+    let durationLow = Math.floor(Math.random() * .2) + .7;
+    let durationMid = Math.floor(Math.random() * .2) + .9;
+    let durationHigh = Math.floor(Math.random() * .2) + 1.1;
+    let delay = Math.random() * 0.025;
+    let duration;
+
+    if (pathId.slice(0, 3) === "low") {
+        duration = durationLow;
+    } else if (pathId.slice(0, 3) === "mid") {
+        duration = durationMid;
+    } else {
+        duration = durationHigh;
+    }
+
     return {
         motionPath: {
-            path: `#path${pathId}`,
+            path: `#p${pathId}`,
             autoRotate: true,
             align: "self",
         },
         scale: 0.9,
-        duration: 1,
-        ease: "slow (0.0, 0.0, true)",
-        delay: `${Math.random() * 0.025}`
+        duration: duration,
+        ease: "bounce.out",
+        delay: delay,
     }
 }
+
+const pathOptions = {}
+topShellPieces.forEach((piece, idx) => {
+    pathOptions[idx] = returnPathOption(piece.id);;
+})
 
 export const animateEgg = function () {
     eggTL.to(eggHatcher, {
@@ -248,42 +270,55 @@ export const animateEgg = function () {
         translateX: 0,
         duration: 1.2,
         ease: 'bounce.out',
-    }).to(eggHatcher, {
-        delay: -1.1,
-        scale: 1,
-        ease: 'none',
-        duration: .2,
-    }).to(shellObject[0], shellOptions) // we crack the egg
+    }).addLabel("shake")
+        .to(eggHatcher, {
+            delay: -1.1,
+            scale: 1,
+            ease: 'none',
+            duration: .2,
+        }).fromTo(
+            eggHatcher,
+            { rotate: "3deg" },
+            {
+                rotate: "-3deg",
+                duration: .1,
+                ease: 'none',
+                repeat: 3
+            },
+            "shake"
+        )
+        .to(eggHatcher, { rotate: "0deg", duration: .1 })
+        .to(shellObject[0], shellOptions, "shake+=.5") // we crack the egg
         .to(shellObject[1], shellOptions2)
         .to(shellObject[2], shellOptions2)
         .to(shellObject[3], shellOptions)
         .to(shellObject[4], shellOptions2)
         .to(shellObject[5], shellOptions)
         .to(shellObject[6], shellOptions)
-        .to(shellObject[7], shellOptions2)
+        .to(shellObject[7], shellOptions)
         .to(shellObject[8], shellOptions)
         .to(shellObject[9], shellOptions)
         .to(shellObject[10], shellOptions)
         .to(shellObject[11], shellOptions)
         .to(shellObject[12], shellOptions)
         .to(shellObject[13], shellOptions)
-        .to(shellObject[14], shellOptions2)
+        .to(shellObject[14], shellOptions)
         .addLabel("explode") // the egg explodes
-        .to(shellObject[0], returnPathOption('867'), "explode")
-        .to(shellObject[1], returnPathOption('867-72'), "explode")
-        .to(shellObject[2], returnPathOption('867-9'), "explode")
-    // .to(shellObject[3], pathOptions, "explode")
-    // .to(shellObject[4], pathOptions, "explode")
-    // .to(shellObject[5], pathOptions, "explode")
-    // .to(shellObject[6], pathOptions, "explode")
-    // .to(shellObject[7], pathOptions, "explode")
-    // .to(shellObject[8], pathOptions, "explode")
-    // .to(shellObject[9], pathOptions, "explode")
-    // .to(shellObject[10], pathOptions, "explode")
-    // .to(shellObject[11], pathOptions, "explode")
-    // .to(shellObject[12], pathOptions, "explode")
-    // .to(shellObject[13], pathOptions, "explode")
-    // .to(shellObject[14], pathOptions, "explode")
+        .to(shellObject[0], pathOptions[0], "explode")
+        .to(shellObject[1], pathOptions[1], "explode")
+        .to(shellObject[2], pathOptions[2], "explode")
+        .to(shellObject[3], pathOptions[3], "explode")
+        .to(shellObject[4], pathOptions[4], "explode")
+        .to(shellObject[5], pathOptions[5], "explode")
+        .to(shellObject[6], pathOptions[6], "explode")
+        .to(shellObject[7], pathOptions[7], "explode")
+        .to(shellObject[8], pathOptions[8], "explode")
+        .to(shellObject[9], pathOptions[9], "explode")
+        .to(shellObject[10], pathOptions[10], "explode")
+        .to(shellObject[11], pathOptions[11], "explode")
+        .to(shellObject[12], pathOptions[12], "explode")
+        .to(shellObject[13], pathOptions[13], "explode")
+        .to(shellObject[14], pathOptions[14], "explode")
     // The chick pops out
     // The chick moves a bit
     // we display our image link with our email address

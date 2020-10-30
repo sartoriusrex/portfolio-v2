@@ -6,7 +6,6 @@
 .section--contact {
 	width: 100%;
 	padding: 0 1rem;
-	max-width: 35rem;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -14,23 +13,37 @@
 
 	* {
 		color: $pastel-yellow;
-		// outline: 1px solid red;
+		padding: 0 1rem;
+		max-width: 35rem;
 	}
 
 	h2 {
 		margin: 4rem 0 2rem;
 		width: 100%;
 		max-width: 35rem;
+
+		a {
+			font-size: inherit;
+			color: inherit;
+			text-decoration: underline;
+    		text-decoration-color: $neon-pink;
+    		text-decoration-skip-ink: auto;
+			-webkit-text-decoration-skip-ink: auto;
+			text-decoration-style: wavy;
+			font-family: inherit;
+		}
 	}
 
 	p {
 		margin-bottom: 4rem;
 		font-size: 1.2rem;
+		line-height: 1.5;
 	}
 
 	#question-arrow {
 		width: 4rem;
 		margin: 0;
+		margin-bottom: 2rem;
 	}
 
 	.container--contact-animation {
@@ -38,6 +51,10 @@
 		min-height: 40rem;
 		position: relative;
 		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
 	}
 
 	form {
@@ -125,6 +142,7 @@
 
 		input {
 			width: 20%;
+			height: 1rem;
 		}
 
 		label {
@@ -152,9 +170,15 @@
 
 #email-link {
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
 
 	svg {
 		width: 800px;
+		position: absolute;
+		top: 25%;
+		left: -25%;
 	}
 
 	#egg-hatcher {
@@ -166,3 +190,13 @@
 		// transform: matrix(0.22031241,0,0,0.22031241,-591.60419,-259.8001);
 	}
 }
+
+@media screen and (min-width: $small) {
+	#email-link {
+		position: static;
+		
+		svg {
+			position: static;
+		}
+	}
+} 
