@@ -11,7 +11,7 @@ submitBtn.addEventListener('click', function (e) {
 
     const selected = Array.from(document.querySelectorAll('input')).filter(e => e.checked)[0];
 
-    scrollTo(0, animationContainer.offsetTop);
+    scrollTo(0, animationContainer.offsetTop - 100);
 
     formEl.classList.add('hidden');
     animateEgg();

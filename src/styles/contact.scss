@@ -50,11 +50,12 @@
 		width: 100%;
 		min-height: 40rem;
 		position: relative;
-		overflow: hidden;
+		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 0;
+		margin-bottom: 2rem;
 	}
 
 	form {
@@ -173,18 +174,20 @@
 	margin: 0;
 	padding: 0;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: -1;
 
 	svg {
 		width: 800px;
-		position: absolute;
-		top: 25%;
-		left: -25%;
 	}
 
 	#egg-hatcher {
 		transform: translateX(50px) scale(0);
 		transform-origin: bottom;
 	}
+
 }
 
 @media screen and (min-width: $small) {
