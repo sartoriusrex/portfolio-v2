@@ -265,12 +265,17 @@ topShellPieces.forEach((piece, idx) => {
 })
 
 export const animateEgg = function () {
-    eggTL.to(eggHatcher, {
-        delay: .1,
-        translateX: 0,
-        duration: 1.2,
-        ease: 'bounce.out',
-    }).addLabel("shake")
+    eggTL
+        // .to(chick, {
+        //     // scale: 0,
+        //     y: 100
+        // })
+        .to(eggHatcher, {
+            delay: .1,
+            translateX: 0,
+            duration: 1.2,
+            ease: 'bounce.out',
+        }).addLabel("shake")
         .to(eggHatcher, {
             delay: -1.1,
             scale: 1,
@@ -319,6 +324,12 @@ export const animateEgg = function () {
         .to(shellObject[12], pathOptions[12], "explode")
         .to(shellObject[13], pathOptions[13], "explode")
         .to(shellObject[14], pathOptions[14], "explode")
+        .to(chick, {
+            rotate: '5deg',
+            x: '1px',
+            ease: 'bounce.out',
+            duration: .5
+        }, "explode")
     // The chick pops out
     // The chick moves a bit
     // we display our image link with our email address

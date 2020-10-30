@@ -185,16 +185,12 @@
 		transform: translateX(50px) scale(0);
 		transform-origin: bottom;
 	}
-
-	#chick {
-		// transform: matrix(0.22031241,0,0,0.22031241,-591.60419,-259.8001);
-	}
 }
 
 @media screen and (min-width: $small) {
 	#email-link {
 		position: static;
-		
+
 		svg {
 			position: static;
 		}
