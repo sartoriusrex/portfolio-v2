@@ -7,16 +7,23 @@ const fs = require('fs');
 const pagesDirectory = './src/pages';
 const viewsDirectory = './src/views';
 
-console.log(fs.readdir(pagesDirectory, (err, files) => {
-	if (err) console.log(err);
-	else console.log(files)
-}));
-
 module.exports = {
-	entry: {
-		app: './src/pages/app.js',
-		contact: './src/pages/contact.js',
-	},
+	entry: fs.readdir(pagesDirectory, (err, files) => {
+		if (err) { console.log(`\n${err}\n`); return; }
+
+		let entryObject = {}
+
+		files.forEach(file => {
+			let length = file.length;
+			let name = file.slice(0, length - 3);
+
+			entryObject[name] = `${pagesDirectory}/${name}.js`;
+		});
+
+		console.log(entryObject);
+
+		return entryObject;
+	}),
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
