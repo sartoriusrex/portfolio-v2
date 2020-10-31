@@ -1,0 +1,84 @@
+<section id="contact" >
+	<div class="contact-background-one">
+		<div class="card contact-title-container">
+			<h2>Contact</h2>
+			<p>Send me a message to check my availability or to grab a coffee.</p>
+		</div>
+	</div>
+
+	<form
+		class="card contact-form"
+		name="contact-form"
+		data-netlify="true"
+		netlify-honeypot="gender"
+		method="POST"
+		action="/"
+	>
+		<p>You can reach me by 
+			<a 
+				href="mailto:dmai.developer@gmail.com"
+				rel="noopener noreferrer"
+				target="_blank"
+			>email
+			</a>
+			, this form, or download 
+			<a 
+				id="resume-link"
+				href="imgs/mai_resume.pdf"
+				rel="noopener noreferrer"
+				target="_blank"
+			>my resume.
+			</a>
+		</p>
+
+		<label 
+			id="email" 
+			for="email"
+		>email</label>
+		<input
+			type="email"
+			name="email"
+			placeholder="email"
+			required
+			aria-labelledby="email"
+		>
+
+		<label 
+			class="gender" 
+			for="gender"
+			id="gender"
+		>gender: if you are human, do not fill this out.</label>
+		<input
+			type="text"
+			name="gender"
+			placeholder="gender"
+			class="gender"
+			aria-labelledby="gender"
+		>
+
+		<label 
+			for="subject"
+			id="subject"
+		>subject</label>
+		<input
+			type="text"
+			name="subject"
+			placeholder="subject"
+			required
+			aria-labelledby="subject"
+		>
+
+		<label 
+			for="message"
+			id="message"
+		>message</label>
+		<textarea
+			name="message"
+			placeholder="message"
+			required
+			aria-labelledby="message"
+		></textarea>
+
+		<button type="submit">Send</button>
+	</form>
+</section>

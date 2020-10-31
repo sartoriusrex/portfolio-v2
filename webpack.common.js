@@ -3,11 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const fs = require('fs');
+const pagesDirectory = './src/pages';
+const viewsDirectory = './src/views';
+
+console.log(fs.readdir(pagesDirectory, (err, files) => {
+	if (err) console.log(err);
+	else console.log(files)
+}));
 
 module.exports = {
 	entry: {
-		app: './src/app.js',
-		contact: './src/contact.js',
+		app: './src/pages/app.js',
+		contact: './src/pages/contact.js',
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -21,7 +29,7 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "src/pages/index.ejs",
+			template: "src/views/index.ejs",
 			inject: true,
 			filename: "index.html",
 			chunks: ['app']
@@ -33,7 +41,7 @@ module.exports = {
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: "src/pages/contact.ejs",
+			template: "src/views/contact.ejs",
 			inject: true,
 			filename: "contact.html",
 			chunks: ['contact']
