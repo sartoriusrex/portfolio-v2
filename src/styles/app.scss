@@ -216,7 +216,7 @@ h1 {
             font-size: 1rem;
             transform: scale(0);
             transition: transform 100ms ease-in;
-            transition-delay: .25s;
+            transition-delay: .5s;
             z-index: 100;
             display: block;
         }
@@ -224,7 +224,7 @@ h1 {
 
     #i-am {
         &::after {
-            content: "This is an appeal to be my friend.";
+            content: "Read to the bottom, if you dare";
             top: 0;
             left: -4rem;
         }
@@ -236,7 +236,7 @@ h1 {
     }
     #i-work {
         &::after {
-            content: "This is me trying to toot my own  horn.";
+            content: "Personal, fun projects, really";
             width: 20rem;
             left: -4rem;
         }
@@ -247,23 +247,11 @@ h1 {
         }
     }
 
-    #i-write {
-        &::after {
-            content: "I don't write a lot, though.";
-            width: 200%;
-        }
-        &:hover {
-            &::after {
-                transform: scale(1) rotate(5deg);
-            }
-        }
-    }
-
     #i-change {
         &::after {
-            content: "This is currently the 3rd iteration. I'm getting better";
+            content: "I experiment with new tech using this site";
             left: -4rem;
-            width: 300%;
+            width: 200%;
         }
         &:hover {
             &::after {
@@ -274,7 +262,7 @@ h1 {
 
     #i-connect {
         &::after {
-            content: "...another appeal to be my friend.";
+            content: "hint: answer the question.";
             left: -4rem;
             width: 200%;
         }
