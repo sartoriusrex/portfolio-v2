@@ -4,6 +4,7 @@ const emailLink = document.getElementById('email-link');
 const submitBtn = document.getElementById('submit-answer');
 const formEl = document.querySelector('form');
 const animationContainer = document.querySelector('.container--contact-animation ');
+const eggHatcherContainer = document.querySelector('#container--egg-hatcher');
 
 submitBtn.addEventListener('click', function (e) {
     e.preventDefault();
@@ -12,7 +13,7 @@ submitBtn.addEventListener('click', function (e) {
     const selected = Array.from(document.querySelectorAll('input')).filter(e => e.checked)[0];
 
     formEl.classList.add('hidden');
-    emailLink.classList.add('shown');
+    eggHatcherContainer.classList.add('shown');
 
     let scrollToPosition = animationContainer.scrollHeight;
     window.scrollTo(0, scrollToPosition);

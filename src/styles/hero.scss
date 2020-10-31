@@ -212,6 +212,12 @@
     }
 }
 
+@media screen and (min-width: $small ) {
+    .container--interactive-cat {
+        top: -20vh;
+    }
+}
+
 .talk-box {
     width: 100%;
     max-width: 40rem;

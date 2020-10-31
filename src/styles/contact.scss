@@ -157,6 +157,19 @@
 	}
 }
 
+#email-link {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid $neon-pink;
+	transform: scale(0);
+	transition: transform 150ms linear;
+	transform-origin: center;
+
+	&.shown {
+		position: absolute;
+		transform: scale(1);
+	}
+}
+
 .container--contact-animation {
 	width: 100%;
 	position: relative;
@@ -168,7 +181,7 @@
 	margin-bottom: 2rem;
 }
 
-#email-link {
+#container--egg-hatcher {
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -192,7 +205,7 @@
 }
 
 @media screen and (min-width: $small) {
-	#email-link {
+	#container--egg-hatcher {
 		position: static;
 
 		svg {

@@ -188,40 +188,12 @@ topShellPieces.forEach((piece, idx) => shellObject[idx] = piece);
 // entire chick
 const chick = document.querySelector('#chick');
 
-// pieces
-const piece15 = document.querySelector('#path952');
-const piece16 = document.querySelector('#path956');
-const piece17 = document.querySelector('#path954');
-const piece18 = document.querySelector('#path956');
-const piece19 = document.querySelector('#path958');
-const piece20 = document.querySelector('#path960');
-const piece21 = document.querySelector('#path962');
-const piece22 = document.querySelector('#path964');
-const piece23 = document.querySelector('#path966');
-const piece24 = document.querySelector('#path968');
-const piece25 = document.querySelector('#path970');
-const piece26 = document.querySelector('#path1021');
-const piece27 = document.querySelector('#path1023');
-const piece28 = document.querySelector('#path1049');
-const piece29 = document.querySelector('#path1023-0');
-const piece30 = document.querySelector('#path984');
-const piece31 = document.querySelector('#path986');
-const piece32 = document.querySelector('#path1009');
-const piece33 = document.querySelector('#path1011');
-const piece34 = document.querySelector('#path1013');
-const piece35 = document.querySelector('#path1015');
-const piece36 = document.querySelector('#path1017');
-const piece37 = document.querySelector('#path1019');
-const piece38 = document.querySelector('#path988-2');
-const piece39 = document.querySelector('#path1007');
-const piece40 = document.querySelector('#path988');
-const piece41 = document.querySelector('#path974');
-const piece42 = document.querySelector('#path1005');
-const piece43 = document.querySelector('#path978');
-const piece44 = document.querySelector('#path980');
-const piece45 = document.querySelector('#path982');
+const leftEar = document.querySelector('#leftEar');
+const rightEar = document.querySelector('#rightEar');
 
-const eggTL = gsap.timeline();
+const eyeLidLeft = document.querySelector('#eyelidLeft');
+const eyeLidRight = document.querySelector('#eyelidRight');
+
 const shellOptions = {
     duration: .05,
     ease: 'none',
@@ -230,6 +202,17 @@ const shellOptions = {
     }
 }
 const shellOptions2 = { ...shellOptions, ...{ delay: -.5 } };
+
+const emailLink = document.querySelector('#email-link');
+
+function showEmail() {
+    emailLink.classList.add('shown');
+}
+
+const eggTL = gsap.timeline({
+    paused: true,
+    onComplete: showEmail
+});
 
 function returnPathOption(pathId) {
     let durationLow = Math.floor(Math.random() * .2) + .7;
@@ -265,17 +248,29 @@ topShellPieces.forEach((piece, idx) => {
 })
 
 export const animateEgg = function () {
-    eggTL
+    return eggTL
+        .addLabel('start')
         .to(chick, {
             scale: 0,
             duration: .001
-        })
+        }, 'start')
+        .to(eyeLidLeft,
+            {
+                scale: 0,
+                duration: .001
+            }, 'start')
+        .to(eyeLidRight,
+            {
+                scale: 0,
+                duration: .001
+            }, 'start')
         .to(eggHatcher, {
             delay: .1,
             translateX: 0,
             duration: 1.2,
             ease: 'bounce.out',
-        }).addLabel("shake")
+        })
+        .addLabel("shake")
         .to(eggHatcher, {
             delay: -1.1,
             scale: 1,
@@ -337,6 +332,59 @@ export const animateEgg = function () {
             duration: .2,
             delay: -.1
         }, "explode")
-    // The chick moves a bit
-    // we display our image link with our email address
+        .addLabel('wiggleEars')
+        .fromTo(leftEar,
+            { skewX: 0 },
+            {
+                duration: .1,
+                ease: 'none',
+                skewX: '2deg',
+                repeat: 2
+            },
+            'wiggleEars')
+        .to(leftEar,
+            {
+                skewX: 0,
+                duration: .1
+            })
+        .fromTo(rightEar,
+            { skewX: 0 },
+            {
+                duration: .1,
+                ease: 'none',
+                skewX: '-2deg',
+                repeat: 2
+            },
+            'wiggleEars')
+        .to(rightEar,
+            {
+                skewX: 0,
+                duration: .1,
+                delay: -.1
+            })
+        .to('#eyelashes', {
+            scale: 0,
+            duration: 0.001
+        })
+        .fromTo(eyeLidLeft,
+            { scale: 1 },
+            {
+                scale: 0,
+                duration: .3,
+                transformOrigin: 'top',
+                repeat: 1
+            }, 'wiggleEars')
+        .fromTo(eyeLidRight,
+            { scale: 1 },
+            {
+                scale: 0,
+                duration: .3,
+                transformOrigin: 'top',
+                repeat: 1
+            }, 'wiggleEars')
+        .to('#eyelashes', {
+            scale: 1,
+            duration: 0.001,
+            delay: -.1
+        }).play()
 }
