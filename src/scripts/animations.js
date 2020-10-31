@@ -333,8 +333,8 @@ export const animateEgg = function () {
             },
             transformOrigin: "top",
             scale: .23,
-            ease: 'bounce.out',
-            duration: 1,
+            ease: 'power1.in',
+            duration: .2,
             delay: -.1
         }, "explode")
     // The chick moves a bit
