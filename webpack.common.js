@@ -19,23 +19,29 @@ const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	(htmlPluginInstances, path) => {
 		let title;
+		let description;
 		const name = path.slice(viewsDirectory.length, path.length - 4);
 
 		switch (name) {
 			case "index":
-				title = "Dennis Mai // Personal Website!";
+				title = "Dennis Mai // Making it interesting since 1988!";
+				description = "Dennis Mai, trying to make the web weirder, more original, more niche, more 90s. This is his personal and authentic web garden.";
 				break;
 			case "contact":
 				title = "Contact Dennis Mai";
+				description = "The easiest way to contact Dennis Mai, even if you're sitting next to him.";
 				break;
 			case "about":
 				title = "Wait, who's Dennis Mai?";
+				description = "A short, probably true description of who and why Dennis Mai is. Who really knows, though?";
 				break;
 			case "projects":
 				title = "Some Things Dennis Mai has worked on";
+				description = "Some of the projects Dennis Mai has or is working on; A lot of them are kind of embarassing, but that's okay.";
 				break;
 			case "writing":
 				title = "Some Things Dennis Mai has written";
+				description = "The written word of Dennis Mai. Some would say it's worth less than its weight in iceberg lettuce, or even celery. They're just jealous.";
 				break;
 			default:
 				title = fs.readFile(path, 'utf8', function (err, data) {
@@ -46,6 +52,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 					console.log(data);
 					return data;
 				});
+				description = "This is a blog post.";
 		}
 
 		let newInstance = new HtmlWebpackPlugin({
@@ -58,7 +65,10 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			template: path,
 			inject: true,
 			filename: `${name}.html`,
-			chunks: [`${name}`]
+			chunks: [`${name}`],
+			meta: {
+				description
+			}
 		});
 
 		return [...htmlPluginInstances, newInstance]
