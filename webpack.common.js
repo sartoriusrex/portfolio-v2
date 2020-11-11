@@ -4,30 +4,68 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const fs = require('fs');
-const pagesDirectory = './src/pages';
-const viewsDirectory = './src/views';
+const glob = require('glob');
+const pagesDirectory = './src/pages/';
+const viewsDirectory = './src/views/';
+
+const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
+	(entries, path) => {
+		const name = path.slice(pagesDirectory.length, path.length - 3);
+		entries[name] = path;
+		return entries;
+	}, {}
+);
+
+const plugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
+	(htmlPluginInstances, path) => {
+		let title;
+		const name = path.slice(viewsDirectory.length, path.length - 3);
+
+		switch (name) {
+			case "index":
+				title = "Dennis Mai // Personal Website!";
+			case "contact":
+				title = "Contact Dennis Mai";
+			case "about":
+				title = "Wait, who's Dennis Mai?";
+			case "projects":
+				title = "Some Things Dennis Mai has worked on";
+			case "writing":
+				title = "Some Things Dennis Mai has written";
+			default:
+				title = fs.readFile(path, 'utf8', function (err, data) {
+					if (err) {
+						return console.log(err);
+					}
+
+					console.log(data);
+					return data;
+				});
+		}
+		return new HtmlWebpackPlugin({
+			title,
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true
+			},
+			template: path,
+			inject: true,
+			filename: `${name}.html`,
+			chunks: [name]
+		})
+	}, []
+);
+
+console.log(plugins);
 
 module.exports = {
-	entry: fs.readdir(pagesDirectory, (err, files) => {
-		if (err) { console.log(`\n${err}\n`); return; }
-
-		let entryObject = {}
-
-		files.forEach(file => {
-			let length = file.length;
-			let name = file.slice(0, length - 3);
-
-			entryObject[name] = `${pagesDirectory}/${name}.js`;
-		});
-
-		console.log(entryObject);
-
-		return entryObject;
-	}),
+	entry: entries,
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
+	plugins: [],
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: "Dennis Mai Personal Website",
@@ -42,7 +80,7 @@ module.exports = {
 			chunks: ['app']
 		}),
 		new HtmlWebpackPlugin({
-			title: "test",
+			title: "Contact",
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
