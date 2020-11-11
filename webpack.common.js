@@ -16,22 +16,27 @@ const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	}, {}
 );
 
-const plugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
+const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	(htmlPluginInstances, path) => {
 		let title;
-		const name = path.slice(viewsDirectory.length, path.length - 3);
+		const name = path.slice(viewsDirectory.length, path.length - 4);
 
 		switch (name) {
 			case "index":
 				title = "Dennis Mai // Personal Website!";
+				break;
 			case "contact":
 				title = "Contact Dennis Mai";
+				break;
 			case "about":
 				title = "Wait, who's Dennis Mai?";
+				break;
 			case "projects":
 				title = "Some Things Dennis Mai has worked on";
+				break;
 			case "writing":
 				title = "Some Things Dennis Mai has written";
+				break;
 			default:
 				title = fs.readFile(path, 'utf8', function (err, data) {
 					if (err) {
@@ -42,7 +47,8 @@ const plugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 					return data;
 				});
 		}
-		return new HtmlWebpackPlugin({
+
+		let newInstance = new HtmlWebpackPlugin({
 			title,
 			minify: {
 				removeAttributeQuotes: true,
@@ -52,12 +58,12 @@ const plugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			template: path,
 			inject: true,
 			filename: `${name}.html`,
-			chunks: [name]
-		})
+			chunks: [`${name}`]
+		});
+
+		return [...htmlPluginInstances, newInstance]
 	}, []
 );
-
-console.log(plugins);
 
 module.exports = {
 	entry: entries,
@@ -65,43 +71,19 @@ module.exports = {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
-	plugins: [],
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: "Dennis Mai Personal Website",
-			minify: {
-				removeAttributeQuotes: true,
-				collapseWhitespace: true,
-				removeComments: true
-			},
-			template: "src/views/index.ejs",
-			inject: true,
-			filename: "index.html",
-			chunks: ['app']
-		}),
-		new HtmlWebpackPlugin({
-			title: "Contact",
-			minify: {
-				removeAttributeQuotes: true,
-				collapseWhitespace: true,
-				removeComments: true
-			},
-			template: "src/views/contact.ejs",
-			inject: true,
-			filename: "contact.html",
-			chunks: ['contact']
-		}),
-		new MiniCssExtractPlugin({
-			filename: "[name].css",
-			chunkFilename: "[id].css",
-		}),
-		new Critters({
-			fonts: true,
-			preload: "js-lazy",
-			noscriptFallback: true
-		}),
-		new CleanWebpackPlugin(),
-	],
+	plugins:
+		htmlPlugins.concat([
+			new MiniCssExtractPlugin({
+				filename: "[name].css",
+				chunkFilename: "[id].css",
+			}),
+			new Critters({
+				fonts: true,
+				preload: "js-lazy",
+				noscriptFallback: true
+			}),
+			new CleanWebpackPlugin(),
+		]),
 	module: {
 		rules: [
 			{

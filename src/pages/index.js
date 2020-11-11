@@ -1,4 +1,4 @@
-import '../styles/app.scss';
+import '../styles/index.scss';
 import '../scripts/images';
 // import. './moreAboutMe';
 import '../scripts/animations';
