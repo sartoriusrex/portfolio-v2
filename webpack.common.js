@@ -28,19 +28,19 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				description = "Dennis Mai, trying to make the web weirder, more original, more niche, more 90s. This is his personal and authentic web garden.";
 				break;
 			case "contact":
-				title = "Contact Dennis Mai";
+				title = "Dennis Mai // Contact me!";
 				description = "The easiest way to contact Dennis Mai, even if you're sitting next to him.";
 				break;
 			case "about":
-				title = "Wait, who's Dennis Mai?";
+				title = "Dennis Mai // Wait, who?";
 				description = "A short, probably true description of who and why Dennis Mai is. Who really knows, though?";
 				break;
 			case "projects":
-				title = "Some Things Dennis Mai has worked on";
+				title = "Dennis Mai // Some Things Dennis Mai has worked on";
 				description = "Some of the projects Dennis Mai has or is working on; A lot of them are kind of embarassing, but that's okay.";
 				break;
 			case "writing":
-				title = "Some Things Dennis Mai has written";
+				title = "Dennis Mai // Some Things Dennis Mai has written";
 				description = "The written word of Dennis Mai. Some would say it's worth less than its weight in iceberg lettuce, or even celery. They're just jealous.";
 				break;
 			default:
@@ -56,7 +56,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		}
 
 		let newInstance = new HtmlWebpackPlugin({
-			title,
+			title: title,
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
@@ -67,7 +67,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			filename: `${name}.html`,
 			chunks: [`${name}`],
 			meta: {
-				description
+				description: description
 			}
 		});
 
