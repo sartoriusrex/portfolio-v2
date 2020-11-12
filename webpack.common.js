@@ -10,7 +10,7 @@ const viewsDirectory = './src/views/';
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
-		const name = path.slice(pagesDirectory.length, path.length - 3);
+		const name = path.split('.')[1].split('/')[3];
 		entries[name] = path;
 		return entries;
 	}, {}
@@ -20,7 +20,9 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	(htmlPluginInstances, path) => {
 		let title;
 		let description;
-		const name = path.slice(viewsDirectory.length, path.length - 4);
+		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
+		const name = path.split('.')[1].split('/')[3];
+		console.log(name);
 
 		switch (name) {
 			case "index":
@@ -53,10 +55,17 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 					return data;
 				});
 				description = "This is a blog post.";
+				keywords = "example keywords";
+		}
+
+		const themeColor = '';
+		const httpEquiv = {
+			'http-equiv': 'Content-Security-Policy',
+			'content': 'default-src self'
 		}
 
 		let newInstance = new HtmlWebpackPlugin({
-			title: title,
+			title,
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
@@ -67,7 +76,10 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			filename: `${name}.html`,
 			chunks: [`${name}`],
 			meta: {
-				description: description
+				description,
+				keywords,
+				'Content-Security-Policy': httpEquiv,
+				'theme-color': themeColor
 			}
 		});
 
