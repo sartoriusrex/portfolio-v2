@@ -5,8 +5,24 @@ const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const fs = require('fs');
 const glob = require('glob');
+const { Markdown } = require("@cenguidanos/node-markdown-parser");
+
 const pagesDirectory = './src/pages/';
 const viewsDirectory = './src/views/';
+const blogDirectory = './src/posts/';
+
+const markdown = new Markdown();
+
+const blogNameArray = fs.readdirSync(blogDirectory, async (err, files) => {
+	if (err) { return console.log(err) }
+	return files
+});
+
+const blogdata = blogNameArray.map(file =>
+	markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
+);
+
+console.log(blogdata);
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
@@ -22,7 +38,6 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		let description;
 		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
 		const name = path.split('.')[1].split('/')[3];
-		console.log(name);
 
 		switch (name) {
 			case "index":

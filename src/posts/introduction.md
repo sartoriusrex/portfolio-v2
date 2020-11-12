@@ -1,9 +1,6 @@
----json
-{
-    "keywords": "Dennis Mai, Blog, Development, Weir Wide Web"
-}
 ---
-
+keywords: Dennis Mai, Blog, Development, Weir Wide Web
+---
 
 # Introduction to this Blog
 
