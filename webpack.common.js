@@ -22,7 +22,7 @@ const blogdata = blogNameArray.map(file =>
 	markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
 );
 
-console.log(blogdata);
+blogdata.forEach(file => console.log(file));
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
