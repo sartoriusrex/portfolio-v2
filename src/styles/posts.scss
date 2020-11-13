@@ -1,0 +1,10 @@
+@import "_variables";
+@import "style";
+@import "navigation";
+@import "footer";
+
+p {
+    padding: 0 1rem;
+    line-height: 1.2;
+    color: red;
+}
