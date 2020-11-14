@@ -25,23 +25,21 @@ const blogData = blogNameArray.map(file =>
 //Create ejs files from posts, which are markdown files;
 Promise.all(blogData.map(async data => {
 	// Create ejs file using markdown data
-	const topSection =
-		`
+	const topSection = `
 <main>
 <% include ../components/header %>
 <section class="section--blog">
 `
 
-	const bottomSection =
-		`
+	const bottomSection = `
 </section>
 </main>
-
 <% include ../components/footer %>
 `
-
+	// content to write is the header, data body, and footer
 	const content = `${topSection} ${data.body} ${bottomSection}`
 
+	// name is the id of the first item of the toc array
 	const name = data.toc[0].id;
 
 	// write the file to the views directory
@@ -88,10 +86,11 @@ const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 
 const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	(htmlPluginInstances, path) => {
+		const name = path.split('.')[1].split('/')[3];
 		let title;
 		let description;
 		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
-		const name = path.split('.')[1].split('/')[3];
+		let isBlogPost = false;
 
 		switch (name) {
 			case "index":
@@ -119,8 +118,11 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				title = post.title;
 				description = post.description;
 				keywords = post.keywords;
+				isBlogPost = true;
+				break;
 		}
 
+		const chunkName = isBlogPost ? 'posts' : name;
 		const themeColor = '#FE53BB';
 		const httpEquiv = {
 			'http-equiv': 'Content-Security-Policy',
@@ -137,7 +139,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			template: path,
 			inject: true,
 			filename: `${name}.html`,
-			chunks: [`${name}`],
+			chunks: [`${chunkName}`],
 			meta: {
 				description,
 				keywords,
@@ -161,10 +163,7 @@ module.exports = {
 	plugins:
 		htmlPlugins
 			.concat([
-				new MiniCssExtractPlugin({
-					filename: "[name].css",
-					chunkFilename: "[id].css",
-				}),
+				new MiniCssExtractPlugin(),
 				new Critters({
 					fonts: true,
 					preload: "js-lazy",
@@ -191,10 +190,6 @@ module.exports = {
 					},
 					'sass-loader'
 				]
-			},
-			{
-				test: /\.html$/,
-				use: ["html-loader"]
 			},
 			{
 				test: /\.ejs$/,
