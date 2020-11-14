@@ -4,14 +4,22 @@ title: Dennis Mai - Introduction to My Blog
 description: A short introduction to Dennis Mai's blog and website.
 ---
 
-# Introduction to this Blog
+# Introduction to this Website and Blog
 
-Hello! My name is Dennis Mai. I'm a husband, father, developer, tinkerer, creative, and jiu-jiteiro. In that order. I'm a lot of other things, too, and you'll figure a lot of that out if you read more. But that's sufficient to start.
+Greetings brave world wide web surfer[*](#note1) and welcome back to the weird web!
 
-I write about technology, culture, society, Brazilian Jiu Jitsu, Fatherhood, being a husband (husband...hood?), and other things, too.
+This website is an expression of myself, my tastes, my thoughts. It's a throwback to the indie web, when people were using AOL Instant Messenger, MSN Messenger, Xanga, MySpace, LiveJournal, and Google Blogs to connect with others. This is my digital garden, and I hope it evokes the same sense of nostalgia for you as it does for me for a time long past.
 
-I've made this blog--and my personal website--as unique to me as possible. Some times that means the site won't load quickly. Some times that means it's not 100% accessible. And some times it means it will just weird you out a little bit. Or a lot. Anyway, it's a work in progress. I try to make sure everybody can digest my content, but, you know what? I won't be able to make everyone happy. And that's okay. That's life. I'm sorry if I offend any of you (truly, I am).
+## An innocent time...
+
+This website is also my own custom blog. It is far from perfect, but it's mine. In here, I write about technology, culture, society, Brazilian Jiu Jitsu, Fatherhood, being a husband (husband...hood?), and other things, too. I hope my writing inspires and provokes you, dear reader.
+
+## This place isn't 100% Accessible
+
+I try to make sure everybody can digest my content, but, you know what? I won't be able to make everyone happy. And that's okay. That's life. I'm sorry if I offend any of you (truly, I am). This place is a work in progress, and I will continue to make it as accessible to as many people as I can.
 
 That said, you can always send me feedback via email.
 
 Enjoy the tour, and and I hope you'll be inspiried to make the web a little bit better. And a little bit weirder.
+
+<a name=note1 ></a> When the internet was first becoming popular, it was called the "World Wide Web", and those browsing the internet then were "surfing the web." Good times.
