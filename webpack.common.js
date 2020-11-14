@@ -78,11 +78,14 @@ blogdata.forEach(file => console.log(file));
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
-		const name = path.split('.')[1].split('/')[3];
+		let name = path.split('.')[1].split('/')[3];
+		if (name === 'posts') name = 'posts1';
 		entries[name] = path;
 		return entries;
 	}, {}
 );
+
+let blogCount = 0;
 
 const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	(htmlPluginInstances, path) => {
@@ -119,10 +122,11 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				description = post.description;
 				keywords = post.keywords;
 				isBlogPost = true;
+				blogCount++;
 				break;
 		}
 
-		const chunkName = isBlogPost ? 'posts' : name;
+		const chunkName = isBlogPost ? `posts${blogCount}` : name;
 		const themeColor = '#FE53BB';
 		const httpEquiv = {
 			'http-equiv': 'Content-Security-Policy',
@@ -152,10 +156,21 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 	}, []
 );
 
+/*
+	Because I could not get webpack's splitChunk optimization to work correctly
+	I ended up just getting the number of blog posts and creating a bundle for each one, each referencing the same posts.js
 
+	This is not ideal, especially as the app grows in size. When that happens, I'll probably migrate to eleventy or Next.js anyway.
+
+	For now, it will work.
+*/
+const blogEntries = {};
+blogNameArray.forEach((name, idx) => {
+	blogEntries[`posts${idx + 1}`] = `${pagesDirectory}posts.js`
+});
 
 module.exports = {
-	entry: entries,
+	entry: { ...entries, ...blogEntries }, // Combine the normal pages with the blog pages, which would normally not be necessary
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
