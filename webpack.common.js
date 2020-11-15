@@ -118,6 +118,27 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				break;
 			default:
 				let post = blogData.filter(data => data.toc[0].id === name)[0];
+
+				// post was deleted
+				if (post === undefined) {
+					let file = `${viewsDirectory}${name}.ejs`;
+					fs.unlinkSync(file, (err) => {
+						if (err) {
+							console.log(err);
+							throw err;
+						}
+
+						console.log(`Deleted ${file}.`)
+					});
+
+					return htmlPluginInstances;
+				}
+
+				// post is missing the properties below
+				if (post.title === undefined) post.title = '';
+				if (post.description === undefined) post.description = '';
+				if (post.keywords === undefined) post.keywords = '';
+
 				title = post.title;
 				description = post.description;
 				keywords = post.keywords;
