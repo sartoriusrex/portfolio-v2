@@ -1,7 +1,12 @@
+# Fonts
+
+1. Merriweather
+2. Fira Mono
+
 # Color Scheme(s)
 
 ## Neutrals:
-- black: #000000;
+- black: #222222;
 - white: #FEFEFE;
 - gray: #ACACAC;
 

@@ -13,16 +13,19 @@ const blogDirectory = './src/posts/';
 
 const markdown = new Markdown();
 
+// Get the name of each file in the src/posts directory
 const blogNameArray = fs.readdirSync(blogDirectory, async (err, files) => {
 	if (err) { return console.log(err) }
 	return files
 });
 
+// Using the array of names above, we grab the data rom each file and transform it to html using the node-markdown-parser package
 const blogData = blogNameArray.map(file =>
 	markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
 );
 
-//Create ejs files from posts, which are markdown files;
+// Using our blog data above, create ejs files from posts
+// Then we get a list of all those files and inject this list as a variable at the top of writing.ejs, in order to correctly reference it.
 Promise.all(blogData.map(async data => {
 	// Create ejs file using markdown data
 	const topSection = `
