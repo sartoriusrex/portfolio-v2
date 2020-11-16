@@ -65,17 +65,21 @@ Promise.all(blogData.map(async data => {
 	// add blogFiles as data at in writing.ejs
 	const blogIndexFile = './src/views/writing.ejs';
 	let blogIndexData = fs.readFileSync(blogIndexFile, 'utf8').split('\n');
-	blogIndexData.shift();
-	let NewBlogIndexData = [dataToAdd, ...blogIndexData];
-	let newData = NewBlogIndexData.join('\n')
+	let blogdataVariable = blogIndexData.shift();
+	console.log(dataToAdd === blogdataVariable)
 
-	try {
-		return await fs.writeFileSync(blogIndexFile, newData, 'utf8', (err, data) => {
-			if (err) return console.log(err);
-			console.log(`\nWrote ${data} to writing.ejs\n`);
-		});
-	} catch (err) {
-		return console.log('Error attempting to write blogData.ejs', err);
+	if (blogdataVariable !== dataToAdd) {
+		let NewBlogIndexData = [dataToAdd, ...blogIndexData];
+		let newData = NewBlogIndexData.join('\n')
+
+		try {
+			return await fs.writeFileSync(blogIndexFile, newData, 'utf8', (err, data) => {
+				if (err) return console.log(err);
+				console.log(`\nWrote ${data} to writing.ejs\n`);
+			});
+		} catch (err) {
+			return console.log('Error attempting to write blogData.ejs', err);
+		}
 	}
 });
 
