@@ -172,9 +172,9 @@
 	transform: translateX(100vw) skewX(-45deg);
 	transition: transform 300ms linear;
 	transform-origin: center;
+	position: absolute;
 
 	&.shown {
-		position: absolute;
 		transform: translateX(0) skewX(0deg);
 		z-index: 10;
 	}
