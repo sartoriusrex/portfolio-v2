@@ -1,0 +1,17 @@
+<% var blogData = ["how-i-made-this-blog.html","introduction-to-this-website-and-blog.html"] %>
+
+<main>
+    <% include ../components/header %>
+    <h1>My Blog and Brain Niche</h1>
+    <p>You can find all of my writing here.</p>
+    <ul>
+        <% blogData.forEach( function(file) { %>
+        <li>
+            <a
+                href="<%= file %>"><%=file.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
+        </li>
+        <% }) %>
+    </ul>
+
+</main>
+<% include ../components/footer %>

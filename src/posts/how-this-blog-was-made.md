@@ -44,13 +44,63 @@ Okay, GSAP is my 20%. I had never worked with GSAP before and had only heard goo
 
 ### Project Setup
 
+
+```
+root    |- configs...
+        |- src  |- components
+                |- fonts
+                |- images
+                |- pages
+                |- posts
+                |- scripts
+                |- styles
+                |- views
+```
 I have all the code in the root/src folder with configs for postcss and webpack under the root directory. I use separate webpack configs for dev and production and use webpack-merge to merge them with common configurations.
 
 I am also hosting on Netlify, which is its own topic.
 
-In my src folder, I have directories for images, fonts, components, posts, scripts, styles, and views.
+In my src folder, I have directories hosting my assets.
 
-You can really have it any way you like, such as having styles next to their pages (or their views or their components. It doesn't matter).
+I have styles in its own folder, but you can host them any way you like, including next to their pages (or their views or their components or wherever. It doesn't matter).
 
-The key is that my Webpack entry points are pointing the pages directory. Each file there is its own entrypoint, except for blog posts, which I'll get to later.
+Of particular importance are my pages, posts, and views folders.
+
+#### Multi-page sites with Webpack
+
+My Webpack entry points are pointing the pages directory. Each file there there is its own entrypoint, except for blog posts. There is 1 entrypoint for each post (in the posts directory), which all use the same styles and javscript. This is not ideal, but I couldn't get webpack to reuse my entrypoints with the splutChunks options. I might try it again later, but it was extremely frustrating.
+
+#### Transform Markdown to EJS and then to plain HTML
+
+I am using [@cenguidanos/node-markdown-parser](https://github.com/cenguidanos/node-markdown-parser) to return an array of all my posts with their meta content such as title, description and keywords in a json object. To do that, I make use of ```fs.readdirSync``` and ```fs.readFileSync``` to grab the all the posts and their data.
+
+With that data, I construct an ejs template that reuses header and footer components. I then write the template to a corresponding ejs file in the views directory using ```fs.writeFile```.
+
+#### Dynamic entry object for Webpack
+
+Before I create any html files, though, I have to create my entry points for Webpack. Using the pages directory, I construct an object with the name of the page file and its path. For posts, I begin with the name 'posts1', since I will need to create 1 entry for each blog post (ugh. Annoying. And VERY non-performant).
+
+#### The HTML files
+
+Now, in order to create all those html files with their css and js files embedded, I get all the ejs files from the views directory and use the [glob](https://www.npmjs.com/package/glob) package to get their paths. It's also possible with the fs module, but glob is easier.
+
+I then use ```Array.reduce()``` to construct a new array of HtmlWebpackPlugin instances of ALL the ejs files, injecting their meta data and associating the appropriate chunk (css and js file) with their names. if they are posts, I have to handle them slightly differently.
+
+Here, I also check if the ejs file is associated with a post that was deleted (no longer in the posts directory). If it's not there, posts is undefined, so I use ```fs.unlink``` to delete it from the views.
+
+In the Webpack Plugins array, I concat the HtmlWebpackPlugins array with MiniCssExtractPlugin, Critters to inline the css, and CleanWebpackPlugin.
+
+The rest is of my webpack config is just configuring scss, ejs, injecting my fonts and images, and setting node rules for different modules.
+
+And there you have it!
+
+#### Caveat
+
+With ejs templates in webpack, the dev server with not reload the browser if there are nested ejs templates, which is annoying. The dev server only check if the entrypoint files or their indexes (root ejs pages) have changed.
+
+## Summary
+
+This was a lot of setup for a small blog. But it's pretty lightweight, and a lot easier to set up than a full-blown blog CRUD app.
+
+That set, it's probably easier to use Huge, Jekyll, or Eleventy. I'll experiment with those later.
 

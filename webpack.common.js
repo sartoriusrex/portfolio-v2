@@ -42,16 +42,42 @@ Promise.all(blogData.map(async data => {
 	// name is the id of the first item of the toc array
 	const name = data.toc[0].id;
 
+	// name of the file
+	const file = `${viewsDirectory}${name}.ejs`
+
 	// write the file to the views directory
 	try {
-		return await fs.writeFile(`${viewsDirectory}${name}.ejs`, content, 'utf8', (err) => {
+		await fs.writeFile(file, content, 'utf8', (err) => {
 			if (err) return err;
-			return console.log(`Wrote data to ${name}`)
+			console.log(`Wrote data to ${name}\n`);
 		})
 	} catch (err) {
 		return console.log(`Catch block: Cannot write to file ${name}: `, err);
+	} finally {
+		return file;
 	}
-}));
+})).then(async blogFiles => {
+	const startStr = `<% var blogData = [`
+	const endStr = `] %>`;
+	const data = blogFiles.map(file => `"${file.split('.')[1].split('/')[3]}.html"`);
+	const dataToAdd = startStr + data + endStr;
+
+	// add blogFiles as data at in writing.ejs
+	const blogIndexFile = './src/views/writing.ejs';
+	let blogIndexData = fs.readFileSync(blogIndexFile, 'utf8').split('\n');
+	blogIndexData.shift();
+	let NewBlogIndexData = [dataToAdd, ...blogIndexData];
+	let newData = NewBlogIndexData.join('\n')
+
+	try {
+		return await fs.writeFileSync(blogIndexFile, newData, 'utf8', (err, data) => {
+			if (err) return console.log(err);
+			console.log(`\nWrote ${data} to writing.ejs\n`);
+		});
+	} catch (err) {
+		return console.log('Error attempting to write blogData.ejs', err);
+	}
+});
 
 /*
 blogdata.forEach(file => console.log(file));
@@ -94,6 +120,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		let description;
 		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
 		let isBlogPost = false;
+		let posts = [];
 
 		switch (name) {
 			case "index":
@@ -115,6 +142,8 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			case "writing":
 				title = "Dennis Mai // Some Things Dennis Mai has written";
 				description = "The written word of Dennis Mai. Some would say it's worth less than its weight in iceberg lettuce, or even celery. They're just jealous.";
+
+				posts = ['test1', 'test2'];
 				break;
 			default:
 				let post = blogData.filter(data => data.toc[0].id === name)[0];
@@ -170,7 +199,8 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				keywords,
 				'Content-Security-Policy': httpEquiv,
 				'theme-color': themeColor
-			}
+			},
+			posts
 		});
 
 		return [...htmlPluginInstances, newInstance]
@@ -185,6 +215,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 
 	For now, it will work.
 */
+
 const blogEntries = {};
 blogNameArray.forEach((name, idx) => {
 	blogEntries[`posts${idx + 1}`] = `${pagesDirectory}posts.js`
