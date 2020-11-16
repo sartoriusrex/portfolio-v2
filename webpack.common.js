@@ -66,11 +66,11 @@ Promise.all(blogData.map(async data => {
 	const blogIndexFile = './src/views/writing.ejs';
 	let blogIndexData = fs.readFileSync(blogIndexFile, 'utf8').split('\n');
 	let blogdataVariable = blogIndexData.shift();
-	console.log(dataToAdd === blogdataVariable)
 
+	// Compare if the variables aka the blog posts list has changed. if it has, rewrite writing.ejs
 	if (blogdataVariable !== dataToAdd) {
-		let NewBlogIndexData = [dataToAdd, ...blogIndexData];
-		let newData = NewBlogIndexData.join('\n')
+		let newBlogIndexData = [dataToAdd, ...blogIndexData];
+		let newData = newBlogIndexData.join('\n')
 
 		try {
 			return await fs.writeFileSync(blogIndexFile, newData, 'utf8', (err, data) => {
