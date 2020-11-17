@@ -2,7 +2,11 @@
     <% include ../components/header %>
     <section class="about-me">
 
-        <h1>About Me!</h1>
+        <h1 id="about-me">About Me!</h1>
+
+        <div class='container--image'>
+            <img src="imgs/me.png" alt="Me, Dennis Mai" />
+        </div>
 
         <p>Oooo! It's not every day I get to toot my own horn!</p>
 
@@ -10,46 +14,84 @@
             Jitsu Blue Belt, Atheist (capital 'A'), amateur Table Tennis competitor, half-marathon runner, lake-swimmer,
             bear-chasing backpacking guide, and ravenous reader of many genres.</p>
 
+        <img class="plain-image" src="https://media.giphy.com/media/MHKl0gVYw0RTq/giphy.gif"
+            alt="Forrest Gump playing table tennis.">
+
         <p>Here are some random facts about me.</p>
 
         <ul>
-            <li>As of November 16, 2020, my favorite cheese has got to be<a href="https://cheese.com/reblochon/"
-                    target="_blank" rel="noopener noreferrer">Reblochon</a>, but a close second is Gruyere (as old as
+            <li>As of November 16, 2020, my favorite cheese has got to be <a href="https://cheese.com/reblochon/"
+                    target="_blank" rel="noopener noreferrer">Reblochon</a>, but a close second is Wildberger, followed
+                by Gruyere (as old as
                 they
-                make it)</li>
-            <li>Currently, my favorite color is Violet (Hex: #EE82EE)</li>
-            <li>I love wool.</li>
+                make it).</li>
+            <li>Currently, my favorite color is <a href="https://www.color-hex.com/color/ee82ee" target="_blank"
+                    rel="noopener noreferrer">Violet</a> (Hex: #EE82EE).</li>
+            <li>I love <a href="https://www.sierra.com/lp2/wool-guide/" target="_blank"
+                    rel="noopener noreferrer">wool.</a></li>
         </ul>
 
-        <p>Why am I telling this? Because I'm unashamed of who I am, including my faults. And despite it all, I still
-            love the world,
-            its people, and the wonderful creations that surround us, both natural and man-made.</p>
+        <p>I am unashamed of who I am and unafraid to share it. And despite everything, I still love this world and all
+            its creations, both natural and man-made.</p>
 
-        <p>The internet used to be a strange, wonderous, inspiring place where we could discover
-            others and dive into an endless pool of interesting facts and non-facts.</p>
+        <p>I'm writing this to add <em>authenticity</em> to our digital lives.</p>
+
+        <p>The internet used to be a strange, wonderous, slow and inspiring place where we could discover others and
+            drown in a sea of interesting facts and non-facts.</p>
+
+        <img class="plain-image" src="https://media.giphy.com/media/QWkuGmMgphvmE/source.gif"
+            alt="Dial up internet, back in the day">
 
         <p>The internet used to be weird, too. And while it's still full of information and connections, it's lost some
-            of <em>that magic.</em> I, and others, still want to keep that spirit alive.</p>
+            of <a
+                href="https://www.bustle.com/articles/102641-10-websites-from-the-early-2000s-you-forgot-about-because-sometimes-you-just-need-a-little"
+                target="_blank" rel="noopener noreferrer"><em>that magic.</em></a></p>
+
+        <p>I, and others, still want to keep that spirit alive.</p>
 
         <p>And so that is why I am here, hand-coding this website and blog, putting my own personal touch and taste into
-            everything. I hope this place inspires you. I hope it weirds you out a bit. I hope it delights you.</p>
+            everything.</p>
 
-        <p>For more information about me, you can use the links in <a href="#the-footer">The Footer</a> or <a
-                href="contact.html">Connect with me by email</a></p>
+        <p>I hope this place inspires you. I hope it weirds you out a bit. I hope it delights you.</p>
+
+        <p>For more information about me, you can use the links in <a href="#the-footer">The Footer</a>
+            or <a href="contact.html">Connect with me by email</a></p>
 
         <p>Thanks for reading.</p>
 
-        <p>Here's another random picture of me</p>
+        <img class="plain-image" src="https://media.giphy.com/media/JlpjgShzDsrMIyFu5U/giphy-downsized.gif"
+            alt="Thank you.">
+
+        <p>Here's another random picture of me, in ASCII art.</p>
+
+        <div class="container--image second-pic">
+            <img src="imgs/portrait-ascii.png" alt="Me in ASCII!">
+        </div>
+
+        <p id="bye">K, Bye!</p>
+
+        <% include ../images/bunny.svg %>
+        <marquee behavior="scroll" direction="left" scrollamount="10">Credit goes to my wife for designing this weirdo.
+        </marquee>
 
         <p>Oh, you're still here? Okay, I'll tell you more.</p>
 
-        <p>I was born (and raised) in Wichita, Kansas to Vietnamese refugees. English was my second language, but not my
-            last. I studied Economics and Spanish at Wichita State University and studied abroad for 1 year in Murcia,
-            Spain, where I met my bombastic Swiss wife. I graduated, moved to Switzerland, learned German and French,
-            got married, and started our family in Zurich. We got bored, so we moved to Kauai, Hawaii. Now, you can find
-            us romping in the snow and lakes back in Switzerland.</p>
+        <p>I was born (and raised) in Wichita, Kansas to Vietnamese refugees.</p>
 
+        <p>English was my second language, but not my last. I studied Economics and Spanish at Wichita State University
+            and studied abroad for 1 year in Murcia, Spain, where I met my bombastic Swiss wife.</p>
 
+        <p>I graduated, moved to Switzerland, learned German and French, got married, and started our family in Zurich.
+        </p>
+
+        <p class='last-p'>We got bored, so we moved to Kauai to adventure there for 4 years! Now, you can find us
+            romping in the snow and lakes back in Switzerland.</p>
+
+        <a id="link-to-contact-p" href="#about-me">Go Back Up</a>
+
+        <h3>The Footer</h3>
+
+        <% include ../images/question-arrow.svg %>
 
     </section>
 </main>
