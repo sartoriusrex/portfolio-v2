@@ -187,7 +187,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		const themeColor = '#FE53BB';
 		const httpEquiv = {
 			'http-equiv': 'Content-Security-Policy',
-			'content': 'default-src self'
+			'content': `default-src 'self' ${name === 'index' ? 'connect-src  https://catfact.ninja/' : ''}`
 		}
 
 		let newInstance = new HtmlWebpackPlugin({
@@ -204,7 +204,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			meta: {
 				description,
 				keywords,
-				'Content-Security-Policy': httpEquiv,
+				// 'Content-Security-Policy': httpEquiv,
 				'theme-color': themeColor
 			},
 			posts
@@ -252,16 +252,7 @@ module.exports = {
 				use: [
 					MiniCssExtractPlugin.loader,
 					'css-loader',
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								plugins: [
-									require('autoprefixer')
-								]
-							}
-						}
-					},
+					'postcss-loader',
 					'sass-loader'
 				]
 			},

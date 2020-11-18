@@ -18,9 +18,14 @@ const getFact = async function () {
 }
 
 const updateFact = async function () {
-    const fact = await getFact();
+    try {
+        const fact = await getFact();
 
-    factContainer.innerText = fact;
+        factContainer.innerText = fact;
+    } catch (err) {
+        console.log(err);
+        factContainer.innerText = "Ah! We ran out of cat facts!"
+    }
 }
 
 // Remove styling from all the .cat s
