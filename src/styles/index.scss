@@ -9,8 +9,8 @@
 @import "footer";
 
 h1 {
-    padding: 1rem;
-    border: .5rem dashed $neon-yellow;
+    padding: .5rem;
+    border: .25rem dashed $neon-yellow;
     transform: rotate(-5deg);
     margin: 1rem;
     z-index: 10;
@@ -22,9 +22,8 @@ h1 {
 }
 
 .container--byline {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    padding: 1rem;
+    font-size: 1.25rem;
+    padding: .5rem;
     text-align: center;
     max-width: 35rem;
     margin-bottom: 3rem;
@@ -87,6 +86,7 @@ h1 {
 .container--about-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 40rem;
 
     h2, p, em, a, span {
@@ -135,9 +135,11 @@ h1 {
         padding: .5rem;
         background-color: $neon-pink;
         margin: .5rem 2rem;
+        transform-origin: top right;
+        width: 95%;
+        max-width: 60ch;
 
         &:nth-of-type(1) {
-            transform-origin: top right;
             transform: rotate(10deg) translateX(1rem);
         }
 
@@ -147,7 +149,6 @@ h1 {
         }
 
         &:nth-of-type(3) {
-            transform-origin: top right;
             transform: rotate(8deg) translateX(1rem);
         }
     }
@@ -162,13 +163,7 @@ h1 {
     @extend .container--about-text;
 
     h2 {
-        background-color: $neon-blue;
-        background-image: linear-gradient($neon-blue, $neon-green);
-        background-size: 100%;
-        background-repeat: repeat;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
+       color: $neon-blue;
     }
 
     ul {
@@ -193,9 +188,8 @@ h1 {
     }
 
     a {
-        font-weight: bold;
-        letter-spacing: 1.1;
-        font-size: 1.2rem;
+        color: $blog-night-violet;
+        border-radius: .1rem;
         text-decoration: underline;
         text-decoration-color: $neon-pink;
         text-decoration-skip-ink: auto;

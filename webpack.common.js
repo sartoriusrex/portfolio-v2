@@ -204,7 +204,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			meta: {
 				description,
 				keywords,
-				// 'Content-Security-Policy': httpEquiv,
+				'Content-Security-Policy': httpEquiv,
 				'theme-color': themeColor
 			},
 			posts

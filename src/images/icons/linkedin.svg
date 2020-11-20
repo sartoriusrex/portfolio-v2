@@ -1,1 +1,57 @@
-<svg enable-background="new 0 0 510 510" height="510" viewBox="0 0 510 510" width="510" xmlns="http://www.w3.org/2000/svg"><path d="m459 0h-408c-28.05 0-51 22.95-51 51v408c0 28.05 22.95 51 51 51h408c28.05 0 51-22.95 51-51v-408c0-28.05-22.95-51-51-51zm-306 433.5h-76.5v-229.5h76.5zm-38.25-272.85c-25.5 0-45.9-20.4-45.9-45.9s20.4-45.9 45.9-45.9 45.9 20.4 45.9 45.9-20.4 45.9-45.9 45.9zm318.75 272.85h-76.5v-135.15c0-20.399-17.85-38.25-38.25-38.25s-38.25 17.851-38.25 38.25v135.15h-76.5v-229.5h76.5v30.6c12.75-20.4 40.8-35.7 63.75-35.7 48.45 0 89.25 40.8 89.25 89.25z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   enable-background="new 0 0 510 510"
+   height="50"
+   viewBox="0 0 50 50"
+   width="50"
+   version="1.1"
+   id="svg1061"
+   sodipodi:docname="linkedin.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata1067">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1065" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1398"
+     inkscape:window-height="858"
+     id="namedview1063"
+     showgrid="false"
+     inkscape:zoom="1.2761642"
+     inkscape:cx="255"
+     inkscape:cy="255"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1061" />
+  <path
+     d="M 45,0 H 5 C 2.25,0 0,2.25 0,5 v 40 c 0,2.75 2.25,5 5,5 h 40 c 2.75,0 5,-2.25 5,-5 V 5 C 50,2.25 47.75,0 45,0 Z M 15,42.5 H 7.5 V 20 H 15 Z M 11.25,15.75 c -2.5,0 -4.5,-2 -4.5,-4.5 0,-2.5 2,-4.5 4.5,-4.5 2.5,0 4.5,2 4.5,4.5 0,2.5 -2,4.5 -4.5,4.5 z M 42.5,42.5 H 35 V 29.25 c 0,-1.9999 -1.75,-3.75 -3.75,-3.75 -2,0 -3.75,1.7501 -3.75,3.75 V 42.5 H 20 V 20 h 7.5 v 3 c 1.25,-2 4,-3.5 6.25,-3.5 4.75,0 8.75,4 8.75,8.75 z"
+     id="path1059"
+     inkscape:connector-curvature="0"
+     style="stroke-width:0.09803922" />
+</svg>
