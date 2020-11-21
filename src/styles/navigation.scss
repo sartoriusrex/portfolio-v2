@@ -9,6 +9,10 @@ header {
 	margin: 0;
 	display: flex;
 	justify-content: center;
+
+	* {
+		// outline: 1px solid red;
+	}
 }
 
 nav {
@@ -16,26 +20,33 @@ nav {
 	max-width: 60rem;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	// height: 100%;
 	padding: 0 1.5rem;
+}
+
+@media screen and (min-width: $medium) {
+	nav {
+		align-items: flex-end;
+	}
 }
 
 .link--logo {
 	width: 50%;
+	display: flex;
 }
 
 #logo {
-	width: 100%;
-
 	path:hover {
 		fill: $neon-pink;
 	}
 }
 
 @media screen and (min-width: $medium) {
+	.link--logo {
+		height: 5rem;
+	}
+
 	#logo {
-		transform: scale(1);
+		height: 100%;	
 	}
 }
 
@@ -149,7 +160,8 @@ nav {
 			height: auto;
 			width: auto;
 			position: relative;
-			padding-right: 0;
+			padding: 0;
+			padding-top:1rem;
 			justify-content: flex-end;
 
 			li {
@@ -157,10 +169,12 @@ nav {
 				justify-content: flex-end;
 				margin-left: 1.5rem;
 				width: auto;
+				height: 5rem;
 
 				svg {
-					width: 4rem;
-					height: 4rem;
+					width: 3rem;
+					height: 3rem;
+					margin: 0;
 					margin-bottom: .5rem;
 					padding: 0;
 
