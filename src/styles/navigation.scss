@@ -2,41 +2,31 @@
 
 header {
 	width: 100%;
-	max-width: 60rem;
 	position: fixed;
+	top: 0;
 	z-index: 40;
 	background-color: $black;
 	margin: 0;
-	height: 5rem;
-
-	* {
-		outline: 1px solid red;
-	}
+	display: flex;
+	justify-content: center;
 }
 
 nav {
 	width: 100%;
+	max-width: 60rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 100%;
-	margin: 0;
+	// height: 100%;
 	padding: 0 1.5rem;
 }
 
 .link--logo {
-	display: flex;
-	align-items: flex-start;
-	
-	&:hover {
-		color: $neon-pink;
-	}
+	width: 50%;
 }
 
 #logo {
-	transform-origin: left;
-	transform: scale(0.5);
-	margin-bottom: .6rem;
+	width: 100%;
 
 	path:hover {
 		fill: $neon-pink;
