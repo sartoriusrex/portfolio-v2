@@ -9,10 +9,6 @@ header {
 	margin: 0;
 	display: flex;
 	justify-content: center;
-
-	* {
-		// outline: 1px solid red;
-	}
 }
 
 nav {
@@ -51,11 +47,14 @@ nav {
 }
 
 .button--burger-menu {
-	transform-origin: right;
 	background-color: $black;
+	width: 3rem;
 
 	&[data-burger="closed"] {
-		transform: scale(1.5);
+		svg {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&[data-burger="open"] {

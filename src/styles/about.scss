@@ -18,7 +18,7 @@
     }
 
     h1 {
-        margin: 2rem 0;
+        margin: 2rem 0 1rem;
         text-align: center;
     }
     
@@ -29,7 +29,7 @@
         max-width: 60ch;
 
         &.last-p {
-            margin-bottom: 100vh;
+            margin-bottom: 50vh;
         }
     }
 
@@ -63,6 +63,10 @@
 
 .plain-image {
     margin-bottom: 1rem;
+
+    &.last {
+        margin-bottom: 50vh;
+    }
 }
 
 .container--image {
@@ -74,35 +78,10 @@
     clip-path: circle(45%);
 }
 
-.second-pic {
-    padding: 0;
-}
-
-#bye {
-    margin-bottom: 100vh;
-}
-
 svg {
     margin-bottom: 1rem;
 }
 
 marquee {
-    margin-bottom: 50vh;
-}
-
-#link-to-contact-p {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
-    color: $neon-blue;
-
-    &:before {
-        content: '^';
-        position: absolute;
-        font-size: 3rem;
-        width: 4rem;
-        left: calc(50% - 2rem);
-        top: -2rem;
-    }
+    margin-bottom: 25vh;
 }

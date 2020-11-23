@@ -116,7 +116,7 @@ const catFacts = {
 }
 
 const getFact = function () {
-    const randNum = Math.floor(Math.random() * Object.keys(catFacts).length + 1);
+    const randNum = Math.floor(Math.random() * Object.keys(catFacts).length) + 1;
     return catFacts[randNum];
 }
 
