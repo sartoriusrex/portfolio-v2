@@ -1,5 +1,4 @@
 @import "_variables";
-@use "sass:color";
 
 .container--hero {
     width: 100%;
@@ -11,14 +10,7 @@
     align-items: center;
     perspective: 1200px;
     z-index: 30;
-    margin-top: 3rem;
     overflow: hidden;
-}
-
-@media screen and (min-width: $medium) {
-    .container--hero {
-        margin-top: 7rem;
-    }
 }
 
 #hero-cube {
@@ -177,140 +169,6 @@
     align-items: center;
 }
 
-.container--interactive-cat {
-    position: absolute;
-    transform: scale(0);
-    border-radius: 50%;
-    width: 100%;
-    height: 110vh;
-    background-color: $neon-yellow;
-    transition: transform 250ms linear, border-radius 300ms linear;
-    transition-delay: 250ms;
-    z-index: 50;
-    top: -13vh;
-
-    .star-background {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    svg:not(.cat) {
-        position: absolute;
-        transform: scale(0);
-        z-index: 1;
-    }
-
-    #cat-dialog {
-        width: 98%;
-        bottom: 20%;
-        left: 1%;
-    }
-
-    .cat {
-        position: absolute;
-        top: 50%;
-        z-index: 1;
-        transform: rotate(-360deg) scale(0);
-    }
-}
-
-@media screen and (min-width: $small ) {
-    .container--interactive-cat {
-        top: -20vh;
-    }
-}
-
-.talk-box {
-    width: 100%;
-    max-width: 40rem;
-    height: 100%;
-    max-height: 40rem;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container--talk-box-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    width: 22rem;
-    height: 25rem;
-    padding: 2rem;
-    z-index: 10;
-    transform: scale(0);
-
-    p {
-        margin-bottom: 1rem;
-        color: $black;
-    }
-
-    a {
-        color: $about-dark-purple;
-        padding: 0 .2rem;
-        background-color: $pastel-yellow;
-    }
-
-    #cat-message {
-        text-align: center;
-    }
-
-    .container--cat-choice {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        p {
-            width: 100%;
-            text-align: center;
-        }
-    }
-
-    .container--cat-buttons {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-
-        button {
-            color: $black;
-            padding: .5rem;
-            border-radius: .5rem;
-            font-size: 1.2rem;
-            background-color: $white;
-            box-shadow: .1rem .1rem $black;
-        }
-
-        .cancel {
-            border: .2rem solid $neon-pink;
-        }
-
-        .subscribe {
-            border: .2rem solid $pastel-green;
-        }
-    }
-}
-
-.cat-attribution {
-    position: absolute;
-    bottom: 2%;
-    color: $pastel-orange;
-    background-color: $neon-yellow;
-    opacity: .8;
-    font-size: .75rem;
-    text-align: center;
-    width: 100%;
-}
-
 #karate-kick {
     max-width: 100%;
     max-height: 100%;
@@ -376,6 +234,7 @@
     z-index: 40;
     align-items: center;
     flex-direction: column;
+    padding-top: 1rem;
 
     button {
         margin: 0;
@@ -421,8 +280,10 @@
 
 .heroCaption-visible {
     display: flex;
+    visibility: visible;
 }
 
 .heroCaption-invisible {
     display: none;
+    visibility: none;
 }

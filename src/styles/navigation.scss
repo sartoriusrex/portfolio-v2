@@ -20,7 +20,7 @@ nav {
 	max-width: 60rem;
 	display: flex;
 	justify-content: space-between;
-	padding: 0 1.5rem;
+	padding: 0 1.5rem .5rem;
 }
 
 @media screen and (min-width: $medium) {
@@ -79,17 +79,14 @@ nav {
 }
 
 .ul--burger-menu {
-	transform-origin: top right;
 	position: absolute;
-	top: 0.5%;
-	left: 0.5%;
+	top: 0;
+	right: 0;
 	flex-direction: column;
 	align-items: center;
-	width: 99vw;
-	height: 97vh;
-	padding: 1rem;
-	border: 2px solid $neon-yellow;
-	border-radius: $radius;
+	width: 100%;
+	height: 100vh;
+	padding: 3rem 2rem;
 	background-color: $black;
 
 	&[data-burger="closed"] {
@@ -102,8 +99,8 @@ nav {
 	}
 
 	svg {
-		width: 5rem;
-		height: 5rem;
+		width: 4rem;
+		height: 4rem;
 		padding: .1rem;
 		margin: .5rem;
 	}
@@ -225,12 +222,12 @@ nav {
 		color: $neon-yellow;
 		position: absolute;
 		top: 0;
-		left: 20%;
+		left: 15%;
 	}
 
 	&::after {
 		content: ']';
-		right: 20%;
+		right: 15%;
 		left: unset;
 	}
 

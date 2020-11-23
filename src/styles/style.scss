@@ -91,6 +91,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: $medium) {
+  main {
+    padding-top: 7rem;
+  }
 }
 
 a {

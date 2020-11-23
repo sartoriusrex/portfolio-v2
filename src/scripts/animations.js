@@ -57,7 +57,7 @@ export const animateCat = function (cat) {
         rotate: -360,
     }, {
         duration: .75,
-        scale: .6,
+        scale: .4,
         rotate: 360,
         ease: 'power4.out',
         delay: .5,
