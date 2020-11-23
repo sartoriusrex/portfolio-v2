@@ -20,6 +20,8 @@ const blogNameArray = fs.readdirSync(blogDirectory, async (err, files) => {
 });
 
 // Using the array of names above, we grab the data rom each file and transform it to html using the node-markdown-parser package
+
+// Somehow here compare if the current file contents are different from new content created by markdown, and if they are different, accept the markdown, otherwise, return the old data
 const blogData = blogNameArray.map(file =>
 	markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
 );
