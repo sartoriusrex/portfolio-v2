@@ -1,2 +1,2 @@
-import '../styles/contact.scss';
+import '../styles/writing.scss';
 import '../scripts/burger-menu';

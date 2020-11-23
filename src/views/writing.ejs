@@ -1,14 +1,14 @@
-<% var blogData = ["how-i-made-this-blog.html","introduction-to-this-website-and-blog.html"] %>
+<% var blogData = [{link:"how-i-made-this-blog.html",date:1606150812659},{link:"introduction-to-this-website-and-blog.html",date:1606150812665}] %>
 
 <main>
     <% include ../components/header %>
-    <h1>My Blog and Brain Niche</h1>
-    <p>You can find all of my writing here.</p>
+    <h1>The Brain Dump</h1>
+    <p>You can find a variety of my writing on this page.</p>
     <ul>
-        <% blogData.forEach( function(file) { %>
+        <% blogData.forEach( function(blogFile) { %>
         <li>
             <a
-                href="<%= file %>"><%=file.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
+                href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
         </li>
         <% }) %>
     </ul>

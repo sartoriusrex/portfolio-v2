@@ -57,12 +57,16 @@ Promise.all(blogData.map(async data => {
 	} catch (err) {
 		return console.log(`Catch block: Cannot write to file ${name}: `, err);
 	} finally {
-		return file;
+		let blogFile = {
+			file,
+			date: data.updatedAt
+		}
+		return blogFile;
 	}
 })).then(async blogFiles => {
 	const startStr = `<% var blogData = [`
 	const endStr = `] %>`;
-	const data = blogFiles.map(file => `"${file.split('.')[1].split('/')[3]}.html"`);
+	const data = blogFiles.map(blogFile => `{link:"${blogFile.file.split('.')[1].split('/')[3]}.html",date:${blogFile.date}}`);
 	const dataToAdd = startStr + data + endStr;
 
 	// add blogFiles as data at in writing.ejs
