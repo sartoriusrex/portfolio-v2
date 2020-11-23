@@ -15,12 +15,8 @@ submitBtn.addEventListener('click', function (e) {
     formEl.classList.add('hidden');
     eggHatcherContainer.classList.add('shown');
 
-    console.log(eggHatcherContainer.scrollTop);
-    console.log(eggHatcherContainer.clientHeight);
-
-    let scrollToPosition = eggHatcherContainer.scrollTop + eggHatcherContainer.clientHeight;
+    let scrollToPosition = eggHatcherContainer.scrollTop + eggHatcherContainer.scrollHeight + 150;
     window.scrollTo(0, scrollToPosition);
-    // eggHatcherContainer.scrollTop = eggHatcherContainer.scrollHeight + 150;
     animateEgg();
 
     emailLink.href = `mailto: dmai.developer@gmail.com?subject=${selected.value}`;
