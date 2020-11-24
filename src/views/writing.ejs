@@ -1,4 +1,4 @@
-<% var blogData = [{link:"how-i-made-this-blog.html",date:1606225458739},{link:"introduction-to-this-website-and-blog.html",date:1606207824976}] %>
+<% var blogData = [{link:"chokes-and-strangulations---my-favorite-ways-to-safely-submit-someone.html",date:1606236840270},{link:"how-i-made-this-blog.html",date:1605049200000},{link:"introduction-to-this-website-and-blog.html",date:1606207824976}] %>
 
 
 <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
@@ -17,9 +17,10 @@
             <% if( year === (new Date(blogFile.date).getFullYear())) { %>
 
             <li>
-                <span><%= new Date(blogFile.date).getDate() %> <%= months[new Date(blogFile.date).getMonth()] %></span>
+                <span><%= new Date(blogFile.date).getDate() %> <%= months[new Date(blogFile.date).getMonth()] %> -
+                </span>
                 <a
-                    href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
+                    href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ if (word[0] === undefined) { return "-" + word.slice(1)} return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
             </li>
             <% } %>
             <% }) %>
