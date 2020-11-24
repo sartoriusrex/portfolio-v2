@@ -13,22 +13,88 @@ const blogDirectory = './src/posts/';
 
 const markdown = new Markdown();
 
-// Get the name of each file in the src/posts directory
+
+/*
+
+	===============
+	REFERENCE: THIS IS WHAT THE BLOGDATA OBJECT RETURNED 
+	FROM MARKDOWN PLUGIN LOOKS LIKE
+	================
+
+{
+	keywords: 'Dennis Mai, Blog, Development, Weird Wide Web',
+	title: 'some title.',
+	description: 'some description',
+	extension: '.md',
+	updatedAt: 1605249017156,
+	toc: [
+	  {
+		id: 'introduction-to-this-blog',
+		depth: 1,
+		text: 'Introduction to this Blog'
+	  }
+	],
+	body: '<h1 id="introduction-to-this-blog">Introduction to this Blog</h1>\n' +
+	  "<p>Hello! My name is Dennis Mai. I'm a husband, father, developer, tinkerer, creative, and jiu-jiteiro. In that order. I'm a lot of other things, too, and you'll figure a lot of that out if you read more. But that's sufficient to start.</p>\n" +
+	  '<p>I write about technology, culture, society, Brazilian Jiu Jitsu, Fatherhood, being a husband (husband...hood?), and other things, too.</p>\n' ETC.>"
+  }
+*/
+
+/*
+	1. Get the name of each file in the src/posts directory
+	2. Read the file and pipe it to markdown to get data object
+*/
 const blogNameArray = fs.readdirSync(blogDirectory, async (err, files) => {
 	if (err) { return console.log(err) }
 	return files
 });
 
-// Using the array of names above, we grab the data rom each file and transform it to html using the node-markdown-parser package
 
-// Somehow here compare if the current file contents are different from new content created by markdown, and if they are different, accept the markdown, otherwise, return the old data
-const blogData = blogNameArray.map(file =>
-	markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
-);
+// Grab the current data from the database
+const currentBlogData = JSON.parse(fs.readFileSync('db.json', 'utf8'));
 
-// Using our blog data above, create ejs files from posts
-// Then we get a list of all those files and inject this list as a variable at the top of writing.ejs, in order to correctly reference it.
-Promise.all(blogData.map(async data => {
+// Create data objects with markdown for all the files in blog directory
+const blogData = blogNameArray.map(file => {
+	return markdown.toJSON(fs.readFileSync(`${blogDirectory}${file}`, 'utf8'))
+});
+
+/*
+	1. Iterate through blogData object Array
+	2. Check if the item already exists in currentBlogData object Array
+		- If it does not exist, return the blogData object
+	3. Check if the contents are the same
+		- If they are not the same, return the blogData object
+	4. If the the item already exists and the contents are the same, finally, return the corresponding currentBlogData object
+*/
+const newBlogData = blogData.map(data => {
+	let match = currentBlogData.filter(currentData => currentData.title === data.title);
+
+	if (match.length === 0 || match[0].body !== data.body) {
+		return data
+	}
+
+	return match[0];
+});
+
+
+/*
+	Store the new blog data to json file as our database
+	Reference it to either update posts or create new ones
+*/
+fs.writeFile('db.json', JSON.stringify(newBlogData), 'utf8', (err) => {
+	if (err) {
+		return console.log('Error saving posts to db file', err);
+	}
+
+	console.log('\nSuccessfully saved posts data\n');
+})
+
+/*
+	1. Using our blog data above, create ejs files from new posts
+	2. Then we get a list of all those files
+	3. And then we inject this list as a variable at the top of writing.ejs, in order to correctly reference it.
+*/
+Promise.all(newBlogData.map(async data => {
 	// Create ejs file using markdown data
 	const topSection = `
 <main>
@@ -44,13 +110,12 @@ Promise.all(blogData.map(async data => {
 	// content to write is the header, data body, and footer
 	const content = `${topSection} ${data.body} ${bottomSection}`
 
-	// name is the id of the first item of the toc array
+	// name is the id of the first item of the toc array, which is the H1 element
 	const name = data.toc[0].id;
 
 	// name of the file
 	const file = `${viewsDirectory}${name}.ejs`
 
-	// write the file to the views directory
 	try {
 		await fs.writeFile(file, content, 'utf8', (err) => {
 			if (err) return err;
@@ -71,7 +136,7 @@ Promise.all(blogData.map(async data => {
 	const data = blogFiles.map(blogFile => `{link:"${blogFile.file.split('.')[1].split('/')[3]}.html",date:${blogFile.date}}`);
 	const dataToAdd = startStr + data + endStr;
 
-	// add blogFiles as data at in writing.ejs
+	// grab data from current writing.ejs (blog index)
 	const blogIndexFile = './src/views/writing.ejs';
 	let blogIndexData = fs.readFileSync(blogIndexFile, 'utf8').split('\n');
 	let blogdataVariable = blogIndexData.shift();
@@ -91,29 +156,6 @@ Promise.all(blogData.map(async data => {
 		}
 	}
 });
-
-/*
-blogdata.forEach(file => console.log(file));
-
-{
-	keywords: 'Dennis Mai, Blog, Development, Weird Wide Web',
-	extension: '.md',
-	updatedAt: 1605249017156,
-	toc: [
-	  {
-		id: 'introduction-to-this-blog',
-		depth: 1,
-		text: 'Introduction to this Blog'
-	  }
-	],
-	body: '<h1 id="introduction-to-this-blog">Introduction to this Blog</h1>\n' +
-	  "<p>Hello! My name is Dennis Mai. I'm a husband, father, developer, tinkerer, creative, and jiu-jiteiro. In that order. I'm a lot of other things, too, and you'll figure a lot of that out if you read more. But that's sufficient to start.</p>\n" +
-	  '<p>I write about technology, culture, society, Brazilian Jiu Jitsu, Fatherhood, being a husband (husband...hood?), and other things, too.</p>\n' +
-	  "<p>I've made this blog--and my personal website--as unique to me as possible. Some times that means the site won't load quickly. Some times that means it's not 100% accessible. And some times it means it will just weird you out a little bit. Or a lot. Anyway, it's a work in progress. I try to make sure everybody can digest my content, but, you know what? I won't be able to make everyone happy. And that's okay. That's life. I'm sorry if I offend any of you (truly, I am).</p>\n" +
-	  '<p>That said, you can always send me feedback via email.</p>\n' +
-	  "<p>Enjoy the tour, and and I hope you'll be inspiried to make the web a little bit better. And a little bit weirder.</p>"
-  }
-*/
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
@@ -159,7 +201,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				posts = ['test1', 'test2'];
 				break;
 			default:
-				let post = blogData.filter(data => data.toc[0].id === name)[0];
+				let post = newBlogData.filter(data => data.toc[0].id === name)[0];
 
 				// post was deleted
 				if (post === undefined) {
