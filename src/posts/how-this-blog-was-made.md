@@ -76,6 +76,12 @@ I am using [@cenguidanos/node-markdown-parser](https://github.com/cenguidanos/no
 
 With that data, I construct an ejs template that reuses header and footer components. I then write the template to a corresponding ejs file in the views directory using ```fs.writeFile```.
 
+#### Updating Posts and Preventing Full Rewrites
+
+The tools provided don't provide a simple way of checking if the date being written or read is new or old. In particular the markdown parser will simply create the file with a new updatedAt date, which can be problematic when you didn't update the post.
+
+The way I dealt with this problem is actually be keeping the list of blog data in a simple database file called db.json, to which I compare the new blog data. We construct a new array of the blog data using old, unchanged entries with new and updated entries and write that to the 'database'. This way, the keep the meta data -- especially the updatedAt date -- in tact.
+
 #### Dynamic entry object for Webpack
 
 Before I create any html files, though, I have to create my entry points for Webpack. Using the pages directory, I construct an object with the name of the page file and its path. For posts, I begin with the name 'posts1', since I will need to create 1 entry for each blog post (ugh. Annoying. And VERY non-performant).

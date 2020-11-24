@@ -2,3 +2,45 @@
 @import "style";
 @import "navigation";
 @import "footer";
+
+.container--writing {
+    padding: 2rem .5rem;
+    width: 100%;
+    max-width: 35rem;
+
+    h1 {
+        color: $neon-yellow;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        width: 100%;
+        margin-bottom: 2rem;
+
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+
+        span {
+            width: 20%;
+            color: $neon-green;
+        }
+
+        a {
+            width: 100%;
+            color: $neon-yellow;
+            padding-left: 1rem;
+        }
+    }
+}
+
+.year {
+    padding-bottom: .25rem;
+    margin-bottom: 1rem;
+    color: $neon-yellow;
+    text-align: center;
+    border-bottom: .2rem dashed $neon-pink;
+}

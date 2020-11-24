@@ -1,17 +1,31 @@
-<% var blogData = [{link:"how-i-made-this-blog.html",date:1606222908197},{link:"introduction-to-this-website-and-blog.html",date:1606222908202}] %>
+<% var blogData = [{link:"how-i-made-this-blog.html",date:1606225458739},{link:"introduction-to-this-website-and-blog.html",date:1606207824976}] %>
 
+
+<% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
+<% var years = Array.from( new Set(blogData.map( function(blogDataObject) { return new Date(blogDataObject.date).getFullYear()}))) %>
 <main>
     <% include ../components/header %>
-    <h1>The Brain Dump</h1>
-    <p>You can find a variety of my writing on this page.</p>
-    <ul>
-        <% blogData.forEach( function(blogFile) { %>
-        <li>
-            <a
-                href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
-        </li>
+
+    <section class="container--writing">
+        <h1>The Brain Dump</h1>
+        <% years.forEach( function(year) { %>
+        <h6 class="year">
+            <%= year %>
+        </h6>
+        <ul>
+            <% blogData.forEach( function(blogFile) { %>
+            <% if( year === (new Date(blogFile.date).getFullYear())) { %>
+
+            <li>
+                <span><%= new Date(blogFile.date).getDate() %> <%= months[new Date(blogFile.date).getMonth()] %></span>
+                <a
+                    href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
+            </li>
+            <% } %>
+            <% }) %>
+        </ul>
         <% }) %>
-    </ul>
+    </section>
 
 </main>
 <% include ../components/footer %>
