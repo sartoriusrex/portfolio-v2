@@ -13,22 +13,23 @@
 
     * {
         margin-bottom: 1rem;
+        width: 100%;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        margin-bottom: 2rem;
+        margin: 1.5rem 0;
         text-align: center;
     }
 
     h1 {
         color: $neon-yellow;
-        text-align: center;
     }
 
 
 
     p {
         line-height: 1.4;
+        text-align: left;
     }
 
     code {
@@ -41,6 +42,10 @@
             -0.2rem -0.2rem 0 $neon-green;
         padding: .5rem;
         margin-bottom: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     ul, ol {
@@ -48,7 +53,7 @@
         margin-left: 2rem;
 
         li {
-            color: $neon-green;
+            color: $neon-yellow;
             margin-bottom: .5rem;
             line-height: 1.4;
         }
@@ -58,11 +63,21 @@
         margin-left: 0;
         list-style: circle;
     }
-}
 
-.date {
-    width: 100%;
-    text-align: left;
-    margin: 1rem 0;
-    color: $neon-green;
+
+    .date, .estimate {
+        width: 100%;
+        text-align: left;
+        color: $neon-green;
+        margin-bottom: .5rem;
+    }
+
+    .estimate {
+        text-align: right;
+    }
+
+    .container--info {
+        display: flex;
+        justify-content: space-between;
+    }
 }

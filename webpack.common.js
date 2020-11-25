@@ -100,8 +100,10 @@ Promise.all(newBlogData.map(async data => {
 <main>
 <% include ../components/header %>
 <section class="section--blog">
-<p class="date">Updated: ${new Date(data.updatedAt).toLocaleDateString()}<p>
-<p class="estimate">Est. Time: ${Math.round(data.body.length / 350)} minutes</p>
+<div class="container--info">
+<p class="date">Updated: ${new Date(data.updatedAt).toLocaleDateString()}</p>
+<p class="estimate">Length: ${Math.round(data.body.length / 350)} minutes</p>
+</div>
 `
 
 	const bottomSection = `
