@@ -3,8 +3,8 @@
 <% include ../components/header %>
 <section class="section--blog">
 <div class="container--info">
-<p class="date">Updated: 11/11/2020</p>
-<p class="estimate">Length: 22 minutes</p>
+<p class="date">Updated: 11/20/2020</p>
+<p class="estimate">Length: 23 minutes</p>
 </div>
  <h1 id="how-i-made-this-blog">How I Made This Blog</h1>
 <p>First, this is a custom solution that's probably only applicable for small blogs (less than a few hundred posts). Anything more will take a long time to build, for reasons I will explain below.</p>
@@ -22,7 +22,7 @@
 <h3 id="ejs">EJS</h3>
 <p>Why? Because I'm already very familiar with the syntax. And when building projects that you expect to last a while, it's probably best to use an 80/20 stack mix of tech you know well with new tech you want to learn, which is why...</p>
 <h3 id="i-am-using-webpack-version-4">I am using Webpack version 4</h3>
-<p>Webpack 5 just came out, and its release is a hot debate, because, well, it's like they didn't even try to see what would and wouldn't break. I know and love (and kind of hate) Webpack 4, so I'm stickin' with the old guns for now.</p>
+<p>Webpack 5 just came out, and its release is a hot debate, because, well, it's like they didn't even try to see what would and wouldn't break. I know and love (and kind of hate) Webpack 4, so I'm stickin' with the old guns for now. Also, it's in plain Javascript, so even when I have to learn something new--like making a blog--it's not too much of a stretch figuring things out.</p>
 <h3 id="sass-scss">SASS (scss)</h3>
 <p>I love it. It's actually mostly unnecessary with the power of the current CSS3 api, but, again, I know it well and I enjoy it.</p>
 <h3 id="vanilla-javascript">Vanilla Javascript</h3>
@@ -63,7 +63,8 @@
 <p>The rest is of my webpack config is just configuring scss, ejs, injecting my fonts and images, and setting node rules for different modules.</p>
 <p>And there you have it!</p>
 <h4 id="caveat">Caveat</h4>
-<p>With ejs templates in webpack, the dev server with not reload the browser if there are nested ejs templates, which is annoying. The dev server only check if the entrypoint files or their indexes (root ejs pages) have changed.</p>
+<p>With ejs templates in webpack, the dev server will <em>not</em> reload the browser if there are nested ejs templates. That's annoying when we are reusing components defined in .ejs files.</p>
+<p>The dev server only checks if the entrypoint files or their indexes (the root ejs pages) have changed, not their nested templates.</p>
 <h2 id="summary">Summary</h2>
 <p>This was a lot of setup for a small blog. But it's pretty lightweight, and a lot easier to set up than a full-blown blog CRUD app.</p>
 <p>That set, it's probably easier to use Huge, Jekyll, or Eleventy. I'll experiment with those later.</p> 

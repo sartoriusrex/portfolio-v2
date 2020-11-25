@@ -28,7 +28,7 @@ Why? Because I'm already very familiar with the syntax. And when building projec
 
 ### I am using Webpack version 4
 
-Webpack 5 just came out, and its release is a hot debate, because, well, it's like they didn't even try to see what would and wouldn't break. I know and love (and kind of hate) Webpack 4, so I'm stickin' with the old guns for now.
+Webpack 5 just came out, and its release is a hot debate, because, well, it's like they didn't even try to see what would and wouldn't break. I know and love (and kind of hate) Webpack 4, so I'm stickin' with the old guns for now. Also, it's in plain Javascript, so even when I have to learn something new--like making a blog--it's not too much of a stretch figuring things out.
 
 ### SASS (scss)
 
@@ -102,7 +102,9 @@ And there you have it!
 
 #### Caveat
 
-With ejs templates in webpack, the dev server with not reload the browser if there are nested ejs templates, which is annoying. The dev server only check if the entrypoint files or their indexes (root ejs pages) have changed.
+With ejs templates in webpack, the dev server will *not* reload the browser if there are nested ejs templates. That's annoying when we are reusing components defined in .ejs files.
+
+The dev server only checks if the entrypoint files or their indexes (the root ejs pages) have changed, not their nested templates.
 
 ## Summary
 

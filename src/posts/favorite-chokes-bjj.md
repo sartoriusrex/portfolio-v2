@@ -20,12 +20,10 @@ In order, they have GOT to be:
 8. The Peruvian Necktie
 9. The Arm-in Guillotine
 10. THE MOTHER'S MILK
-BONUS. The Triangle Choke. (This should be #1, but it's such a staple. C'mon!)
+*BONUS* The Triangle Choke. (This should be #1, but it's such a staple. C'mon!)
 
-I'll go into the details for each one below, but suffice it to say, this is a non-exhaustive list of awesome chokes everybody doing BJJ should know.
+I'll go into the details for each one below, but suffice it to say that this is a non-exhaustive list of awesome chokes everybody doing BJJ should know.
 
+## Summary
 
-
-# Summary
-
-Chok
+If you haven't yet, go start Brazilian Jiu Jitsu. It isn't for everyone, but if you're comfortable in uncomfortable situations, enjoy being rowdy, and like bonding with people by simulating murder in pajamas, then it's for you. The choking isn't bad either.
