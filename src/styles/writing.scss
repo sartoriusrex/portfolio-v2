@@ -4,7 +4,7 @@
 @import "footer";
 
 .container--writing {
-    padding: 2rem .5rem;
+    padding: 2rem 1rem;
     width: 100%;
     max-width: 35rem;
 
@@ -26,15 +26,20 @@
         align-items: baseline;
 
         p {
-            width: 25%;
+            width: 30%;
             color: $neon-green;
         }
 
         a {
-            width: 75%;
+            width: 70%;
             color: $neon-yellow;
             padding-left: .5rem;
             line-height: 1.4;
+
+            &:hover {
+                text-shadow: -.1rem -.1rem 0 $neon-pink;
+                transform: scale(1.1);
+            }
         }
     }
 }

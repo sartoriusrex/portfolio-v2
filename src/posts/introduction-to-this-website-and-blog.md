@@ -6,7 +6,7 @@ description: A short introduction to Dennis Mai's blog and website.
 
 # Introduction to this Website and Blog
 
-Greetings brave world wide web surfer[*](#note1) and welcome back to the weird web!
+Greetings brave surfer[*](#note1) of the world wide web! And welcome back to the weird web!
 
 This website is an expression of myself, my tastes, my thoughts. It's a throwback to the indie web, when people were using AOL Instant Messenger, MSN Messenger, Xanga, MySpace, LiveJournal, and Google Blogs to connect with others. This is my digital garden, and I hope it evokes the same sense of nostalgia for you as it does for me for a time long past.
 

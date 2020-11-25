@@ -3,8 +3,66 @@
 @import "navigation";
 @import "footer";
 
-p {
-    padding: 0 1rem;
-    line-height: 1.2;
-    color: red;
+.section--blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: $max-width;
+    padding: 1rem;
+
+    * {
+        margin-bottom: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: $neon-yellow;
+        text-align: center;
+    }
+
+
+
+    p {
+        line-height: 1.4;
+    }
+
+    code {
+        color: $neon-pink;
+        width: 100%;
+    }
+
+    pre {
+        box-shadow: .2rem .2rem 0 $neon-yellow,
+            -0.2rem -0.2rem 0 $neon-green;
+        padding: .5rem;
+        margin-bottom: 2rem;
+    }
+
+    ul, ol {
+        padding-left: 1rem;
+        margin-left: 2rem;
+
+        li {
+            color: $neon-green;
+            margin-bottom: .5rem;
+            line-height: 1.4;
+        }
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: circle;
+    }
+}
+
+.date {
+    width: 100%;
+    text-align: left;
+    margin: 1rem 0;
+    color: $neon-green;
 }

@@ -10,17 +10,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: $max-width;
 
 	* {
 		color: $pastel-yellow;
-		padding: 0 1rem;
-		max-width: 35rem;
+		max-width: $max-width;
 	}
 
 	h2 {
 		margin: 4rem 0 2rem;
 		width: 100%;
-		max-width: 35rem;
 
 		a {
 			font-size: inherit;
