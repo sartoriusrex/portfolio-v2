@@ -23,8 +23,9 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
+        align-items: baseline;
 
-        span {
+        p {
             width: 25%;
             color: $neon-green;
         }

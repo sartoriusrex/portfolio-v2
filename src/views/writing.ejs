@@ -17,8 +17,8 @@
             <% if( year === (new Date(blogFile.date).getFullYear())) { %>
 
             <li>
-                <span><%= new Date(blogFile.date).getDate() %> <%= months[new Date(blogFile.date).getMonth()] %> -
-                </span>
+                <p><%= new Date(blogFile.date).getDate() %> <%= months[new Date(blogFile.date).getMonth()] %> ->
+                </p>
                 <a
                     href="<%= blogFile.link %>"><%=blogFile.link.split('.')[0].split('-').map(function(word){ if (word[0] === undefined) { return "-" + word.slice(1)} return word[0].toUpperCase() + word.slice(1)}).join(' ') %></a>
             </li>
