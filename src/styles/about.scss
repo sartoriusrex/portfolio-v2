@@ -58,11 +58,14 @@
         text-align: center;
         color: $neon-pink;
         margin-bottom: 1rem;
+        text-shadow: none;
     }
 }
 
 .plain-image {
     margin-bottom: 1rem;
+    width: 100%;
+    max-width: 25rem;
 
     &.last {
         margin-bottom: 50vh;
@@ -74,7 +77,7 @@
     margin-bottom: 2rem;
     background-color: $neon-green;
     width: 100%;
-    max-width: 30rem;
+    max-width: 20rem;
     clip-path: circle(45%);
 }
 

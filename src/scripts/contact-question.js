@@ -15,7 +15,7 @@ submitBtn.addEventListener('click', function (e) {
     formEl.classList.add('hidden');
     eggHatcherContainer.classList.add('shown');
 
-    let scrollToPosition = eggHatcherContainer.scrollTop + eggHatcherContainer.scrollHeight + 150;
+    let scrollToPosition = eggHatcherContainer.scrollTop + eggHatcherContainer.scrollHeight + 100;
     window.scrollTo(0, scrollToPosition);
     animateEgg();
 

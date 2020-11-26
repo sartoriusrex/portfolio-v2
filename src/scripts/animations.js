@@ -75,6 +75,56 @@ export const animateCat = function (cat) {
 
 }
 
+const bunnyCatTL = gsap.timeline({ repeat: -1 });
+const bunnyCat = document.querySelector('#cat-bunny');
+const bunnyLeftEar = document.querySelector('#leftEar');
+const bunnyRighttEar = document.querySelector('#rightEar');
+
+export const animateBunny = function () {
+    return bunnyCatTL
+        .fromTo(bunnyCat, {
+            translateX: '-5rem',
+        }, {
+            translateX: '10rem',
+            translateY: '-5rem',
+            ease: 'none',
+            duration: 1,
+        })
+        .addLabel('theWalk')
+        .to(bunnyCat, {
+            rotateY: '180deg',
+            duration: .1,
+        })
+        .to(bunnyCat, {
+            translateX: '-5rem',
+            duration: 2,
+        })
+        .to(bunnyCat, {
+            translateY: '0rem',
+            duration: 1,
+        })
+        .to(bunnyCat, {
+            rotateY: '0deg',
+            duration: .1,
+        })
+        .to(bunnyCat, {
+            translateX: '5rem',
+            duration: 1,
+        })
+        .to(bunnyCat, {
+            rotateY: '180deg',
+            duration: .1,
+        })
+        .to(bunnyCat, {
+            translateX: '-5rem',
+            duration: .5,
+        })
+        .to(bunnyCat, {
+            rotateY: '0deg',
+            duration: .2,
+        })
+}
+
 // Animating the about this place paragraph drop bounces
 const pDrop1 = gsap.timeline();
 const pDrop2 = gsap.timeline();
