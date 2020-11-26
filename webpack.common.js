@@ -10,6 +10,7 @@ const { Markdown } = require("@cenguidanos/node-markdown-parser");
 const pagesDirectory = './src/pages/';
 const viewsDirectory = './src/views/';
 const blogDirectory = './src/posts/';
+const projects = require('./src/scripts/projects');
 
 const markdown = new Markdown();
 
@@ -161,6 +162,10 @@ Promise.all(newBlogData.map(async data => {
 	}
 });
 
+// Populate variable of projects from projects.js to projects.ejs to compile correctly
+const projectsString = `var projects = [${projects.toString()}]`
+console.log(`\n${projectsString}\n`)
+
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {
 		let name = path.split('.')[1].split('/')[3];
@@ -179,7 +184,6 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		let description;
 		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
 		let isBlogPost = false;
-		let posts = [];
 
 		switch (name) {
 			case "index":
@@ -201,8 +205,6 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 			case "writing":
 				title = "Dennis Mai // Some Things Dennis Mai has written";
 				description = "The written word of Dennis Mai. Some would say it's worth less than its weight in iceberg lettuce, or even celery. They're just jealous.";
-
-				posts = ['test1', 'test2'];
 				break;
 			case "changelog":
 				title = "Dennis Mai // The Change Log"
@@ -262,8 +264,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				keywords,
 				'Content-Security-Policy': httpEquiv,
 				'theme-color': themeColor
-			},
-			posts
+			}
 		});
 
 		return [...htmlPluginInstances, newInstance]
