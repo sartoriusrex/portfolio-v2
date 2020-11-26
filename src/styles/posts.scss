@@ -25,7 +25,14 @@
         color: $neon-yellow;
     }
 
+    a {
+        color: $neon-pink;
 
+        &:hover {
+            background-color: $neon-yellow;
+            color: $about-dark-purple;
+        }
+    }
 
     p {
         line-height: 1.4;
@@ -62,6 +69,10 @@
     ul {
         margin-left: 0;
         list-style: circle;
+    }
+
+    em {
+        color: $pastel-orange;
     }
 
 

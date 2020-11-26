@@ -204,6 +204,10 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 
 				posts = ['test1', 'test2'];
 				break;
+			case "changelog":
+				title = "Dennis Mai // The Change Log"
+				description = "This website's change log"
+				break;
 			default:
 				let post = newBlogData.filter(data => data.toc[0].id === name)[0];
 

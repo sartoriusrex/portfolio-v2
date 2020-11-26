@@ -6,7 +6,7 @@ description: A short introduction to Dennis Mai's blog and website.
 
 # Introduction to this Website and Blog
 
-Greetings brave surfer[*](#note1) of the world wide web! And welcome back to the weird web!
+Greetings brave [surfer*](#note1) of the world wide web! And welcome back to the weird web!
 
 This website is a work of *self expression*. Here I lay to bare my thoughts, ideas, my learning and doubt.
 
@@ -28,4 +28,4 @@ That said, you can always send me feedback via email.
 
 Enjoy the tour, and and I hope you'll be inspired to make the web a little bit better. And a little bit weirder.
 
-<a name=note1 ></a> When the internet was first becoming popular, it was called the "World Wide Web", and those browsing the internet then were "surfing the web." Good times.
+*<a name=note1 ></a> \* When the internet was first becoming popular, it was called the "World Wide Web", and those browsing the internet then were "surfing the web." Good times.*
