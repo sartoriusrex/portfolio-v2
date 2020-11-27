@@ -16,6 +16,10 @@ import jjdImageLg from '../images/projects/jjd-lg.png';
 import '../images/projects/jjd-sm.png';
 import '../images/projects/usdt-sm.png';
 
+import '../images/projects/polyglotist-1.png';
+import '../images/projects/polyglotist-2.png';
+import '../images/projects/polyglotist-3.png';
+
 // // usdt images
 import usdtImageSm from '../images/projects/usdt-sm.png';
 import usdtImageMd from '../images/projects/usdt-md.png';
