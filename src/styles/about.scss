@@ -60,6 +60,10 @@
         margin-bottom: 1rem;
         text-shadow: none;
     }
+
+    svg {
+        margin-bottom: 1rem;
+    }
 }
 
 .plain-image {
@@ -79,10 +83,6 @@
     width: 100%;
     max-width: 20rem;
     clip-path: circle(45%);
-}
-
-svg {
-    margin-bottom: 1rem;
 }
 
 marquee {

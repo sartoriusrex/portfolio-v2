@@ -136,10 +136,8 @@ Promise.all(newBlogData.map(async data => {
 		return blogFile;
 	}
 })).then(async blogFiles => {
-	const startStr = `<% var blogData = [`
-	const endStr = `] %>`;
 	const data = blogFiles.map(blogFile => `{link:"${blogFile.file.split('.')[1].split('/')[3]}.html",date:${blogFile.date}}`);
-	const dataToAdd = startStr + data + endStr;
+	const dataToAdd = `<% var blogData = [${data}] %>`;
 
 	// grab data from current writing.ejs (blog index)
 	const blogIndexFile = './src/views/writing.ejs';
@@ -163,8 +161,21 @@ Promise.all(newBlogData.map(async data => {
 });
 
 // Populate variable of projects from projects.js to projects.ejs to compile correctly
-const projectsString = `var projects = [${projects.toString()}]`
-console.log(`\n${projectsString}\n`)
+const projectsString = `<% var projects = ${JSON.stringify(projects)} %>`;
+const projectsPage = './src/views/projects.ejs';
+const projectsData = fs.readFileSync(projectsPage, 'utf8').split('\n');
+const projectsPageFirstLine = projectsData.shift();
+
+// If the data hasn't changed, do nothing, otherwise rewrite the file;
+if (projectsString !== projectsPageFirstLine) {
+	let newProjectsArray = [projectsString, ...projectsData];
+	let newProjectsData = newProjectsArray.join('\n');
+
+	fs.writeFileSync(projectsPage, newProjectsData, 'utf8', (err, data) => {
+		if (err) console.log(err);
+		console.log('----\nRewrote Projects Page\n----');
+	})
+}
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 	(entries, path) => {

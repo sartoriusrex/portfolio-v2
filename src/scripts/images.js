@@ -9,19 +9,18 @@ import '../images/leila.png';
 
 
 // // jjd images
-// import jjdImageSm from '../images/projects/jjd-sm.png';
-// import jjdImageMd from '../images/projects/jjd-md.png';
-// import jjdImageLg from '../images/projects/jjd-lg.png';
+import jjdImageSm from '../images/projects/jjd-sm.png';
+import jjdImageMd from '../images/projects/jjd-md.png';
+import jjdImageLg from '../images/projects/jjd-lg.png';
+
+import '../images/projects/jjd-sm.png';
+import '../images/projects/usdt-sm.png';
 
 // // usdt images
-// import usdtImageSm from '../images/projects/usdt-sm.png';
-// import usdtImageMd from '../images/projects/usdt-md.png';
-// import usdtImageLg from '../images/projects/usdt-lg.png';
+import usdtImageSm from '../images/projects/usdt-sm.png';
+import usdtImageMd from '../images/projects/usdt-md.png';
+import usdtImageLg from '../images/projects/usdt-lg.png';
 
-// // raven images
-// import ravenImageSm from '../images/projects/raven-sm.png';
-// import ravenImageMd from '../images/projects/raven-md.png';
-// import ravenImageLg from '../images/projects/raven-lg.png';
 
 // // Placeholders
 // import '../images/placeholders/jjd-sm-ph.png';
