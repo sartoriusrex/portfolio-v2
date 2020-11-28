@@ -40,24 +40,27 @@
     details {
         @include card;
         width: 100%;
-        text-align: center;
         line-height: 1.5;
         text-align: left;
+        margin-left: -.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0;
 
         p {
-            margin-bottom: 1rem;
+            margin: 1rem 0;
+            padding: 0 1rem;
         }
     }
 
     summary {
         color: $neon-yellow;
-        margin-bottom: 1rem;
+        padding: 1rem;
     }
 
     ul {
-        margin-bottom: 1rem;
+        margin: 1rem 0;
         width: 100%;
-        padding-left: 1rem;
+        padding-left: 2rem;
 
         li {
             width: 100%;

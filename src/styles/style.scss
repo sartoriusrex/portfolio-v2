@@ -82,6 +82,11 @@
 	padding: 0;
 	scroll-behavior: smooth;
   color: $neon-blue;
+
+  &:focus,
+  &:active {
+    outline: 1px solid $neon-yellow;
+  }
 }
 
 main {
@@ -102,8 +107,7 @@ main {
 a {
   &:hover,
   &:active,
-  &:focus {
-    outline: none;
+  &:focus {     
     cursor: pointer;
   }
 
