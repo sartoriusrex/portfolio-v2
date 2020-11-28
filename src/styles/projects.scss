@@ -24,32 +24,52 @@
     margin: 1rem 0;
 
     h4 {
-        color: $neon-pink;
-        text-shadow: .1rem .05rem 0 $neon-blue;
         text-align: center;
-
-        &::after {
-            content: '|-->';
-            font-size: 1rem;
-            color: $neon-yellow;
-            transform: rotate(.25turn);
-            margin-left: .5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
+        margin-bottom: 1rem;
     }
 }
 
 .container--details {
-    margin: 1rem 0 2rem;
-    padding: .5rem;
-    box-shadow: .1rem .1rem 0 $neon-pink,
-        -.1rem -.1rem 0 $neon-green;
+    @include card;
+
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    details {
+        @include card;
+        width: 100%;
+        text-align: center;
+        line-height: 1.5;
+        text-align: left;
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    summary {
+        color: $neon-yellow;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        margin-bottom: 1rem;
+        width: 100%;
+        padding-left: 1rem;
+
+        li {
+            width: 100%;
+            margin-bottom: .5rem;
+        }
+    }
 }
 
 .container--project-img {
     width: 100%;
     max-height: 12rem;
+    margin-bottom: 1rem;
     background-color: transparent;
     display: flex;
     justify-content: center;
