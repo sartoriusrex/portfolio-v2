@@ -48,6 +48,6 @@
 
 .list {
     & > li {
-        @include card;
+        @include card($neon-green, $neon-pink);
     }
 }
