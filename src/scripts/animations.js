@@ -4,7 +4,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 gsap.registerPlugin(MotionPathPlugin);
 
 // Animate Dennis Mai on start, fade in to color\
-function animateLogo() {
+export function animateLogo() {
     gsap.from('#logo path', {
         duration: 1.5,
         attr: {
@@ -13,8 +13,6 @@ function animateLogo() {
         ease: "back.inOut(1.7)"
     });
 }
-
-animateLogo();
 
 const heroTL = gsap.timeline();
 const heroCube = document.getElementById('hero-cube');

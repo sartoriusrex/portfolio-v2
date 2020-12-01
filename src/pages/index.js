@@ -1,5 +1,8 @@
 import '../styles/index.scss';
 import '../scripts/images';
-import '../scripts/animations';
+import { animateLogo } from '../scripts/animations';
 import '../scripts/hero';
 import '../scripts/burger-menu';
+
+animateLogo();
+
