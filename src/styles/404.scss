@@ -1,0 +1,49 @@
+@import "_variables";
+@import "style";
+@import "navigation";
+@import "footer";
+
+.container--404 {
+    width: 100%;
+    padding: 1rem;
+
+    * {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 8rem;
+        margin: 2rem 0 3rem;
+        text-align: center;
+        color: $neon-yellow;
+    }
+
+    h6 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        padding: 1rem;
+        border: .1rem solid $neon-green;
+        max-width: 35rem;
+    }
+
+    li {
+        text-align: center;
+        margin-bottom: 1rem;
+
+        a {
+            color: $neon-pink;
+            transition: transform 100ms linear;
+            width: 100%;
+            text-align: center;
+
+            &:hover {
+                color: $neon-yellow;
+                transform: scale(1.1);
+            }
+        }
+    }
+}

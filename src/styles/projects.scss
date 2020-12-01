@@ -18,6 +18,10 @@
     * {
         width: 100%;
     }
+
+    >p {
+        max-width: 35rem;
+    }
 }
 
 @media screen and (min-width: $medium) {
@@ -104,6 +108,7 @@
     img {
         height: 12rem;
         width: auto;
+        box-shadow: 0 0 1rem .1rem $neon-yellow;
     }
 }
 

@@ -221,6 +221,10 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				title = "Dennis Mai // The Change Log"
 				description = "This website's change log"
 				break;
+			case "404":
+				title = "Yo, that page don't exist!"
+				description = "This is the page that shows that the requested page under the domain for Dennis Mai DOES NOT EXIST. Basically, just visit the links in the main page instead of attempting to navigate to somewhere that doesn't exist (anymore?)."
+				break;
 			default:
 				let post = newBlogData.filter(data => data.toc[0].id === name)[0];
 

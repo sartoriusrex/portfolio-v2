@@ -15,7 +15,7 @@ const projects = [
     },
     {
         name: 'Jiu Jitsu Distilled',
-        description: 'A web application for users to document and share Brazilian >%Jiu Jitsu techniques.Users can make noteson techniques and link to videos, connect techniques insequences, like them, and share them in -app with other usersor by e - mail.There are hundreds of grappling techniques and manyvariations between them.Flowing from one toanother is the essence of Jiu Jitsu, but understanding howand when they can move from one to another is a largeundertaking.This application helps document the relationshipsthey have with each other.',
+        description: 'A web application for users to document and share Brazilian Jiu Jitsu techniques.Users can make noteson techniques and link to videos, connect techniques insequences, like them, and share them in -app with other usersor by e - mail.There are hundreds of grappling techniques and manyvariations between them.Flowing from one toanother is the essence of Jiu Jitsu, but understanding howand when they can move from one to another is a largeundertaking.This application helps document the relationshipsthey have with each other.',
         links: {
             'Github Front-end': 'https://github.com/sartoriusrex/jjd-client',
             'Github Back-end': 'https://github.com/sartoriusrex/jjd-server-public',
