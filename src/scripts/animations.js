@@ -471,7 +471,7 @@ export const animateEgg = function () {
         }).play()
 }
 
-const fourZeroFour = Array.from(document.querySelectorAll('.container--404svg svg'));
+export const fourZeroFour = Array.from(document.querySelectorAll('.container--404svg svg'));
 
 const numbersStart = {
     translateY: '-2rem',
@@ -509,5 +509,14 @@ export const animate404 = function () {
             .to(fourZeroFour[2], numbersStart, 'start+=1')
             .to(fourZeroFour[2], numbersEnd, 'start+=3')
 
+    )
+}
+
+export const animateNum = function (num) {
+    return (
+        gsap.timeline().to(num, {
+            rotateY: 1080,
+            duration: 1
+        })
     )
 }
