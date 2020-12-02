@@ -21,6 +21,8 @@
     h6 {
         margin-bottom: 2rem;
         text-align: center;
+        text-shadow: none;
+        color: $neon-yellow;
     }
 
     p {
@@ -28,6 +30,11 @@
         padding: 1rem;
         border: .1rem solid $neon-green;
         max-width: 35rem;
+        transform: rotate(2deg);
+    }
+
+    ul {
+        margin-bottom: 3rem;
     }
 
     li {
