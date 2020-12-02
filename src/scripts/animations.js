@@ -470,3 +470,44 @@ export const animateEgg = function () {
             delay: -.1
         }).play()
 }
+
+const fourZeroFour = Array.from(document.querySelectorAll('.container--404svg svg'));
+
+const numbersStart = {
+    translateY: '-2rem',
+    duration: 2,
+    ease: 'power2.out'
+}
+
+const numbersEnd = {
+    ...numbersStart,
+    ...{ translateY: '0' }
+}
+
+const fourZeroFourShadow = document.querySelector('.container--404shadow svg');
+
+const fourZeroFourAnimation = gsap.timeline({ repeat: -1 });
+
+export const animate404 = function () {
+    return (
+        fourZeroFourAnimation
+            .addLabel('start')
+            .to(fourZeroFourShadow, {
+                translateY: '-0.5rem',
+                duration: 2.5,
+                ease: 'power2.out',
+            })
+            .to(fourZeroFourShadow, {
+                translateY: '0rem',
+                duration: 2.5,
+                ease: 'power2.out'
+            })
+            .to(fourZeroFour[0], numbersStart, 'start')
+            .to(fourZeroFour[0], numbersEnd, 'start+=2')
+            .to(fourZeroFour[1], numbersStart, 'start+=.5')
+            .to(fourZeroFour[1], numbersEnd, 'start+=2.5')
+            .to(fourZeroFour[2], numbersStart, 'start+=1')
+            .to(fourZeroFour[2], numbersEnd, 'start+=3')
+
+    )
+}
