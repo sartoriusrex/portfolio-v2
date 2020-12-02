@@ -1,6 +1,8 @@
 import { heroAnimation, starAnimation, animateCat } from './animations';
 import { enableScroll, disableScroll } from './enableDisableScrolling';
 
+starAnimation.pause();
+
 const sides = ['front', 'back', 'left', 'right', 'bottom', 'top']
 const cube = {}
 const captions = {}

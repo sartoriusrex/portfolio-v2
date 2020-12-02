@@ -37,9 +37,7 @@ export const starAnimation = starTL.to(star, {
     rotation: 45,
     scale: 3,
     ease: 'none',
-})
-
-starAnimation.pause();
+});
 
 
 // Animations for cats -- export function to apply to a random cat on each click
@@ -164,63 +162,99 @@ export const animatePDrop = function () {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    /*
-        If there's the intersection observer (all browsers except ie) then we use that to check the window.
-    */
-    if (aboutP1) {
-
-        if ("IntersectionObserver" in window) {
-            // Callback just calls animateDrop and unobserves after it's called.
-            let cb = function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        animatePDrop();
-                        observer.unobserve(entry.target);
-                    }
-                })
-            }
-
-            // Make sure we're about 150px into the window to animate
-            let opts = {
-                rootMargin: '0px 0px -150px 0px',
-            }
-
-            let observer = new IntersectionObserver(cb, opts);
-            observer.observe(aboutP3);
-        } else {
+export const fallingParagraphs = function () {
+    return (
+        document.addEventListener("DOMContentLoaded", function () {
             /*
-                Polyfill for intersection Observer.
-                We have to listen and remove events using setTimeout and measure the top of the object to the window.
-                We also have to listen to orientation changes and resize events.
+                If there's the intersection observer (all browsers except ie) then we use that to check the window.
             */
+            if (aboutP1) {
 
-            let ieTimout;
-
-            function ieIOanimation() {
-                if (ieTimout) clearTimeout(ieTimout);
-
-                ieTimout = setTimeout(function () {
-                    let animated = false;
-                    if (aboutP3.offsetTop < (window.innerHeight + window.pageYOffset)) {
-                        animatePDrop();
-                        animated = true;
+                if ("IntersectionObserver" in window) {
+                    // Callback just calls animateDrop and unobserves after it's called.
+                    let cb = function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                animatePDrop();
+                                observer.unobserve(entry.target);
+                            }
+                        })
                     }
 
-                    if (animated) {
-                        document.removeEventListener("scroll", ieIOanimation);
-                        window.removeEventListener("resize", ieIOanimation);
-                        window.removeEventListener("orientationChange", ieIOanimation);
+                    // Make sure we're about 150px into the window to animate
+                    let opts = {
+                        rootMargin: '0px 0px -150px 0px',
                     }
-                }, 20);
+
+                    let observer = new IntersectionObserver(cb, opts);
+                    observer.observe(aboutP3);
+                } else {
+                    /*
+                        Polyfill for intersection Observer.
+                        We have to listen and remove events using setTimeout and measure the top of the object to the window.
+                        We also have to listen to orientation changes and resize events.
+                    */
+
+                    let ieTimout;
+
+                    function ieIOanimation() {
+                        if (ieTimout) clearTimeout(ieTimout);
+
+                        ieTimout = setTimeout(function () {
+                            let animated = false;
+                            if (aboutP3.offsetTop < (window.innerHeight + window.pageYOffset)) {
+                                animatePDrop();
+                                animated = true;
+                            }
+
+                            if (animated) {
+                                document.removeEventListener("scroll", ieIOanimation);
+                                window.removeEventListener("resize", ieIOanimation);
+                                window.removeEventListener("orientationChange", ieIOanimation);
+                            }
+                        }, 20);
+                    }
+
+                    document.addEventListener("scroll", ieIOanimation);
+                    window.addEventListener("resize", ieIOanimation);
+                    window.addEventListener("orientationChange", ieIOanimation);
+                }
             }
+        })
+    )
+}
 
-            document.addEventListener("scroll", ieIOanimation);
-            window.addEventListener("resize", ieIOanimation);
-            window.addEventListener("orientationChange", ieIOanimation);
-        }
-    }
-});
+const projectItems = document.querySelectorAll('.project-item');
+
+export const appearingProjects = function () {
+    return (
+        document.addEventListener("DOMContentLoaded", function () {
+            if ('IntersectionObserver' in window) {
+                let cb = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const item = entry.target;
+
+                            item.classList.remove('hidden');
+
+                            projectObserver.unobserve(item);
+                        }
+                    })
+                }
+
+                let opts = {
+                    rootMargin: '0px 0px -250px 0px',
+                }
+
+                const projectObserver = new IntersectionObserver(cb, opts);
+
+                projectItems.forEach(item => projectObserver.observe(item));
+            } else {
+                projectItems.forEach(item => item.classList.remove('.hidden'));
+            }
+        })
+    )
+}
 
 // whole egg
 const eggHatcher = document.querySelector('#egg-hatcher');

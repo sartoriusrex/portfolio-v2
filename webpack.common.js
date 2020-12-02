@@ -10,7 +10,7 @@ const { Markdown } = require("@cenguidanos/node-markdown-parser");
 const pagesDirectory = './src/pages/';
 const viewsDirectory = './src/views/';
 const blogDirectory = './src/posts/';
-const projects = require('./src/scripts/projects');
+const projects = require('./src/scripts/projectList');
 
 const markdown = new Markdown();
 
