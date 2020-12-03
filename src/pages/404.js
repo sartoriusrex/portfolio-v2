@@ -1,11 +1,11 @@
 import '../styles/404.scss';
 import '../scripts/burger-menu';
-import { animate404, fourZeroFour, animateNum } from '../scripts/animations';
+import { animate404, fourZeroFour, playNum } from '../scripts/animations';
 
 animate404();
 
-fourZeroFour.forEach(num => {
+fourZeroFour.forEach((num, i) => {
     num.addEventListener('click', async () => {
-        animateNum(num);
+        playNum(i)
     })
 })

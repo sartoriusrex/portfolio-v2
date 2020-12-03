@@ -474,7 +474,7 @@ export const animateEgg = function () {
 export const fourZeroFour = Array.from(document.querySelectorAll('.container--404svg svg'));
 
 const numbersStart = {
-    translateY: '-2rem',
+    translateY: '-4rem',
     duration: 2,
     ease: 'power2.out'
 }
@@ -493,7 +493,7 @@ export const animate404 = function () {
         fourZeroFourAnimation
             .addLabel('start')
             .to(fourZeroFourShadow, {
-                translateY: '-0.5rem',
+                translateY: '-1rem',
                 duration: 2.5,
                 ease: 'power2.out',
             })
@@ -512,11 +512,13 @@ export const animate404 = function () {
     )
 }
 
-export const animateNum = function (num) {
-    return (
-        gsap.timeline().to(num, {
-            rotateY: 1080,
-            duration: 1
-        })
-    )
+const numbersAnimations = fourZeroFour.map(num =>
+    gsap.timeline().to(num, {
+        rotateY: 1080,
+        duration: 1
+    })
+)
+
+export const playNum = function (i) {
+    numbersAnimations[i].progress(0)
 }
