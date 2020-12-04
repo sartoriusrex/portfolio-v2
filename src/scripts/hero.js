@@ -118,7 +118,7 @@ const catFacts = {
 }
 
 const getFact = function () {
-    const randNum = Math.floor(Math.random() * Object.keys(catFacts).length) + 1;
+    const randNum = Math.floor(Math.random() * (Object.keys(catFacts).length - 1) + 1);
     return catFacts[randNum];
 }
 
@@ -187,7 +187,7 @@ sides.forEach(side => {
     cube[side] = document.querySelector(`.side.${side}`);
 
     // Top side doesn't have a caption. It's the cat door
-    if (side !== 'top') captions[side] = document.querySelector(`#${side}`);
+    if (side !== 'top') captions[side] = document.querySelector(`.${side} figcaption`);
 
     //When the side of the cube is clicked, we make the caption visible by removing class invisible and adding class visible
     // Then we  pause the animation
@@ -197,8 +197,7 @@ sides.forEach(side => {
         let paused = heroAnimation.paused();
 
         if (side !== 'top') {
-            captions[side].classList.remove('heroCaption-invisible');
-            captions[side].classList.add('heroCaption-visible');
+            captions[side].classList.toggle('visible')
         }
 
         if (paused) {
@@ -213,13 +212,7 @@ sides.forEach(side => {
 
     // If the caption is visible, then it can be clicked
     // If that happens, then we remove visible and add invisible classes and play the animation
-    if (side !== 'top') {
-        captions[side].addEventListener('click', function () {
-            captions[side].classList.remove('heroCaption-visible');
-            captions[side].classList.add('heroCaption-invisible');
-            heroAnimation.play();
-        });
-    } else {
+    if (side === 'top') {
         // If it's the top side, we do some magic
         const catMessage = document.querySelector('#cat-message');
         const cancelBtn = document.querySelector('.cancel');
