@@ -183,7 +183,7 @@ export const fallingParagraphs = function () {
 
                     // Make sure we're about 150px into the window to animate
                     let opts = {
-                        rootMargin: '0px 0px -150px 0px',
+                        rootMargin: '0px 0px 0px 0px',
                     }
 
                     let observer = new IntersectionObserver(cb, opts);
