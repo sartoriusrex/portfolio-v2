@@ -14,11 +14,10 @@
         <ul class="project-list">
             <% projects.forEach( function(project) { %>
             <li class="project-item hidden">
-                <a href="<%= project.links.live %>" target="_blank" rel="noopener noreferrer">
-                    <h4><%= project.name %></h4>
-                </a>
-
                 <div class="container--details">
+                    <a href="<%= project.links.live %>" target="_blank" rel="noopener noreferrer">
+                        <h4><%= project.name %></h4>
+                    </a>
 
                     <div class="container--project-img">
                         <img src="<%=project.images[0] %>" alt="project image">
