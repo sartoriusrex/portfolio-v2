@@ -6,26 +6,22 @@ description: A short introduction to Dennis Mai's blog and website.
 
 # Introduction to this Website and Blog
 
-Greetings brave [surfer*](#note1) of the world wide web! And welcome back to the weird web!
+Greetings web [surfer*](#note1) and welcome back to the weird web!
 
 This website is a work of *self expression*. Here I lay to bare my thoughts, ideas, my learning and doubt.
 
-It's also a throwback to the early days of the internet, a homage to the primordial [indie web](https://indieweb.org/) that made the internet such a fascinating place to begin with. 
+It's also a homage to the primordial [indie web](https://indieweb.org/) that makes the internet such a fascinating place. 
 
-People were using AOL Instant Messenger, MSN Messenger, Xanga, MySpace, LiveJournal, and Google Blogs to connect with others. This is my digital garden, and I hope it evokes the same sense of nostalgia for you as it does for me for a time long past.
+This website is also my own custom blog. It is far from perfect, but it's mine. I write about Technology, Society & Culture, Brazilian Jiu Jitsu, Fatherhood, being a husband (Husband...hood?), and lots of other things.
 
-## An innocent time...
+## My Promise to You
 
-This website is also my own custom blog. It is far from perfect, but it's mine. In here, I write about technology, culture, society, Brazilian Jiu Jitsu, Fatherhood, being a husband (husband...hood?), and other things, too. I hope my writing inspires and provokes you, dear reader.
-
-## This place isn't 100% Accessible
-
-I try to make sure everybody can digest my content, but, you know what? I won't be able to make everyone happy. And that's okay. That's life. I'm sorry if I offend any of you (truly, I am). 
-
-This place is a work in progress, and I will continue to make it as accessible to as many people as I can.
+This place is a work in progress. Right now, it's not 100% accessible, but I will continue to make it as accessible to as many people as I can.
 
 That said, you can always send me feedback via email.
 
 Enjoy the tour, and and I hope you'll be inspired to make the web a little bit better. And a little bit weirder.
+
+[Back to the top](#introduction-to-this-website-and-blog)
 
 *<a name=note1 ></a> \* When the internet was first becoming popular, it was called the "World Wide Web", and those browsing the internet then were "surfing the web." Good times.*
