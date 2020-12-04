@@ -163,24 +163,10 @@ const animateRandomCat = async function () {
 }
 
 // Prevent any clicks when user clicks on the star or background. This could accidentally trigger cat animations.
-catContainer.addEventListener('click', function (e) { e.stopPropagation() })
+catContainer.addEventListener('click', function (e) { e.stopPropagation() });
 
-// When the door opens, the random cat container scales up and the cat spins out, revealing the text
-door.addEventListener('click', function (e) {
-    e.stopPropagation();
-    heroAnimation.pause();
-    door.classList.add('open');
 
-    catContainer.style.transform = 'scale(1)';
-    catContainer.style.borderRadius = '0';
-
-    updateFact();
-
-    animateRandomCat();
-    starAnimation.play();
-
-    disableScroll();
-});
+let activeSide = null;
 
 // Add click events on all sides and their captions
 sides.forEach(side => {
@@ -189,11 +175,19 @@ sides.forEach(side => {
     // Top side doesn't have a caption. It's the cat door
     if (side !== 'top') captions[side] = document.querySelector(`.${side} figcaption`);
 
-    //When the side of the cube is clicked, we make the caption visible by removing class invisible and adding class visible
+    //When the side of the cube is clicked, we make the caption visible by toggling the class visible
     // Then we  pause the animation
     // For the top side, we check if the animation is paused and toggle it each time.
     // We also scroll the user to the very top for the best UX
     cube[side].addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        // Do nothing is the active side isn't the one already clicked
+        if (activeSide !== side && activeSide !== null) return;
+
+        // If the side has been activated, toggle it back to null, otherwise set it
+        activeSide = activeSide === side ? null : side;
+
         let paused = heroAnimation.paused();
 
         if (side !== 'top') {
@@ -210,10 +204,10 @@ sides.forEach(side => {
         window.scrollTo(0, heroContainer.getBoundingClientRect.y);
     });
 
-    // If the caption is visible, then it can be clicked
-    // If that happens, then we remove visible and add invisible classes and play the animation
     if (side === 'top') {
         // If it's the top side, we do some magic
+
+        // get the stuff and init counter
         const catMessage = document.querySelector('#cat-message');
         const cancelBtn = document.querySelector('.cancel');
         const subscribeBtn = document.querySelector('.subscribe');
@@ -259,4 +253,25 @@ sides.forEach(side => {
             closeCatBox();
         });
     }
-})
+});
+
+// When the door opens, the random cat container scales up and the cat spins out, revealing the text
+door.addEventListener('click', function (e) {
+    // first, make sure all the other sides' captions are off and inactive
+    captions[activeSide].classList.toggle('visible');
+    activeSide = null;
+
+    e.stopPropagation();
+    heroAnimation.pause();
+    door.classList.add('open');
+
+    catContainer.style.transform = 'scale(1)';
+    catContainer.style.borderRadius = '0';
+
+    updateFact();
+
+    animateRandomCat();
+    starAnimation.play();
+
+    disableScroll();
+});
