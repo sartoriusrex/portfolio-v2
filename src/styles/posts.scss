@@ -56,8 +56,8 @@
     }
 
     ul, ol {
-        padding-left: 1rem;
         margin-left: 2rem;
+        list-style-position: inside;
 
         li {
             color: $neon-yellow;

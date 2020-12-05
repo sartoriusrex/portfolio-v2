@@ -98,8 +98,9 @@ fs.writeFile('db.json', JSON.stringify(newBlogData), 'utf8', (err) => {
 Promise.all(newBlogData.map(async data => {
 	// Create ejs file using markdown data
 	const topSection = `
-<main>
+<% include ../components/head %>
 <% include ../components/header %>
+<main>
 <section class="section--blog">
 <div class="container--info">
 <p class="date">Updated: ${new Date(data.updatedAt).toLocaleDateString()}</p>
@@ -111,6 +112,7 @@ Promise.all(newBlogData.map(async data => {
 </section>
 </main>
 <% include ../components/footer %>
+</html>
 `
 	// content to write is the header, data body, and footer
 	const content = `${topSection} ${data.body} ${bottomSection}`
