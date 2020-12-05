@@ -6,6 +6,10 @@ import '../images/karate-kick.svg';
 import '../images/fam.png';
 import '../images/me.png';
 import '../images/leila.png';
+import '../images/me.webp';
+import '../images/leila.webp';
+import '../images/fam.webp';
+import '../images/portrait-ascii.webp';
 
 
 // // jjd images
@@ -44,8 +48,8 @@ import '../images/icons/github.svg';
 import '../images/icons/stackoverflow.svg';
 import '../images/icons/skype.svg';
 
-import '../images/icons/favicon-16x16.png';
-import '../images/icons/favicon-32x32.png';
+import '../images/icons/favicon16x16.png';
+import '../images/icons/favicon32x32.png';
 import '../images/icons/favicon.ico';
 
 // =========Code Below
