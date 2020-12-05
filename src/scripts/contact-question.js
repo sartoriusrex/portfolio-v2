@@ -19,5 +19,5 @@ submitBtn.addEventListener('click', function (e) {
     window.scrollTo(0, scrollToPosition);
     animateEgg();
 
-    emailLink.href = `mailto: dmai.developer@gmail.com?subject=${selected.value}`;
+    emailLink.href = `mailto: dmai.developer@gmail.com?subject=i-chose-${selected.value}`;
 });
