@@ -1,14 +1,17 @@
 <body>
     <header>
-        <nav>
+        <nav aria-labelledby="burger-button">
             <a href="/" class='link--logo'>
                 <% include ./logo %>
             </a>
-            <button class="button--burger-menu" data-burger="closed">
+            <button id="burger-button" class="button--burger-menu" data-burger="closed" aria-expanded="false"
+                aria-label="Open Menu">
                 <%include ./menu %>
             </button>
-            <ul class="ul--burger-menu" data-burger="closed">
-                <li class="button--close-burger-menu"><button>Close The Menu</button></li>
+            <ul class="ul--burger-menu" data-burger="closed" role="menubar" aria-haspopup="true">
+                <li class="button--close-burger-menu">
+                    <button aria-label="Close Menu">Close The Menu</button>
+                </li>
                 <li>
                     <a href="/about.html">
                         <% include ../images/codemonkey.svg %>
