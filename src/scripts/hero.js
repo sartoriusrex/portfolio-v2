@@ -257,11 +257,15 @@ sides.forEach(side => {
 
 // When the door opens, the random cat container scales up and the cat spins out, revealing the text
 door.addEventListener('click', function (e) {
+    e.stopPropagation();
+
     // first, make sure all the other sides' captions are off and inactive
-    captions[activeSide].classList.toggle('visible');
+    if (activeSide !== null && activeSide !== 'top') {
+        captions[activeSide].classList.toggle('visible');
+    }
+
     activeSide = null;
 
-    e.stopPropagation();
     heroAnimation.pause();
     door.classList.add('open');
 
