@@ -260,7 +260,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 		const themeColor = '#FE53BB';
 		const httpEquiv = {
 			'http-equiv': 'Content-Security-Policy',
-			'content': `default-src 'self' ${name === 'index' ? 'connect-src  https://catfact.ninja/' : ''}`
+			'content': `default-src 'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/**/* 'unsafe-inline'`
 		}
 
 		let newInstance = new HtmlWebpackPlugin({

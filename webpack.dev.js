@@ -2,14 +2,14 @@ const path = require('path');
 const common = require("./webpack.common");
 const merge = require("webpack-merge");
 
-module.exports = merge( common, {
+module.exports = merge(common, {
 	mode: 'development',
-	devtool: 'cheap-eval-source-map',
+	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: path.join(__dirname, './dist'),
 		compress: true,
-    watchOptions: {
-      aggregateTimeout: 200
-    }
+		watchOptions: {
+			aggregateTimeout: 200
+		}
 	}
 });

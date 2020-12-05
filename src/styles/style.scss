@@ -82,11 +82,6 @@
 	padding: 0;
 	scroll-behavior: smooth;
   color: $neon-blue;
-
-  &:focus,
-  &:active {
-    outline: 1px solid $neon-yellow;
-  }
 }
 
 main {
@@ -105,14 +100,18 @@ main {
 }
 
 a {
-  &:hover,
-  &:active,
-  &:focus {     
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: 1px solid $neon-yellow;
     cursor: pointer;
   }
 
-  text-decoration: none;
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 body {
@@ -176,6 +175,11 @@ button {
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:focus,
+  &:active {
+    outline: 1px solid $neon-yellow;
   }
 }
 
