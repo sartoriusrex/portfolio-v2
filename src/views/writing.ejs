@@ -11,9 +11,9 @@
     <section class="container--writing">
         <h1>The Brain Dump</h1>
         <% years.forEach( function(year) { %>
-        <h6 class="year">
+        <p class="year">
             <%= year %>
-        </h6>
+        </p>
         <ul>
             <% blogData.forEach( function(blogFile) { %>
             <% if( year === (new Date(blogFile.date).getFullYear())) { %>

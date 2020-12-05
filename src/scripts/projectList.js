@@ -4,7 +4,7 @@ const projects = [
         description: 'An application for intermediate language learners to improve reading fluency and vocabulary. Users can read foreign language newspapers, as well as look up words and phrases  and save them. Looking up and saving can be done in a total of 3 clicks, a drastic speed from  leaving the app or window to look up and document a word. This helps learners improve fluency with increasing focus on the text at hand instead of abruptly switching contexts.',
         links: {
             Github: 'https://github.com/sartoriusrex/polyglotist',
-            // Live: ''
+            Live: 'https://www.dennismai.dev/404.html'
         },
         images: [
             'imgs/polyglotist-1.png',
