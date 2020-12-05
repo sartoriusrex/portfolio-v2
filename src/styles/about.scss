@@ -93,6 +93,8 @@
         border-radius: 50%;
         border: .25rem solid $about-magenta;
         background-color: $neon-green;
+        height: 100%;
+        width: 100%;
     }
 
     &::after {
