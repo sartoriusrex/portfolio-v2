@@ -342,7 +342,7 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif|pdf|ico)$/,
+				test: /\.(png|svg|jpg|jpeg|webp|gif|pdf|ico)$/,
 				use: {
 					loader: "file-loader",
 					options: {
