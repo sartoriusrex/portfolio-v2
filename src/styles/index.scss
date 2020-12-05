@@ -10,6 +10,10 @@
 
 @import "footer";
 
+main {
+    padding-top: 0;
+}
+
 h1 {
     padding: .5rem;
     border: .25rem dashed $neon-yellow;

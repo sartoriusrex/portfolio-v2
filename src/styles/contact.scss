@@ -5,7 +5,7 @@
 
 .section--contact {
 	width: 100%;
-	padding: 0 1rem;
+	padding: 2rem 1rem;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -18,9 +18,9 @@
 	}
 
 	h2 {
-		margin: 4rem 0 2rem;
+		margin-bottom: 2rem;
 		width: 100%;
-		text-shadow: none;
+		// text-shadow: none;
 
 		a {
 			font-size: inherit;

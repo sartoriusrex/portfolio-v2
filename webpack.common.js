@@ -255,12 +255,13 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				blogCount++;
 				break;
 		}
+		const content = "default-src 'self' https://www.google-analytics.com *.dennismai.dev https://media.giphy.com 'unsafe-inline'";
 
 		const chunkName = isBlogPost ? `posts${blogCount}` : name;
 		const themeColor = '#FE53BB';
 		const httpEquiv = {
 			'http-equiv': 'Content-Security-Policy',
-			'content': `default-src 'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/**/* 'unsafe-inline'`
+			'content': content
 		}
 
 		let newInstance = new HtmlWebpackPlugin({
