@@ -313,7 +313,7 @@ module.exports = {
 				new MiniCssExtractPlugin(),
 				new Critters({
 					fonts: true,
-					preload: "js-lazy",
+					// preload: "js-lazy",
 					noscriptFallback: true
 				}),
 				new CleanWebpackPlugin(),
