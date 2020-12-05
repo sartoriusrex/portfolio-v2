@@ -10,6 +10,7 @@
 	flex-direction: column;
     align-items: center;
     max-width: $max-width;
+    overflow-x: hidden;
     
     * {
 		color: $neon-yellow;
