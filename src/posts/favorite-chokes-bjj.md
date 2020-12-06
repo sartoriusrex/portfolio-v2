@@ -2,6 +2,7 @@
 keywords: Dennis Mai, Weird Wide Web, Brazilian Jiu Jitsu, BJJ, Choke Holds, BJJ Strangulations
 title: My Favorite BJJ Chokes
 description: An oddly specific list of Dennis Mai's favoriate Brazilian Jiu jitsu chokes and strangulations.
+tags: Jiu Jitsu
 ---
 
 # Jiu Jitsu Chokes and Strangulations - My Favorite Ways to Safely Submit Someone

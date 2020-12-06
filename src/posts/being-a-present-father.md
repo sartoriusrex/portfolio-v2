@@ -2,6 +2,7 @@
 keywords: Dennis Mai, Blog, Fatherhood
 title: Dennis Mai - Being a Present and Mindful Father
 description: Being present and mindful as a father -- being your best self so that your child/children can be their best selves
+tags: Fatherhood, Mindfulness
 ---
 
 # Being a Present Father

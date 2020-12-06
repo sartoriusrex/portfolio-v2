@@ -2,6 +2,7 @@
 keywords: ejs, webpack, blog, markdown, simple blog, Vanilla JS, GSAP, Lean Web, JAM Stack
 title: Dennis Mai - How I Made My Blog
 description: How I made my blog using just ejs, webpack, scss, and vanilla JS. (And GSAP for animations. It's unnecessary -- but fun)
+tags: Web Dev
 ---
 
 # How I Made This Blog

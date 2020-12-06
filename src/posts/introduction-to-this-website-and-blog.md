@@ -2,6 +2,7 @@
 keywords: Dennis Mai, Blog, Development, Weird Wide Web, Node, Webpack, EJS, Vanilla JS, Lean Web, JAMstack
 title: Dennis Mai - Introduction to My Blog
 description: A short introduction to Dennis Mai's blog and website.
+tags: Web Dev
 ---
 
 # Introduction to this Website and Blog
