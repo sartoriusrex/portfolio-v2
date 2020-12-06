@@ -69,3 +69,31 @@ footer {
 	padding-bottom: 0;
 	margin: 1rem 0;
 }
+
+.weird {
+	width: 100%;
+	padding: 0 1rem;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container--weird-center {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.weird-other {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.container--arrows {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
