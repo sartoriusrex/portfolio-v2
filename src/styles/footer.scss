@@ -71,29 +71,212 @@ footer {
 }
 
 .weird {
-	width: 100%;
-	padding: 0 1rem;
-	margin-bottom: 2rem;
+	width: calc(100% - 1rem);
+	max-width: 35rem;
+	padding: 1rem;
+	margin: 4rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border: .1rem solid $white;
+	border-radius: .25rem;
+	box-shadow:
+		0 0 1rem $neon-green,
+		inset 0 0 1rem $neon-green;
+
+	animation: 10s linear 4s infinite flicker;
+
+	&> p {
+		color: $neon-yellow;
+		text-align: center;
+		margin-bottom: 1rem;
+
+		&> a {
+			font-family: 'VT323';
+			font-size: 3rem;
+			color: $neon-green;
+			line-height: 1.1;
+			margin-top: 1rem;
+			text-shadow: .1rem .1rem 0 $neon-pink;
+
+			&:hover {
+				color: $neon-pink;
+				text-shadow: .1rem .1rem 0 $neon-green;
+				animation: 300ms ease-in-out shake;
+			}
+		}
+	}
 }
 
-.container--weird-center {
+.weird-links {
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	div {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		a {
+			color: $neon-yellow;
+			width: auto;
+			padding: 1rem;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $neon-pink;
+			}
+		}
+	}
+}
+
+.arrow {
+	color: $neon-green;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.weird-other {
-	width: 50%;
-	display: flex;
-	justify-content: space-between;
-}
-
-.container--arrows {
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
+	height: 3rem;
+
+	svg {
+		margin-bottom: .5rem;
+	}
+
+	&:hover {
+		svg {
+			fill: $neon-pink;
+			stroke: $neon-pink;
+		}
+	}
+
+	&:nth-of-type(2) {
+		svg {
+			transform: rotate(.5turn);
+		}
+	}
+}
+
+
+@keyframes shake {
+	0% {
+		transform: translateX(.2rem);
+	}
+
+	10% {
+		transform: translateX(-.2rem);
+	}
+
+	20% {
+		transform: translateX(.2rem);
+	}
+
+	30% {
+		transform: translateX(-.2rem);
+	}
+
+	40% {
+		transform: translateX(.2rem);
+	}
+
+	50% {
+		transform: translateX(-.2rem);
+	}
+
+	60% {
+		transform: translateX(.2rem);
+	}
+
+	70% {
+		transform: translateX(-.2rem);
+	}
+	
+	80% {
+		transform: translateX(.2rem);
+	}
+
+	90% {
+		transform: translateX(-.2rem);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes flicker {
+	0% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	1% {
+		box-shadow: none;
+	}
+
+	2% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	2.5% {
+		box-shadow: none;
+	}
+
+	3% {
+		box-shadow:
+			0 0 1.5rem $neon-green,
+			inset 0 0 1.5rem $neon-green;
+	}
+
+	3.5% {
+		box-shadow: none;
+	}
+
+	4% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	10% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	10.5% {
+		box-shadow: none;
+	}
+
+	11% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	100% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+}
+
+@media screen and (min-width: $medium) {
+	.weird {
+		transform: skew(10deg);
+
+		&> p {
+			transform: skew(-10deg);
+		}
+	}
+
+	.weird-links {
+		transform: skew(-10deg);
+	}
 }
