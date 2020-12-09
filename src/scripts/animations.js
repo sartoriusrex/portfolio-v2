@@ -73,11 +73,15 @@ export const animateCat = function (cat) {
 
 const bunnyCatTL = gsap.timeline({ repeat: -1 });
 const bunnyCat = document.querySelector('#cat-bunny');
-const bunnyLeftEar = document.querySelector('#leftEar');
-const bunnyRighttEar = document.querySelector('#rightEar');
+const foot4 = document.querySelector('#foot4');
+const foot3 = document.querySelector('#foot3');
+const foot2 = document.querySelector('#foot2');
+const foot1 = document.querySelector('#foot1');
+const tail = document.querySelector('#tail');
 
 export const animateBunny = function () {
     return bunnyCatTL
+        .addLabel('theWalk')
         .fromTo(bunnyCat, {
             translateX: '-5rem',
         }, {
@@ -86,7 +90,6 @@ export const animateBunny = function () {
             ease: 'none',
             duration: 1,
         })
-        .addLabel('theWalk')
         .to(bunnyCat, {
             rotateY: '180deg',
             duration: .1,
@@ -119,6 +122,60 @@ export const animateBunny = function () {
             rotateY: '0deg',
             duration: .2,
         })
+        .to(foot4, {
+            motionPath: {
+                path: '#traj4',
+                align: "self",
+                offsetY: 20
+            },
+            duration: .5,
+            ease: "power1.out",
+            repeat: 11
+        }, 'theWalk')
+        .to(foot3, {
+            motionPath: {
+                path: '#traj3',
+                align: "self",
+                offsetY: 20
+            },
+            duration: .5,
+            ease: "power1.out",
+            repeat: 11,
+            delay: .1
+        }, 'theWalk')
+        .to(foot2, {
+            motionPath: {
+                path: '#traj2',
+                align: "self",
+                offsetY: 20
+            },
+            duration: .5,
+            ease: "power1.out",
+            repeat: 11,
+            delay: .2
+        }, 'theWalk')
+        .to(foot1, {
+            motionPath: {
+                path: '#traj1',
+                align: "self",
+                offsetY: 20
+            },
+            duration: .5,
+            ease: "power1.out",
+            repeat: 11,
+            delay: .3
+        }, 'theWalk')
+        .to(tail, {
+            motionPath: {
+                path: '#trajTail',
+                align: 'self',
+                offsetY: 10,
+                offsetX: 5,
+            },
+            duration: 1,
+            repeat: 6,
+            ease: "none",
+        }, 'theWalk')
 }
 
 // Animating the about this place paragraph drop bounces
