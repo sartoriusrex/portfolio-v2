@@ -250,6 +250,11 @@ sides.forEach(side => {
         subscribeBtn.addEventListener('click', function () {
             alert("Seriously? \n\nOkay, well, I might implement that another time.\n\nWeirdo.");
 
+            cancelCount = 0;
+            catMessage.innerText = 'Thank you for subscribing to Cat Facts!';
+            cancelBtn.innerText = "No?";
+            subscribeBtn.innerText = "Absolutely!";
+
             closeCatBox();
         });
     }

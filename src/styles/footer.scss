@@ -84,7 +84,7 @@ footer {
 		0 0 1rem $neon-green,
 		inset 0 0 1rem $neon-green;
 
-	animation: 10s linear 4s infinite flicker;
+	animation: 10s linear 0s infinite flicker;
 
 	&> p {
 		color: $neon-yellow;
@@ -215,7 +215,9 @@ footer {
 	}
 
 	1% {
-		box-shadow: none;
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
 	}
 
 	2% {
@@ -225,7 +227,9 @@ footer {
 	}
 
 	2.5% {
-		box-shadow: none;
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
 	}
 
 	3% {
@@ -235,7 +239,9 @@ footer {
 	}
 
 	3.5% {
-		box-shadow: none;
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
 	}
 
 	4% {
@@ -251,10 +257,66 @@ footer {
 	}
 
 	10.5% {
-		box-shadow: none;
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
 	}
 
 	11% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	20% {
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
+	}
+
+	30% {
+		box-shadow:
+			0 0 2rem $neon-green,
+			inset 0 0 2rem $neon-green;
+	}
+
+	35% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	45% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	45.5% {
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
+	}
+
+	46% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	47% {
+		box-shadow:
+			0 0 1rem $neon-green,
+			inset 0 0 1rem $neon-green;
+	}
+
+	47.5% {
+		box-shadow:
+			0 0 .1rem $neon-green,
+			inset 0 0 .1rem $neon-green;
+	}
+
+	48% {
 		box-shadow:
 			0 0 1rem $neon-green,
 			inset 0 0 1rem $neon-green;
