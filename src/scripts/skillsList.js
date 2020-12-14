@@ -1,32 +1,14 @@
-export const skills = {
-    languages: [
+const skills = {
+    'Markup & Style': [
         'HTML',
-        'CSS',
-        'Javascript',
-        'Typescript',
-        'Node',
-        'Python',
         'ejs',
-    ],
-    styling: [
-        'CSS',
-        'SCSS',
-        'BEM',
+        'CSS / SCSS + BEM',
         'Styled-Components',
         'CSS-in-JS',
         'CSS-in-CSS',
         'CSS Modules',
-        'Tailwind',
-        'Bootstrap',
-        'SemanticUI',
     ],
-    frameworks: [
-        'React + Redux',
-        'Apollo',
-        'Express',
-        'Electron',
-    ],
-    databases: [
+    'Databases': [
         'PostgresQL',
         'mySQL',
         'GraphQL',
@@ -34,7 +16,20 @@ export const skills = {
         'NeDB',
         'Redis'
     ],
-    devops: [
+    'Scripting Languages, Frameworks & Libraries': [
+        'Javascript',
+        'Typescript',
+        'Node',
+        'Python',
+        'Express',
+        'React + Redux',
+        'Electron',
+        'Apollo',
+        'Bootstrap',
+        'Tailwind',
+        'SemanticUI'
+    ],
+    'Devops & Testing': [
         'Docker',
         'Webpack',
         'Babel',
@@ -43,18 +38,18 @@ export const skills = {
         'Enzyme',
         'React-Testing-Library',
         'TravisCI',
-        'Heroku',
         'GitlabCI',
+        'Heroku',
         'Netlify'
     ],
-    collaboration: [
+    'Collaboration & Productivity': [
         'Git',
         'Github, Bitbucket, Gitlab',
         'Jira',
         'Salesforce',
         'Google & Microsoft Productivity Suites'
     ],
-    design: [
+    'Design': [
         'Figma',
         'Zeplin',
         'Gimp',
@@ -62,3 +57,5 @@ export const skills = {
         'Adobe XD'
     ]
 }
+
+module.exports = skills;

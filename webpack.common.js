@@ -11,6 +11,7 @@ const pagesDirectory = './src/pages/';
 const viewsDirectory = './src/views/';
 const blogDirectory = './src/posts/';
 const projects = require('./src/scripts/projectList');
+const skills = require('./src/scripts/skillsList');
 
 const markdown = new Markdown();
 
@@ -167,10 +168,13 @@ const projectsString = `<% var projects = ${JSON.stringify(projects)} %>`;
 const projectsPage = './src/views/projects.ejs';
 const projectsData = fs.readFileSync(projectsPage, 'utf8').split('\n');
 const projectsPageFirstLine = projectsData.shift();
+const projectsPageSecondLine = projectsData.shift();
+
+const skillsString = `<% var skills = ${JSON.stringify(skills)} %>}`
 
 // If the data hasn't changed, do nothing, otherwise rewrite the file;
-if (projectsString !== projectsPageFirstLine) {
-	let newProjectsArray = [projectsString, ...projectsData];
+if (projectsString !== projectsPageFirstLine || skillsString !== projectsPageSecondLine) {
+	let newProjectsArray = [projectsString, skillsString, ...projectsData];
 	let newProjectsData = newProjectsArray.join('\n');
 
 	fs.writeFileSync(projectsPage, newProjectsData, 'utf8', (err, data) => {

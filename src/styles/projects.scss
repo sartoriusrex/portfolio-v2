@@ -39,7 +39,7 @@
 .project-list {
     margin: 1rem 0;
 
-    h2 {
+    h3 {
         text-align: center;
         margin-bottom: 1rem;
         text-shadow: none;
@@ -124,6 +124,97 @@
         height: 12rem;
         width: auto;
         box-shadow: 0 0 1rem .1rem $neon-yellow;
+    }
+}
+
+.container--skills {
+    @include card($blog-purple, $neon-yellow, 'small');
+    width: 100%;
+    max-width: calc(60rem - 2rem - 2rem);
+
+    summary {
+        color: $neon-yellow;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        p {
+            width: 100%;
+            max-width: 35rem;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            list-style: disc;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &[open] {
+        p {
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    em {
+        color: $neon-green;
+    }
+}
+
+@media screen and (min-width: $medium) {
+    .container--skills {
+        p {
+            list-style: disc;
+        }
+        p::after {
+            content: "->";
+            position: absolute;
+            color: $neon-yellow;
+            left: -4rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    }
+
+    &[open] {
+        p::after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.skills-grid-container {
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr auto;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    width: 100%;
+    align-self: stretch;
+    justify-self: center;
+
+    h2 {
+        color: $neon-green;
+        text-shadow: .1rem .1rem 0 $neon-pink;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    ul {
+        list-style: circle inside;
+        margin: .5rem 0 0 1rem;
+        line-height: 1.5;
+    }
+
+    li {
+        color: $neon-pink;
     }
 }
 
