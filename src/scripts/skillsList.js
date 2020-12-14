@@ -8,14 +8,6 @@ const skills = {
         'CSS-in-CSS',
         'CSS Modules',
     ],
-    'Databases': [
-        'PostgresQL',
-        'mySQL',
-        'GraphQL',
-        'MongoDB',
-        'NeDB',
-        'Redis'
-    ],
     'Scripting Languages, Frameworks & Libraries': [
         'Javascript',
         'Typescript',
@@ -42,6 +34,21 @@ const skills = {
         'Heroku',
         'Netlify'
     ],
+    'Design': [
+        'Figma',
+        'Zeplin',
+        'Gimp',
+        'Inkscape',
+        'Adobe XD'
+    ],
+    'Databases': [
+        'PostgresQL',
+        'mySQL',
+        'GraphQL',
+        'MongoDB',
+        'NeDB',
+        'Redis'
+    ],
     'Collaboration & Productivity': [
         'Git',
         'Github, Bitbucket, Gitlab',
@@ -49,13 +56,6 @@ const skills = {
         'Salesforce',
         'Google & Microsoft Productivity Suites'
     ],
-    'Design': [
-        'Figma',
-        'Zeplin',
-        'Gimp',
-        'Inkscape',
-        'Adobe XD'
-    ]
 }
 
 module.exports = skills;

@@ -128,9 +128,9 @@
 }
 
 .container--skills {
-    @include card($blog-purple, $neon-yellow, 'small');
     width: 100%;
     max-width: calc(60rem - 2rem - 2rem);
+    margin-bottom: 2rem;
 
     summary {
         color: $neon-yellow;
@@ -144,7 +144,13 @@
             padding: 0;
             margin: 0;
             position: relative;
-            list-style: disc;
+            display: inline list-item;
+            list-style-position: inside;
+
+            &::marker {
+                color: $neon-yellow;
+                margin-right:1rem;
+            }
         }
 
         &:hover {
@@ -152,38 +158,9 @@
         }
     }
 
-    &[open] {
-        p {
-            &::before {
-                transform: rotate(90deg);
-            }
-        }
-    }
-
     em {
         color: $neon-green;
-    }
-}
-
-@media screen and (min-width: $medium) {
-    .container--skills {
-        p {
-            list-style: disc;
-        }
-        p::after {
-            content: "->";
-            position: absolute;
-            color: $neon-yellow;
-            left: -4rem;
-            font-weight: bold;
-            font-size: 2rem;
-        }
-    }
-
-    &[open] {
-        p::after {
-            transform: rotate(90deg);
-        }
+        text-decoration: underline;
     }
 }
 
@@ -191,19 +168,59 @@
     width: 100%;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     margin-top: 1rem;
 }
 
+@media screen and (min-width: $small) {
+    .skills-grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+            "markup scripts"
+            "markup scripts"
+            "devops scripts"
+            "devops design"
+            "devops collab"
+            "data collab"
+    }
+
+    [data-cat="Markup & Style"] {
+        grid-area: markup;
+    }
+
+    [data-cat="Scripting Languages, Frameworks & Libraries"] {
+        grid-area: scripts;
+    }
+
+    [data-cat="Devops & Testing"] {
+        grid-area: devops;
+    }
+
+    [data-cat="Design"] {
+        grid-area: design;
+    }
+
+    [data-cat="Databases"] {
+        grid-area: data;
+    }
+
+    [data-cat="Collaboration & Productivity"] {
+        grid-area: collab;
+    }
+}
+
 .skill-category {
+    @include card($blog-purple, $neon-yellow, 'small'); 
     width: 100%;
     align-self: stretch;
     justify-self: center;
+    margin: 0;
 
     h2 {
-        color: $neon-green;
-        text-shadow: .1rem .1rem 0 $neon-pink;
-        font-size: 1.5rem;
+        color: $neon-yellow;
+        // text-shadow: .1rem .1rem 0 $neon-blue;
+        font-size: 1.75rem;
         width: 100%;
     }
 
