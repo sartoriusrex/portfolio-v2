@@ -1,12 +1,12 @@
 const skills = {
-    'Markup & Style': [
-        'HTML',
-        'ejs',
+    'Style & Markup': [
         'CSS / SCSS + BEM',
         'Styled-Components',
         'CSS-in-JS',
         'CSS-in-CSS',
         'CSS Modules',
+        'HTML',
+        'ejs',
     ],
     'Scripting Languages, Frameworks & Libraries': [
         'Javascript',
