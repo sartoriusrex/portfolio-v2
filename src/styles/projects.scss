@@ -132,11 +132,19 @@
     max-width: calc(60rem - 2rem - 2rem);
     margin-bottom: 2rem;
 
+    &[open] {
+        .skill-category {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+    }
+
     summary {
         color: $neon-yellow;
         width: 100%;
         display: flex;
         justify-content: center;
+        position: relative;
 
         p {
             width: 100%;
@@ -156,6 +164,15 @@
         &:hover {
             cursor: pointer;
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: .1rem;
+            height: 100%;
+            background-color: $neon-green;
+            bottom: 0;
+        }
     }
 
     em {
@@ -167,9 +184,9 @@
 .skills-grid-container {
     width: 100%;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 4rem;
     grid-template-columns: 1fr;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 @media screen and (min-width: $small) {
@@ -216,6 +233,30 @@
     align-self: stretch;
     justify-self: center;
     margin: 0;
+    opacity: 0;
+    transition: 
+        150ms opacity ease-in-out,
+        150ms transform ease-in-out;
+
+    &[data-cat] {
+        &:nth-child(even) {
+            transform: translateX(5rem) translateY(-3rem);
+        }
+
+        &:nth-child(odd) {
+            transform: translateX(-5rem) translateY(-3rem);
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+            transition-delay: 100ms;
+        }
+
+        &:nth-child(5),
+        &:nth-child(6) {
+            transition-delay: 200ms;
+        }
+    }
 
     h2 {
         color: $neon-yellow;
