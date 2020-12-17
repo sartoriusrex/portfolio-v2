@@ -170,7 +170,7 @@ const projectsData = fs.readFileSync(projectsPage, 'utf8').split('\n');
 const projectsPageFirstLine = projectsData.shift();
 const projectsPageSecondLine = projectsData.shift();
 
-const skillsString = `<% var skills = ${JSON.stringify(skills)} %>}`
+const skillsString = `<% var skills = ${JSON.stringify(skills)} %>`
 
 // If the data hasn't changed, do nothing, otherwise rewrite the file;
 if (projectsString !== projectsPageFirstLine || skillsString !== projectsPageSecondLine) {
@@ -261,7 +261,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				blogCount++;
 				break;
 		}
-		const content = "default-src 'self' *.cloudfront.net https://www.google-analytics.com *.dennismai.dev https://media.giphy.com 'unsafe-inline'";
+		const content = "default-src 'self' *.cloudfront.net *.dennismai.dev https://media.giphy.com 'unsafe-inline'";
 
 		const chunkName = isBlogPost ? `posts${blogCount}` : name;
 		const themeColor = '#FE53BB';

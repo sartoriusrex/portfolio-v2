@@ -82,13 +82,6 @@
             margin: 1rem 0;
             padding: 0 1rem;
         }
-
-        &:focus,
-        &:active,
-        & *:focus,
-        & *:active {
-            outline: .15rem solid $neon-blue;        
-        }
     }
 
     summary {
@@ -153,23 +146,31 @@
         justify-content: center;
         position: relative;
 
+        &::marker {
+            color: $neon-yellow;
+            margin-right:1rem;
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
         p {
             width: 100%;
             max-width: 35rem;
             padding: 0;
             margin: 0;
             position: relative;
-            display: inline list-item;
-            list-style-position: inside;
-
-            &::marker {
-                color: $neon-yellow;
-                margin-right:1rem;
-            }
         }
 
         &:hover {
             cursor: pointer;
+        }
+
+        &:focus,
+        &:active,
+        &:focus-within {
+            outline: none;
         }
     }
 
@@ -180,16 +181,12 @@
 }
 
 .skills-grid-container {
-    width: 100%;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr;
+    display: flex;
+    height: 80vh;
+    width: 100vw;
     margin: 2rem 0 4rem;
-    position: relative;
-    transition: 150ms opacity ease-in-out;
-    color: transparent;
-    overflow-x: hidden;
-    padding: .2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (min-width: $small) {
@@ -205,6 +202,13 @@
             "data collab";
         position: relative;
         grid-gap: 4rem;
+        width: 100%;
+        display: grid;
+        margin: 2rem 0 4rem;
+        transition: 150ms opacity ease-in-out;
+        color: transparent;
+        overflow-x: hidden;
+        padding: .2rem;
 
         &::after {
             content: "";
