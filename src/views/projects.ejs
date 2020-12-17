@@ -24,6 +24,7 @@
             </summary>
 
             <div class="skills-grid-container">
+                <button class="left-skill">&lt</button>
                 <% Object.keys(skills).forEach( function(cat) { %>
                 <div data-cat="<%= cat%>" class="skill-category">
                     <h2><%= cat %></h2>
@@ -34,6 +35,7 @@
                     </ul>
                 </div>
                 <% }) %>
+                <button class="right-skill">&gt</button>
             </div>
 
         </details>
