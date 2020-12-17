@@ -124,6 +124,7 @@
     width: 100%;
     max-width: calc(60rem - 2rem - 2rem);
     margin-bottom: 2rem;
+    overflow-x: hidden;
 
     &[open] {
         .skill-category {
@@ -187,6 +188,7 @@
     margin: 2rem 0 4rem;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 @media screen and (min-width: $small) {
@@ -203,6 +205,7 @@
         position: relative;
         grid-gap: 4rem;
         width: 100%;
+        height: auto;
         display: grid;
         margin: 2rem 0 4rem;
         transition: 150ms opacity ease-in-out;
@@ -230,91 +233,92 @@
             bottom: 7rem;
             opacity: 0;
         }
-    }
+        
 
-    [data-cat] {
-        display: flex;
-        align-items: center;
+        [data-cat] {
+            display: flex;
+            align-items: center;
 
-        &:nth-child(odd) {
-            flex-direction: row-reverse;
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
 
-            h2 {
-                text-align: right;
+                h2 {
+                    text-align: right;
+                }
             }
         }
-    }
 
-    [data-cat="Style & Markup"] {
-        grid-area: markup;
+        [data-cat="Style & Markup"] {
+            grid-area: markup;
 
-        &::after {
-            content: "";
-            position: absolute;
-            height: calc(2rem - .2rem);
-            width: calc(50% + 2rem);
-            border-left: .1rem solid $neon-green;
-            border-bottom: .1rem solid $neon-green;
-            bottom: -2rem;
-            left: 50%;
-            z-index: -1;
+            &::after {
+                content: "";
+                position: absolute;
+                height: calc(2rem - .2rem);
+                width: calc(50% + 2rem);
+                border-left: .1rem solid $neon-green;
+                border-bottom: .1rem solid $neon-green;
+                bottom: -2rem;
+                left: 50%;
+                z-index: -1;
+            }
         }
-    }
 
-    [data-cat="Scripting Languages, Frameworks & Libraries"] {
-        grid-area: scripts;
+        [data-cat="Scripting Languages, Frameworks & Libraries"] {
+            grid-area: scripts;
 
-        &::after {
-            content: "";
-            position: absolute;
-            height: calc(2rem - .2rem);
-            width: calc(50% + 2rem);
-            border-right: .1rem solid $neon-green;
-            border-bottom: .1rem solid $neon-green;
-            bottom: -2rem;
-            right: calc(50% - .1rem);
-            z-index: -1;
+            &::after {
+                content: "";
+                position: absolute;
+                height: calc(2rem - .2rem);
+                width: calc(50% + 2rem);
+                border-right: .1rem solid $neon-green;
+                border-bottom: .1rem solid $neon-green;
+                bottom: -2rem;
+                right: calc(50% - .1rem);
+                z-index: -1;
+            }
         }
-    }
 
-    [data-cat="Devops & Testing"] {
-        grid-area: devops;
+        [data-cat="Devops & Testing"] {
+            grid-area: devops;
 
-        &::after {
-            content: "";
-            position: absolute;
-            height: .1rem;
-            width: calc(2rem - .2rem);
-            border-bottom: .1rem solid $neon-green;
-            bottom: -2rem;
-            top: 50%;
-            right: -2rem;
-            z-index: -1;
+            &::after {
+                content: "";
+                position: absolute;
+                height: .1rem;
+                width: calc(2rem - .2rem);
+                border-bottom: .1rem solid $neon-green;
+                bottom: -2rem;
+                top: 50%;
+                right: -2rem;
+                z-index: -1;
+            }
         }
-    }
 
-    [data-cat="Design"] {
-        grid-area: design;
+        [data-cat="Design"] {
+            grid-area: design;
 
-        &::after {
-            content: "";
-            position: absolute;
-            height: .1rem;
-            width: calc(2rem - .2rem);
-            border-bottom: .1rem solid $neon-green;
-            bottom: -2rem;
-            top: 75%;
-            left: -2rem;
-            z-index: -1;
+            &::after {
+                content: "";
+                position: absolute;
+                height: .1rem;
+                width: calc(2rem - .2rem);
+                border-bottom: .1rem solid $neon-green;
+                bottom: -2rem;
+                top: 75%;
+                left: -2rem;
+                z-index: -1;
+            }
         }
-    }
 
-    [data-cat="Databases"] {
-        grid-area: data;
-    }
+        [data-cat="Databases"] {
+            grid-area: data;
+        }
 
-    [data-cat="Collaboration & Productivity"] {
-        grid-area: collab;
+        [data-cat="Collaboration & Productivity"] {
+            grid-area: collab;
+        }
     }
 }
 
@@ -330,6 +334,7 @@
         150ms opacity ease-in-out,
         150ms transform ease-in-out;
     color: transparent;
+    display: none;
 
     &[data-cat] {
         &:nth-child(even) {
@@ -353,7 +358,6 @@
 
     h2 {
         color: $neon-yellow;
-        // text-shadow: .1rem .1rem 0 $neon-blue;
         font-size: 1.75rem;
         width: 100%;
     }
