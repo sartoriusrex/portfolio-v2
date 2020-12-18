@@ -91,6 +91,11 @@
         &:hover {
             cursor: pointer;
         }
+
+        &:active,
+        &:focus {
+            border: .1rem solid $neon-yellow;
+        }
     }
 
     ul {
@@ -147,6 +152,7 @@
         justify-content: center;
         position: relative;
         padding: .2rem;
+        border: .1rem solid transparent;
 
         &::marker {
             color: $neon-yellow;
@@ -183,7 +189,7 @@
 
 .skills-grid-container {
     display: flex;
-    height: 25rem;
+    height: 30rem;
     width: 100%;
     margin: 2rem 0 4rem;
     justify-content: center;
@@ -194,9 +200,9 @@
 
     button {
         background-color: $black;
-        height: 100%;
+        height: 70%;
         position: absolute;
-        top: 0;
+        top: 15%;
         cursor: pointer;
         width: 2rem;
         border: .1rem solid $neon-pink;
@@ -204,9 +210,28 @@
 
         &:active,
         &:focus,
-        &:visited {
+        &:visited,
+        &:hover {
             border: .1rem solid $neon-yellow;
             color: $neon-yellow;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            width: 1.5rem;
+            height: 10%;
+            border: .1rem solid $neon-pink;
+            opacity: .9;
+            margin: .5rem 0;
+            top: -15%;
+            position: absolute;
+            right: -30%;
+        }
+
+        &::after {
+            top: unset;
+            bottom: -15%;
         }
     }
 
@@ -217,6 +242,11 @@
 
     .right-skill {
         right: 0;
+
+        &::before,
+        &::after {
+            left: -30%
+        }
     }
 }
 
@@ -275,8 +305,23 @@
             flex-direction: row-reverse;
             width: 100%;
 
+            &:nth-child(even) {
+                transform: translateX(5rem) translateY(-3rem);
+            }
+    
             &:nth-child(odd) {
                 flex-direction: row;
+                transform: translateX(-5rem) translateY(-3rem);
+            }
+    
+            &:nth-child(3),
+            &:nth-child(4) {
+                transition-delay: 100ms;
+            }
+    
+            &:nth-child(5),
+        &:nth-child(6) {
+                transition-delay: 200ms;
             }
 
             ul {
@@ -375,26 +420,6 @@
 
     &.visible {
         display: flex;
-    }
-
-    &[data-cat] {
-        &:nth-child(even) {
-            transform: translateX(5rem) translateY(-3rem);
-        }
-
-        &:nth-child(odd) {
-            transform: translateX(-5rem) translateY(-3rem);
-        }
-
-        &:nth-child(3),
-        &:nth-child(4) {
-            transition-delay: 100ms;
-        }
-
-        &:nth-child(5),
-        &:nth-child(6) {
-            transition-delay: 200ms;
-        }
     }
 
     h2 {
