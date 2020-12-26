@@ -1,4 +1,4 @@
-<% var blogData = [{link:"being-a-present-father.html",date:1607078582227},{link:"jiu-jitsu-chokes-and-strangulations---my-favorite-ways-to-safely-submit-someone.html",date:1606690800000},{link:"how-i-made-this-blog.html",date:1605826800000},{link:"introduction-to-this-website-and-blog.html",date:1605049200000}] %>
+<% var blogData = [{link:"being-a-present-father.html",date:1607078582227},{link:"jiu-jitsu-chokes-and-strangulations---my-favorite-ways-to-safely-submit-someone.html",date:1606690800000},{link:"how-i-made-this-blog.html",date:1605826800000},{link:"introduction-to-this-website-and-blog.html",date:1605049200000},{link:"how-i-stay-sharp-and-motivated-to-keep-learning.html",date:1609005949224}] %>
 
 
 <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
@@ -15,7 +15,7 @@
             <%= year %>
         </p>
         <ul>
-            <% blogData.forEach( function(blogFile) { %>
+            <% blogData.sort( function(a,b) {return (b.date-a.date)}).forEach( function(blogFile) { %>
             <% if( year === (new Date(blogFile.date).getFullYear())) { %>
 
             <li>
