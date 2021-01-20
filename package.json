@@ -46,7 +46,7 @@
     "@cenguidanos/node-markdown-parser": "^1.0.6-9",
     "ejs": "^2.7.4",
     "ejs-compiled-loader": "^3.0.0",
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "howler": "^2.2.0",
     "is-obj": "^2.0.0"
   }
