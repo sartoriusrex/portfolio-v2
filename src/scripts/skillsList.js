@@ -4,7 +4,6 @@ const skills = {
         'Styled-Components',
         'CSS-in-JS',
         'CSS-in-CSS',
-        'CSS Modules',
         'HTML',
         'ejs',
     ],
@@ -15,11 +14,11 @@ const skills = {
         'Python',
         'Express',
         'React + Redux',
+        'Angular2',
         'Electron',
         'Apollo',
         'Bootstrap',
-        'Tailwind',
-        'SemanticUI'
+        'Tailwind'
     ],
     'Devops & Testing': [
         'Docker',
@@ -52,9 +51,9 @@ const skills = {
     'Collaboration & Productivity': [
         'Git',
         'Github, Bitbucket, Gitlab',
-        'Jira',
-        'Salesforce',
-        'Google & Microsoft Productivity Suites'
+        'Windows, Mac OSX, Linux',
+        'Jira & Friends',
+        'Google & Microsoft Productivity Suites',
     ],
 }
 

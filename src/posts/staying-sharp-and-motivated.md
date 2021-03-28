@@ -1,45 +1,45 @@
 ---
 keywords: Dennis Mai, Blog, Development, Weird Wide Web, Leetcode, Side Projects, Motivation, Burnout, Hobbies
 title: Dennis Mai - How I Stay Sharp, Focused, and Motivated
-description: A short introduction to Dennis Mai's blog and website.
+description: How I stay motivated to keep learning new technology
 ---
 
 # How I Stay Sharp and Motivated to Keep Learning
 
-It's no secret that in the world of programming, and especially in the Web Development domain, it is both challenging to get started and to stay current with technology. Leetcode grinding, Personal Projects, Side Projects, Experience, Portfolios, Internships. It's all par for the course. That doesn't include whatever personal tribulations each of us encounters -- financial, familial, emotional.
+First, let's get this straight. it is impossible to be on top of all the advancements and development in new technology. Even the brightest, most senior, most intelligent Aspie who doesn't sleep but a minute a day couldn't keep up.
 
-Even after that first job, it can still be overwhelming to keep up with the trends in technology, new (old) best practices, old and legacy technology, and relevant blog posts and package updates. (This post doesn't count. I'm writing more for myself than for you. Sorry, dear reader).
+But that's not a reason to stop learning. The industry demands it, but more importantly, your curiousity should, too. In order stay marketable and productive, we must both sharpen our current skills and gain new ones. We do this deepening our current skills through practice and research and by broadening the number of those skills through using new technology, reading, writing, and networking.
 
-Sure, you do just fine if you're not learning new technologies, depending on your niche. But it eventually catches up, unless you change careers completely. Most of us need to learn to stay competative and relevant. Anyway, most of us want to, because part of the draw of programming comes from the learning, the tinkering, the problem-solving and creative processes.
+Okay, sure, you can do just fine if you're not learning new technologies, depending on your niche and seniority. But unless you change careers, the lack of current skills eventually catches up.
 
-## Embracing the grind
+## Embracing the grind --Prioritize
 
-Even more disheartening, there's too much for any one person to know. We have to choose wisely what we want to invest our time and energy learning, because it's a rare individual that can effectively learn and apply 15 programming languages, methodologies and best practices, library interfaces and apis, *and* soft skills to be a 10x developer.
+Given that there's too much for any one person to know. We have to choose wisely what we want to invest our time and energy learning, because it's a rare individual that can effectively learn and apply 15 programming languages, methodologies, best practices, library interfaces and apis, *with* soft skills to be a 10x developer.
 
-Let's face it, more than half of us don't stray far from average. That's statistics. And that's okay. So how do we best utilize our average resources to optimize our programming performance?
+More than half of us don't stray far from average. That's statistics. And that's okay. So how do we best utilize our *average* resources to optimize our programming performance?
 
-By being strategic and calculated about what we learn, when we learn it, and how we retain that knowledge.
+By being strategic and calculated about what, when, and how we learn, and how we retain that knowledge.
 
 ## Learning how to learn -- my personal methods
 
 I can't speak for everybody, but I learn best by following these steps:
 
-1. Figuring out what I want to do, whether it be learning a new technology, addressing a specific, personal or professional need, or just fixing a bug.
-2. Learning what others have done to solve this specific problem, if it's been solved before. When there are multiple solutions, find one that suits my needs the best.
-3. Applying whatever solution I find through IMPLEMENTING IT in my own code
-4. Reading documentation, blogs, and other code to better implement the solution
-5. Taking notes, breaks, and returning to the code later
-6. Repeat steps 3 to 5
+1. Figuring out what I want to do or learn, whether it be learning a new technology, addressing a specific, personal or professional need, or just fixing a bug.
+2. Learning what others have done to solve this specific problem, if it's been solved before. When there are multiple solutions, I find one that suits my needs the best.
+3. Applying whatever solution I find through IMPLEMENTING IT in my own code.
+4. Reading documentation, blogs, and other code to better implement the solution.
+5. Taking notes, breaks, and returning to the code later (between a few days to a few months, if I'm feeling spicy).
+6. Repeat steps 3 to 5.
 
-For me, it's really too academic to just read and take notes. I have to practice, implement, act. Knowledge sinks in best when applied. Taking notes is also useful, but, again, without practice, it's just in-and-out, theoretical knowledge -- impractical.
+For me, it's really too academic to just read and take notes. I have to practice, implement, and act. Knowledge sinks in best when applied. Taking notes is also useful, but, without practice, it's just in-and-out, theoretical knowledge -- impractical.
 
-This method applies both to my professional and personal projects. It's how I keep up with old and new tech and best practices. When best practices, libraries, or APIs change, I refactor. That's also an amazing time to learn, especially from myself. It's how I benchmark my own progress as well, whether or not I can read my own code later, judging its readability, organization, efficiency, and efficacy.
+This method applies both to my professional and personal projects. It's how I keep up with old and new tech. When best practices, libraries, or APIs change, I refactor. That's also an amazing time to learn, especially from myself. It's how I benchmark my own progress as well, whether or not I can read my own code later, judging its readability, organization, efficiency, and efficacy.
 
 ## Switching context
 
-But it's not just projects I dip my brain toes in. I'm constantly reading books and articles. I read when I'm awake and my brain is active, and when I tire, I take a break or do something completely different, such as go on a walk, do some exercises, go to Jiu Jitsu practice.
+But it's not just projects I explore in. I'm constantly reading books and articles. I read when I'm awake and my brain is active, and when I tire, I take a break or do something completely different, such as go on a walk, do some exercises, go to Jiu Jitsu practice. Or play video games (my 'vice').
 
-When I'm bored of working on a project, I leetcode. And when that's boring, I work on a project, or read.
+When I'm bored of working on a project, I leetcode. And when that's boring, I work on a project, or read. You have to switch it up.
 
 My brain needs constant stimulation, but not always the same kind. That's why it's good for me to switch context. I'm almost always learning, and never vegging out, but what I'm learning and how is constantly varying. I can only work my attention span so long to be effective. But switching context is like a breath of fresh air.
 
