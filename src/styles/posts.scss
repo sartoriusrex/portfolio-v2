@@ -91,4 +91,9 @@
         display: flex;
         justify-content: space-between;
     }
+
+    figcaption {
+        color: $neon-pink;
+        margin-left: 2rem;
+    }
 }

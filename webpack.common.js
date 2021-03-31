@@ -1,18 +1,28 @@
 const path = require('path');
+const fs = require('fs');
+
+// plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const fs = require('fs');
+
+// reading directories and converting markdown
 const glob = require('glob');
 const { Markdown } = require("@cenguidanos/node-markdown-parser");
 
+
+// constants that define the location of our files
 const pagesDirectory = './src/pages/';
 const viewsDirectory = './src/views/';
 const blogDirectory = './src/posts/';
+
+// javascript lists of data that are injected in other files
 const projects = require('./src/scripts/projectList');
 const skills = require('./src/scripts/skillsList');
 
+
+// initialize Markdown
 const markdown = new Markdown();
 
 

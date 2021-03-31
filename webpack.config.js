@@ -10,7 +10,6 @@ module.exports = {
 	mode: 'production',
 	entry: {
 		app: './src/index.js',
-		test: './src/test.js',
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -38,17 +37,6 @@ module.exports = {
 			template: "!!ejs-webpack-loader!src/views/index.ejs",
 			filename: "index.html",
 			chunks: ['app']
-		}),
-		new HtmlWebpackPlugin({
-			title: "test",
-			minify: {
-				removeAttributeQuotes: true,
-				collapseWhitespace: true,
-				removeComments: true
-			},
-			template: "!!ejs-webpack-loader!src/views/test.ejs",
-			filename: "test.html",
-			chunks: ['test']
 		}),
 		new MiniCssExtractPlugin({
 			filename: "style.css",

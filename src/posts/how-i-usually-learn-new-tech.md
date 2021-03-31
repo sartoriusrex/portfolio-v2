@@ -6,6 +6,10 @@ description: How I, and probably most people, end up learning new tech
 
 # How I Usually Learn New Tech
 
+![Alt text](imgs/lucas-benjamin-wQLAGv4_OYs-unsplash.jpg 'Photo by Lucas Benjamin')
+
+<figcaption>Photo by Lucas Benjamin</figcaption>
+
 I mentioned in a previous post how important it is to keep learning to both deepen and broaden your skillset as a programmer. In that same post, I made it extra clear that we have to choose what we want to learn wisely. But as it turns out, there's at least one solid method of learning new technology.
 
 Getting paid to do it, duh.

@@ -11,6 +11,10 @@ import '../images/leila.webp';
 import '../images/fam.webp';
 import '../images/portrait-ascii.webp';
 
+//blog post images
+import '../images/posts/lucas-benjamin-wQLAGv4_OYs-unsplash.jpg';
+import '../images/posts/daniel-olah-gEta6dbzFy0-unsplash.jpg'
+
 
 // // jjd images
 import jjdImageSm from '../images/projects/jjd-sm.png';

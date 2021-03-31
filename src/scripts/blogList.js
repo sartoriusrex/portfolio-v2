@@ -5,5 +5,3 @@ export const posts = fs.readdirSync('../views/', (err, files) => {
     return files;
 })
 
-console.log(posts);
-

@@ -6,6 +6,10 @@ description: How I made my blog using just ejs, webpack, scss, and vanilla JS. (
 
 # How I Made This Blog
 
+![Alt text](imgs/daniel-olah-gEta6dbzFy0-unsplash.jpg 'Photo by Daniel Olah')
+
+<figcaption>Photo by Daniel Olah</figcaption>
+
 First, this is a custom solution that's probably only applicable for small blogs (less than a few hundred posts). Anything more will take a long time to build, for reasons I will explain below.
 
 Second, This blog was built just for fun. While webpack supports building multiple pages with multiple entry points, it was probably never intended for full-blown blog building. There are other tools better suited for the job, like Next.js, Huge, Jekyll, Eleventy, and the like.

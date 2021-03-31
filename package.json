@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.production.js",
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "watch": "webpack --watch",
-    "pa11y": "pa11y-ci -c pa11y.config.js"
+    "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js"
   },
   "author": "",
   "license": "ISC",
