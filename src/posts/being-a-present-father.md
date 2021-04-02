@@ -6,7 +6,7 @@ description: Being present and mindful as a father -- being your best self so th
 
 # Being a Present Father
 
-![Alt text](imgs/tim-mossholder-goIMPtdFmig-unsplash.jpg, 'Photo by Tim Mossholder')
+![Alt text](imgs/tim-mossholder-goIMPtdFmig-unsplash.jpg 'Photo by Tim Mossholder')
 
 <figcaption>Photo by Time Mossholder</figcaption>
 
