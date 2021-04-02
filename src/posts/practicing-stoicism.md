@@ -6,7 +6,7 @@ description: My personal, somewhat successful methods, of being Stoic
 
 # Practicing Stoicism
 
-![Alt text](kristopher-roller-zepnJQycr4U-unsplash.jpg 'Photo by Kristopher Roller')
+![Alt text](imgs/kristopher-roller-zepnJQycr4U-unsplash.jpg 'Photo by Kristopher Roller')
 
 <figcaption>Photo by Kristopher Roller</figcaption>
 

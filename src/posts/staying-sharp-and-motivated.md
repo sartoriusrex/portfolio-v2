@@ -6,7 +6,7 @@ description: How I stay motivated to keep learning new technology
 
 # How I Stay Sharp and Motivated to Keep Learning
 
-![Alt text](benjamin-voros-phIFdC6lA4E-unsplash.jpg 'Photo by Benjamin Voros')
+![Alt text](imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg 'Photo by Benjamin Voros')
 
 <figcaption>Photo by Benjamin Voros</figcaption>
 

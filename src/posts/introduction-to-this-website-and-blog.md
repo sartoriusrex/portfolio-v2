@@ -6,7 +6,7 @@ description: A short introduction to Dennis Mai's blog and website.
 
 # Introduction to this Website and Blog
 
-![Alt text](jon-tyson-co1xvjqNjxU-unsplash.jpg 'Photo by Jon Tyson')
+![Alt text](imgs/jon-tyson-co1xvjqNjxU-unsplash.jpg 'Photo by Jon Tyson')
 
 <figcaption>Photo by Jon Tyson</figcaption>
 
