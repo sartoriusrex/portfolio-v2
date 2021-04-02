@@ -6,6 +6,10 @@ description: My personal, somewhat successful methods, of being Stoic
 
 # Practicing Stoicism
 
+![Alt text](kristopher-roller-zepnJQycr4U-unsplash.jpg, 'Photo by Kristopher Roller')
+
+<figcaption>Photo by Kristopher Roller</figcaption>
+
 I am not a good stoic. I don't meditate regularly. I often lose my temper.
 
 But that doesn't mean I don't try. And that doesn't mean you shouldn't either.

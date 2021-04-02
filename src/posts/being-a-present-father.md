@@ -6,6 +6,10 @@ description: Being present and mindful as a father -- being your best self so th
 
 # Being a Present Father
 
+![Alt text](imgs/tim-mossholder-goIMPtdFmig-unsplash.jpg, 'Photo by Tim Mossholder')
+
+<figcaption>Photo by Time Mossholder</figcaption>
+
 I love my job. I love programming and web development. I could spend all day learning, experimenting, and building things. Some days, I do do that. That's okay sometimes.
 
 And sometimes, that's not okay.

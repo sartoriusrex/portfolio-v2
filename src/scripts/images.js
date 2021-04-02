@@ -13,7 +13,13 @@ import '../images/portrait-ascii.webp';
 
 //blog post images
 import '../images/posts/lucas-benjamin-wQLAGv4_OYs-unsplash.jpg';
-import '../images/posts/daniel-olah-gEta6dbzFy0-unsplash.jpg'
+import '../images/posts/daniel-olah-gEta6dbzFy0-unsplash.jpg';
+import '../images/posts/tim-mossholder-goIMPtdFmig-unsplash.jpg';
+import '../images/posts/jon-tyson-co1xvjqNjxU-unsplash.jpg';
+import '../images/posts/nathan-dumlao-AsCCBr7J-XM-unsplash.jpg';
+import '../images/posts/kristopher-roller-zepnJQycr4U-unsplash.jpg';
+import '../images/posts/benjamin-voros-phIFdC6lA4E-unsplash.jpg';
+
 
 
 // // jjd images

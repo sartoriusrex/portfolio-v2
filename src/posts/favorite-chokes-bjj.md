@@ -6,6 +6,10 @@ description: An oddly specific list of Dennis Mai's favoriate Brazilian Jiu jits
 
 # Jiu Jitsu Chokes and Strangulations - My Favorite Ways to Safely Submit Someone
 
+![Alt text](imgs/nathan-dumlao-AsCCBr7J-XM-unsplash.jpg, 'Photo by Nathan Dumiao')
+
+<figcaption>Photo by Nathan Dumiao</figcaption>
+
 This may sound weird (or it won't, if you're familiar with Jiu Jitsu), but I have a very specific list of favorite chokes for Jiu Jitsu.
 
 In order, they have GOT to be:

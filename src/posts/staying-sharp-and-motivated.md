@@ -6,6 +6,10 @@ description: How I stay motivated to keep learning new technology
 
 # How I Stay Sharp and Motivated to Keep Learning
 
+![Alt text](benjamin-voros-phIFdC6lA4E-unsplash.jpg, 'Photo by Benjamin Voros')
+
+<figcaption>Photo by Benjamin Voros</figcaption>
+
 First, let's get this straight. it is impossible to be on top of all the advancements and development in new technology. Even the brightest, most senior, most intelligent Aspie who doesn't sleep but a minute a day couldn't keep up.
 
 But that's not a reason to stop learning. The industry demands it, but more importantly, your curiousity should, too. In order stay marketable and productive, we must both sharpen our current skills and gain new ones. We do this deepening our current skills through practice and research and by broadening the number of those skills through using new technology, reading, writing, and networking.

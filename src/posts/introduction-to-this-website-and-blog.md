@@ -6,6 +6,10 @@ description: A short introduction to Dennis Mai's blog and website.
 
 # Introduction to this Website and Blog
 
+![Alt text](jon-tyson-co1xvjqNjxU-unsplash.jpg, 'Photo by Jon Tyson')
+
+<figcaption>Photo by Jon Tyson</figcaption>
+
 Greetings web [surfer*](#note1) and welcome back to the weird web!
 
 This website is a work of *self expression*. Here I lay to bare my thoughts, ideas, my learning and doubt.
