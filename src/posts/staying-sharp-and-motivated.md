@@ -69,5 +69,3 @@ A career in programming is a long-distance sprint. No, that's not an oxymoron. T
 
 Mental and emotional stamina, resilience, flexibility, and raw power are necessary to thrive in such an environment. So we have to take care of ourselves and utilize our resources to the best of our personal abilities.
 
-Sorry if that was long-winded.
-
