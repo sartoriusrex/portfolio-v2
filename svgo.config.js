@@ -1,4 +1,7 @@
+const { extendDefaultPlugins } = require('svgo');
+
 module.exports = {
+    multipass: true,
     plugins: extendDefaultPlugins([
         {
             name: 'inlineStyles',
@@ -9,7 +12,7 @@ module.exports = {
             active: false
         },
         {
-            name: 'revmoveViewbox',
+            name: 'removeViewBox',
             active: false
         },
         {

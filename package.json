@@ -7,9 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.production.js",
-    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
     "watch": "webpack --watch",
-    "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js"
+    "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js",
+    "svgo": "svgo --folder src/images/icons --config svgo.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "sass": "^1.22.10",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "svgo": "^2.3.0",
     "terser-webpack-plugin": "^5.1.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.8",
