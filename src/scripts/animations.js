@@ -125,8 +125,7 @@ export const animateBunny = function () {
         .to(foot4, {
             motionPath: {
                 path: '#traj4',
-                align: "self",
-                offsetY: 20
+                align: "self"
             },
             duration: .5,
             ease: "power1.out",
@@ -135,8 +134,7 @@ export const animateBunny = function () {
         .to(foot3, {
             motionPath: {
                 path: '#traj3',
-                align: "self",
-                offsetY: 20
+                align: "self"
             },
             duration: .5,
             ease: "power1.out",
@@ -146,8 +144,7 @@ export const animateBunny = function () {
         .to(foot2, {
             motionPath: {
                 path: '#traj2',
-                align: "self",
-                offsetY: 20
+                align: "self"
             },
             duration: .5,
             ease: "power1.out",
@@ -158,7 +155,6 @@ export const animateBunny = function () {
             motionPath: {
                 path: '#traj1',
                 align: "self",
-                offsetY: 20
             },
             duration: .5,
             ease: "power1.out",
@@ -168,9 +164,7 @@ export const animateBunny = function () {
         .to(tail, {
             motionPath: {
                 path: '#trajTail',
-                align: 'self',
-                offsetY: 10,
-                offsetX: 5,
+                align: 'self'
             },
             duration: 1,
             repeat: 6,

@@ -26,6 +26,18 @@ module.exports = {
         {
             name: 'convertTransform',
             active: 'false'
+        },
+        {
+            name: 'cleanupIDs',
+            active: false
+        },
+        {
+            name: 'removeHiddenElems',
+            active: false
+        },
+        {
+            nname: 'mergePaths',
+            active: false
         }
     ])
 }
