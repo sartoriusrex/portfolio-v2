@@ -36,7 +36,7 @@ module.exports = {
             active: false
         },
         {
-            nname: 'mergePaths',
+            name: 'mergePaths',
             active: false
         }
     ])
