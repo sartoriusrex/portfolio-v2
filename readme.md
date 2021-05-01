@@ -169,6 +169,16 @@ And that's pretty much it. Please review the code itself in webpack.common.js.
 
 ## Change log
 
+### 01/05/21
+
+#### Features
+
+- Use SVGO in build script with custom config to optimize svgs in the ./src/images directory
+
+#### Fixes
+
+- Correct transformation of the bunny svg's feet and tail
+
 ### 30/03/21
 
 - Update blog posts for How I stay sharp and being a present father.

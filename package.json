@@ -6,11 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.production.js",
+    "build": "npm run svgo && webpack --config webpack.production.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "watch": "webpack --watch",
     "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js",
-    "svgo": "svgo --folder src/images/icons --config svgo.config.js"
+    "svgo": "svgo --folder src/images --config svgo.config.js"
   },
   "author": "",
   "license": "ISC",
