@@ -10,11 +10,14 @@
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "watch": "webpack --watch",
     "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js",
-    "svgo": "svgo --folder src/images --config svgo.config.js"
+    "svgo": "svgo --folder src/images --config svgo.config.js",
+    "serve": "eleventy --serve --port=3000 --config=config/eleventy.js",
+    "eleventy": "eleventy --config=config/eleventy.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^9.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^6.1.0",
@@ -45,11 +48,17 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@11ty/eleventy-navigation": "^0.3.2",
     "@cenguidanos/node-markdown-parser": "^1.0.6-9",
+    "clean-css": "^5.2.2",
     "ejs": "^2.7.4",
     "ejs-compiled-loader": "^3.0.0",
     "gsap": "^3.6.0",
     "howler": "^2.2.0",
-    "is-obj": "^2.0.0"
+    "html-minifier": "^4.0.0",
+    "is-obj": "^2.0.0",
+    "luxon": "^2.2.0",
+    "markdown-it-anchor": "^8.4.1",
+    "uglify-js": "^3.14.5"
   }
 }

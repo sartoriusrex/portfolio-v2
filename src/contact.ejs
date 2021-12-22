@@ -1,0 +1,57 @@
+<% include /components/head %>
+<% include /components/header %>
+<main>
+    <section class="section--contact">
+        <h2>
+            Just <a href="mailto:dmai.developer@gmail.com?subject=Contact Dennis Mai">e-mail</a> Please.
+        </h2>
+        <p>You can also find links to my Resume, Stackoverflow, LinkedIn, and Github Accounts below.</p>
+        <p>And for more fun, just answer a quick question.</p>
+        <% include /images/question-arrow.svg %>
+        <form action="POST">
+            <fieldset>
+                <legend>
+                    <p>
+                        Suddenly a pack of angry miniature Centaurs attack you.
+                    </p>
+                    <p>
+                        What heroic Pokemon would you call upon
+                        to defend you?
+                    </p>
+                </legend>
+                <div class="input-group">
+                    <input type="radio" id="stupid" name="answer" value="stupid" checked>
+                    <label for="stupid">Stupid question (select this if you don't want to reach me)</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="jet-li" name="answer" value="jet-li" tabindex="0">
+                    <label for="jet-li">Jet Li</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="jackie-chan" name="answer" value="jackie-chan" tabindex="0">
+                    <label for="jackie-chan">Jackie Chan</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="neither" name="answer" value="neither" tabindex="0">
+                    <label for="neither">Neither</label>
+
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="not-pokemon" name="answer" value="not-pokemon" tabindex="0">
+                    <label for="not-pokemon">Those aren't Pokemon!</label>
+                </div>
+            </fieldset>
+            <button type='submit' id='submit-answer'>That's my final answer </button>
+        </form>
+        <div class="container--contact-animation">
+            <a href="mailto:dmai.developer@gmail.com?subject='warning'" id="email-link">dmai.developer@gmail.com</a>
+            <div id="container--egg-hatcher" href="">
+                <% include /images/egg-hatching.svg %>
+            </div>
+        </div>
+    </section>
+</main>
+
+<% include /components/footer %>
+
+</html>
