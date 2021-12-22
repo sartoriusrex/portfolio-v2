@@ -12,7 +12,8 @@
     "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js",
     "svgo": "svgo --folder src/images --config svgo.config.js",
     "serve": "eleventy --serve --port=3000 --config=config/eleventy.js",
-    "eleventy": "eleventy --config=config/eleventy.js"
+    "eleventy": "eleventy --config=config/eleventy.js",
+    "sass": "sass --style=compressed src/scss/styles.scss src/includes/css/styles.css"
   },
   "author": "",
   "license": "ISC",

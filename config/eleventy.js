@@ -1,15 +1,3 @@
-// module.exports = function (config) {
-//   return {
-//     dir: {
-//       input: "pages",
-//       output: "dist",
-//       includes: "includes",
-//       layouts: "layouts"
-//     },
-//     templateFormats: ["ejs", "md"]
-//   }
-// }
-
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
