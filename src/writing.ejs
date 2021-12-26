@@ -4,8 +4,10 @@
 <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
 <% var years = Array.from( new Set(blogData.map( function(blogDataObject) { return new Date(blogDataObject.date).getFullYear()}))) %>
 
-<% include /components/head %>
-<% include /components/header %>
+---
+layout: base 
+title: DM's Writing
+---
 <main>
 
     <section class="container--writing">
@@ -31,6 +33,3 @@
     </section>
 
 </main>
-<% include /components/footer %>
-
-</html>

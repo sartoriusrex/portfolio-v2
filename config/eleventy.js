@@ -4,7 +4,9 @@ const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
+  // eleventiy ignores inspecting .gitignore to watch scss files
+  eleventyConfig.setUseGitIgnore(false);
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -81,6 +83,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("_includes/assets/css/inline.css");
 
+  // allow compiled see to go thorugh the _site folder for development
+  eleventyConfig.addPassthroughCopy('css')
+
+
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
   let markdownItAnchor = require("markdown-it-anchor");
@@ -98,7 +104,8 @@ module.exports = function(eleventyConfig) {
   );
 
   return {
-    templateFormats: ["md", "ejs", "html"],
+    passthroughFileCopy: true,
+    templateFormats: ["11ty.js", "md", "ejs"],
 
     // If your site lives in a different subdirectory, change this.
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
@@ -108,9 +115,6 @@ module.exports = function(eleventyConfig) {
 
     dir: {
       input: "./src",
-      includes: "includes",
-      data: "_data",
-      output: "_site"
     }
   };
 };

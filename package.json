@@ -6,14 +6,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run svgo && webpack --config webpack.production.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "build:old": "npm run svgo && webpack --config webpack.production.js",
+    "dev": "webpack-dev-server --config webpack.dev.js - star-open",
     "watch": "webpack --watch",
     "pa11y-local": "pa11y localhost:8080 -c pa11y.config.js",
     "svgo": "svgo --folder src/images --config svgo.config.js",
     "serve": "eleventy --serve --port=3000 --config=config/eleventy.js",
     "eleventy": "eleventy --config=config/eleventy.js",
-    "sass": "sass --style=compressed src/scss/styles.scss src/includes/css/styles.css"
+    "sass": "sass --style=compressed src/styles/styles.scss src/css/styles.css",
+    "watch:eleventy": "eleventy --serve --port=3000 --input=src",
+    "watch:sass": "npm run sass -- --watch",
+    "start": "npm-run-all sass --parallel watch:*",
+    "build": "npm run sass && eleventy"
   },
   "author": "",
   "license": "ISC",

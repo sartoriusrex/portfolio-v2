@@ -1,5 +1,13 @@
-<% include /components/head %>
-<% include /components/header %>
+---
+pagination:
+  data: collections.posts
+  size: 5
+  alias: list
+  reverse: true
+
+eleventyComputed:
+  title: 'test'
+---
 <main>
 
     <section class="container--404">
@@ -23,6 +31,3 @@
     </section>
 
 </main>
-<% include /components/footer %>
-
-</html>

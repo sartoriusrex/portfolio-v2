@@ -1,0 +1,39 @@
+<footer id="the-footer">
+        <div class="weird">
+                <p>Proud Member of <a href="https://weirdwidewebring.net" target="_blank">The Weird Wide
+                                Webring</a></p>
+
+                <div class="weird-links">
+                        <a class="arrow" href="https://weirdwidewebring.net/prev.html" target="_blank">
+                                <% include ../images/weird-arrow.svg %>
+                                Previous
+                        </a>
+
+                        <div>
+                                <a href="https://weirdwidewebring.net/random.html" target="_blank">Random!</a>
+
+                                <a href="https://weirdwidewebring.net/join.html" target="_blank">Join</a>
+                        </div>
+
+                        <a class="arrow" href="https://weirdwidewebring.net/next.html" target="_blank">
+                                <% include ../images/weird-arrow.svg %>
+                                Next
+                        </a>
+                </div>
+        </div>
+        <ul>
+                <li><a href="imgs/cv-mai-small.pdf" target="_blank"
+                                rel="noopener noreferrer"><% include ../images/icons/pdf.svg %></a></li>
+                <li><a href="https://www.github.com/sartoriusrex" target="_blank"
+                                rel="noopener noreferrer"><% include ../images/icons/github.svg %></a></li>
+                <li><a href="https://www.linkedin.com/in/dennismai-dev" target="_blank"
+                                rel="noopener noreferrer"><% include ../images/icons/linkedin.svg %></a></li>
+                <li><a href="https://stackoverflow.com/users/11639750/dmai-developer?tab=profile" target="_blank"
+                                rel="noopener noreferrer"><% include ../images/icons/stackoverflow.svg %></a>
+                </li>
+                <li><a href="/changelog.html">Change Log</a></li>
+        </ul>
+        <p class="cookies">* I don't use cookies and I don't track you.</p>
+        <p>Copyright <% let ts = new Date(); %> <%= ts.getFullYear() %> Dennis Mai</p>
+</footer>
+</html>
