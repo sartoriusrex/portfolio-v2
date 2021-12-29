@@ -44,6 +44,7 @@ module.exports = function () {
       <p class="cookies">* I don't use cookies and I don't track you.</p>
       <p>Copyright ${(new Date()).getFullYear()} Dennis Mai</p>
 </footer>
+<script src="./scripts/animations.js"></script>
 </html>
 `
 }

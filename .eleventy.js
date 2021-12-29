@@ -4,18 +4,8 @@ module.exports = function(eleventyConfig) {
     "ejs",
     "11ty.js",
     "css",
-    "svg",
-    "png",
-    "webp",
-    "jpeg",
-    "pdf",
-    "jpg"
   ]);
 
-   eleventyConfig.addPassthroughCopy({ "**/*.svg": "images" });
-   eleventyConfig.addPassthroughCopy({ "**/*.png": "images" });
-   eleventyConfig.addPassthroughCopy({ "**/*.jpg": "images" });
-   eleventyConfig.addPassthroughCopy({ "**/*.jpeg": "images" });
-   eleventyConfig.addPassthroughCopy({ "**/*.webp": "images" });
-   eleventyConfig.addPassthroughCopy({ "**/*.pdf": "images" });
+  eleventyConfig.addPassthroughCopy('src/_includes/images', 'images');
+  eleventyConfig.addPassthroughCopy('src/scripts');
 };
