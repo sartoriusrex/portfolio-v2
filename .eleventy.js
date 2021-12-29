@@ -6,6 +6,6 @@ module.exports = function(eleventyConfig) {
     "css",
   ]);
 
-  eleventyConfig.addPassthroughCopy('src/_includes/images', 'images');
+  eleventyConfig.addPassthroughCopy({ 'src/_includes/images': 'images'});
   eleventyConfig.addPassthroughCopy('src/scripts');
 };
