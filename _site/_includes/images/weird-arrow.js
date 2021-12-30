@@ -1,5 +1,0 @@
-module.exports = function () {
-  return `
-  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 9.26 9.26"><g stroke="#09fbd3" fill="#09fbd3"><path style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke-width:.1759928;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" d="M.088 291.796h1.147v1.147H.088zm1.322-1.323h1.148v1.147H1.41zm1.324-1.323H3.88v1.147H2.734zm1.323-1.322h1.147v1.147H4.057zM1.41 293.12h1.148v1.146H1.41zm1.324 1.322H3.88v1.147H2.734zm1.323 1.323h1.147v1.147H4.057z" transform="translate(0 -287.74)" /><path style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke-width:1.310812;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" d="M3.301 292.364h5.304v.012H3.301z" transform="translate(0 -287.74)" /></g></svg>
-  `
-}

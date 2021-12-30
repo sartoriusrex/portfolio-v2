@@ -3,9 +3,9 @@ module.exports = function(eleventyConfig) {
     "md",
     "ejs",
     "11ty.js",
-    "css",
   ]);
 
-  eleventyConfig.addPassthroughCopy({ 'src/_includes/images': 'images'});
+  eleventyConfig.addPassthroughCopy({ 'src/_includes/images': 'includes/images' });
+  eleventyConfig.addPassthroughCopy({ 'src/css': 'includes/css' })
   eleventyConfig.addPassthroughCopy('src/scripts');
 };

@@ -59,7 +59,7 @@ description: Being present and mindful as a father -- being your best self so th
 
 keywords, title, and description are necessary.
 
-To insert images, you first have to have it in the images/posts directory, and then reference using the link 'imgs/your-image-name.extension'
+To insert images, you first have to have it in the ./images/posts directory, and then reference using the link 'imgs/your-image-name.extension'
 
 The image also needs to be imported in the scripts/images.js file.
 
