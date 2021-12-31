@@ -1,5 +1,3 @@
-import { enableScroll, disableScroll } from './enableDisableScrolling';
-
 const burgerButton = document.getElementsByClassName('button--burger-menu')[0];
 const burgerMenu = document.getElementsByClassName('ul--burger-menu')[0];
 

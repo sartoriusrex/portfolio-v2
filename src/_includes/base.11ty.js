@@ -4,9 +4,11 @@ const footer = require('./components/footer');
 
 module.exports = function (data) {
   return `
-  ${head(data.title)}
+  ${head(data)}
   ${header()}
+
   ${data.content}
+  
   ${footer()}
   `
 }

@@ -1,0 +1,3 @@
+animateFallingParagraphs();
+animateLogo();
+animateCat();

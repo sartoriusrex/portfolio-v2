@@ -571,7 +571,7 @@ const playNum = function (i) {
     numbersAnimations[i].progress(0)
 }
 
-module.exports = {
+exports = {
   playNum,
   animate404,
   fourZeroFour,

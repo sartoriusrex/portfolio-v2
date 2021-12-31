@@ -1,4 +1,12 @@
-module.exports = function (title) {
+module.exports = function (data) {
+  let scripts;
+
+  if (data.js && data.js.length > 0) {
+    scripts = data.js.map(function (script) {
+      return `<script defer src="/scripts/${script}.js"></script>`;
+    }).join('\n')
+  }
+
   return `
 <!DOCTYPE html>
 <!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
@@ -32,19 +40,21 @@ module.exports = function (title) {
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+  <script defer src="/scripts/enableDisableScrolling.js"></script>
+  ${scripts}
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Dennis Mai">
 
-  <title>${title}</title>
+  <title>${data.title}</title>
 
 
   <link id="favicon" rel="shortcut icon" type="image/png" sizes="16X16" href="images/favicon.ico">
   <link id="favicon-large" rel="shortcut icon" type="image/png" sizes="32X32" href="images/favicon32x32.png">
   <link id="favicon-small" rel="shortcut icon" type="image/png" sizes="16X16" href="images/favicon16x16.png">
-  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="/includes/css/styles.css" type="text/css">
 </head>  
   `
 }

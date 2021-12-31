@@ -4,7 +4,7 @@ const github = require('../images/icons/github');
 const linkedin = require('../images/icons/linkedin');
 const stackoverflow = require('../images/icons/stackoverflow');
 
-module.exports = function () {
+module.exports = function (data) {
   return `
 <footer id="the-footer">
       <div class="weird">
