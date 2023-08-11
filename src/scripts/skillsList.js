@@ -14,9 +14,9 @@ const skills = {
         'Python',
         'Express',
         'React + Redux',
-        'Angular2',
+        'Angular2+',
         'Electron',
-        'Apollo',
+        'Apollo GraphQL',
         'Bootstrap',
         'Tailwind'
     ],
@@ -27,6 +27,7 @@ const skills = {
         'Gulp',
         'Jest',
         'Enzyme',
+        'Jasmine',
         'React-Testing-Library',
         'TravisCI',
         'GitlabCI',
@@ -54,6 +55,8 @@ const skills = {
         'Windows, Mac OSX, Linux',
         'Jira & Friends',
         'Google & Microsoft Productivity Suites',
+        'Slack, Mattermost, etc.',
+        'Agile Philosophies and various flavors'
     ],
 }
 
