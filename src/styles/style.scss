@@ -199,7 +199,7 @@ button {
             .3rem .3rem 0 $bottom-color,
             .4rem .4rem 0 $bottom-color;
 
-  @if $size = 'small' {
+  @if $size == 'small' {
     box-shadow:
       -.1rem -.1rem 0 $top-color,
       .1rem .1rem 0 $bottom-color,

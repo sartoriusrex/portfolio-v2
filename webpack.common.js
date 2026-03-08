@@ -4,7 +4,6 @@ const fs = require('fs');
 // plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Critters = require('critters-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // reading directories and converting markdown
@@ -63,7 +62,8 @@ const blogNameArray = fs.readdirSync(blogDirectory, async (err, files) => {
 
 
 // Grab the current data from the database
-const currentBlogData = JSON.parse(fs.readFileSync('db.json', 'utf8'));
+const dbContent = fs.readFileSync('db.json', 'utf8').trim();
+const currentBlogData = dbContent ? JSON.parse(dbContent) : [];
 
 // Create data objects with markdown for all the files in blog directory
 const blogData = blogNameArray.map(file => {
@@ -194,10 +194,10 @@ if (projectsString !== projectsPageFirstLine || skillsString !== projectsPageSec
 }
 
 const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
-	(entries, path) => {
-		let name = path.split('.')[1].split('/')[3];
+	(entries, filePath) => {
+		let name = filePath.replace(/^.*\//, '').replace(/\.js$/, '');
 		if (name === 'posts') name = 'posts1';
-		entries[name] = path;
+		entries[name] = filePath.startsWith('./') ? filePath : `./${filePath}`;
 		return entries;
 	}, {}
 );
@@ -205,8 +205,8 @@ const entries = glob.sync(`${pagesDirectory}*.js`).reduce(
 let blogCount = 0;
 
 const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
-	(htmlPluginInstances, path) => {
-		const name = path.split('.')[1].split('/')[3];
+	(htmlPluginInstances, filePath) => {
+		const name = filePath.replace(/^.*\//, '').replace(/\.ejs$/, '');
 		let title;
 		let description;
 		let keywords = "web, developer, javascript, HTML, CSS, react, remote, front-end, full-stack, back-end, web developer, react developer, redux, weird web"
@@ -287,7 +287,7 @@ const htmlPlugins = glob.sync(`${viewsDirectory}*.ejs`).reduce(
 				collapseWhitespace: true,
 				removeComments: true
 			},
-			template: path,
+			template: filePath.startsWith('./') ? filePath : `./${filePath}`,
 			inject: true,
 			filename: `${name}.html`,
 			chunks: [`${chunkName}`],
@@ -327,11 +327,6 @@ module.exports = {
 		htmlPlugins
 			.concat([
 				new MiniCssExtractPlugin(),
-				new Critters({
-					fonts: true,
-					// preload: "js-lazy",
-					noscriptFallback: true
-				}),
 				new CleanWebpackPlugin(),
 			]),
 	module: {
@@ -342,7 +337,14 @@ module.exports = {
 					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
-					'sass-loader'
+					{
+						loader: 'sass-loader',
+						options: {
+							sassOptions: {
+								silenceDeprecations: ['import']
+							}
+						}
+					}
 				]
 			},
 			{
@@ -359,26 +361,23 @@ module.exports = {
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|webp|gif|pdf|ico)$/,
-				use: {
-					loader: "file-loader",
-					options: {
-						name: "[name].[ext]",
-						outputPath: "imgs"
-					}
+				type: 'asset/resource',
+				generator: {
+					filename: 'imgs/[name][ext]'
 				}
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				use: [
-					'file-loader'
-				]
+				type: 'asset/resource'
 			}
 		]
 	},
-	node: {
-		fs: "empty",
-		tls: 'empty',
-		dns: 'empty',
-		net: 'empty'
+	resolve: {
+		fallback: {
+			fs: false,
+			tls: false,
+			dns: false,
+			net: false
+		}
 	}
 };
