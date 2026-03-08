@@ -1,5 +1,5 @@
 import '../images/bio.jpeg';
-import '../images/cv-mai-small.pdf';
+import '../images/cv.pdf';
 import '../images/logo.svg';
 import '../images/portrait-ascii.png';
 import '../images/karate-kick.svg';
